@@ -9,6 +9,7 @@ import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.Null;
 
+import java.util.Arrays;
 import java.util.HashMap;
 
 
@@ -82,6 +83,16 @@ public abstract class GridBase<T extends SlotObject, U extends Slot<T>> extends 
     @Override
     public @Null U getFreeSlot(int slotType) {
         for (U slot : slots) {
+            if (slot.isEmpty() && slot.getSlotType() == slotType) {
+                return slot;
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public @Null U getFreeSlot(int slotType, int[] excludeNumbers) {
+        for (U slot : slots.select(s -> Arrays.stream(excludeNumbers).anyMatch(n -> n != s.getNumber()))) {
             if (slot.isEmpty() && slot.getSlotType() == slotType) {
                 return slot;
             }

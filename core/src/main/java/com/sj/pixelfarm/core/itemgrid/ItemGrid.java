@@ -42,9 +42,7 @@ public class ItemGrid extends GridBase<ItemStack, ItemStackSlot> {
         });
 
         Events.on(EventType.TransferSlotEvent.class, e -> {
-            if (e.source().equals(this) || e.source().selectedSlot.isEmpty() || !isVisible() || !isTouchable()) {
-                return;
-            }
+            if (e.source().equals(this) || e.source().selectedSlot.isEmpty() || !isVisible() || !isTouchable()) return;
 
             // Belangrijk: maak kopie, bij meerdere grids wordt 'e.pos()' steeds veranderd en gebruikt voor verdere berekeningen
             Vector2 localPos = stageToLocalCoordinates(e.pos().cpy());
@@ -63,7 +61,7 @@ public class ItemGrid extends GridBase<ItemStack, ItemStackSlot> {
                 }
             }
 
-            ItemStackSlot freeSlot = getFreeSlot(e.stack().getSlotType());
+            ItemStackSlot freeSlot = getFreeSlot(e.stack().getSlotType(), new int[] { selectedSlot.getNumber() });
             if (freeSlot != null) {
                 freeSlot.setObj(e.stack());
                 e.onSuccess().run();

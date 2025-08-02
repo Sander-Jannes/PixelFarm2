@@ -2,6 +2,7 @@ package com.sj.pixelfarm.core.grid;
 
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Array;
+import com.badlogic.gdx.utils.Null;
 
 
 public interface Grid<T extends SlotObject, U extends Slot<T>> {
@@ -11,9 +12,10 @@ public interface Grid<T extends SlotObject, U extends Slot<T>> {
     Array<U> getSlots();
     Array<U> getFullSlots();
 
-    U getSlotByNumber(int number);
-    U getSlotByPos(Vector2 pos);
-    U getFreeSlot(int slotType);
+    @Null U getSlotByNumber(int number);
+    @Null U getSlotByPos(Vector2 pos);
+    @Null U getFreeSlot(int slotType);
+    @Null U getFreeSlot(int slotType, int[] excludeNumbers);
 
     void setSelectable(boolean value);
     void setObjToSlot(int slotNumber, T item);
