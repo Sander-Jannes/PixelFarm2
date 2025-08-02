@@ -1,0 +1,516 @@
+assets.png
+size: 2028, 1814
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+box_info/box_info
+  rotate: false
+  xy: 1525, 363
+  size: 270, 335
+  orig: 270, 335
+  offset: 0, 0
+  index: -1
+box_info/box_info_selection1
+  rotate: false
+  xy: 403, 87
+  size: 82, 82
+  orig: 82, 82
+  offset: 0, 0
+  index: -1
+box_info/box_info_selection3
+  rotate: false
+  xy: 1352, 183
+  size: 82, 147
+  orig: 82, 147
+  offset: 0, 0
+  index: -1
+calendar/day_icon
+  rotate: false
+  xy: 485, 87
+  size: 90, 90
+  orig: 90, 90
+  offset: 0, 0
+  index: -1
+calendar/day_icon_completed
+  rotate: false
+  xy: 575, 87
+  size: 90, 90
+  orig: 90, 90
+  offset: 0, 0
+  index: -1
+calendar/day_selection
+  rotate: false
+  xy: 665, 87
+  size: 90, 90
+  orig: 90, 90
+  offset: 0, 0
+  index: -1
+calendar/day_selection2
+  rotate: false
+  xy: 878, 183
+  size: 90, 120
+  orig: 90, 120
+  offset: 0, 0
+  index: -1
+calendar/order_completed
+  rotate: false
+  xy: 1204, 23
+  size: 50, 50
+  orig: 50, 50
+  offset: 0, 0
+  index: -1
+calendar/order_details
+  rotate: false
+  xy: 0, 698
+  size: 330, 411
+  orig: 330, 411
+  offset: 0, 0
+  index: -1
+car
+  rotate: false
+  xy: 968, 183
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+chest/chest
+  rotate: false
+  xy: 1430, 698
+  size: 345, 428
+  orig: 345, 428
+  offset: 0, 0
+  index: -1
+chest/inventory_selection1
+  rotate: false
+  xy: 0, 87
+  size: 80, 80
+  orig: 80, 80
+  offset: 0, 0
+  index: -1
+chest/inventory_selection2
+  rotate: false
+  xy: 80, 87
+  size: 163, 80
+  orig: 163, 80
+  offset: 0, 0
+  index: -1
+chest/inventory_selection3
+  rotate: false
+  xy: 1434, 183
+  size: 80, 163
+  orig: 80, 163
+  offset: 0, 0
+  index: -1
+chest/inventory_selection4
+  rotate: false
+  xy: 1514, 183
+  size: 163, 163
+  orig: 163, 163
+  offset: 0, 0
+  index: -1
+grid
+  rotate: false
+  xy: 1265, 363
+  size: 260, 260
+  orig: 260, 260
+  offset: 0, 0
+  index: -1
+hotbar/hotbar
+  rotate: false
+  xy: 0, 183
+  size: 878, 100
+  orig: 878, 100
+  offset: 0, 0
+  index: -1
+hotbar/hotbar_forced_selection
+  rotate: false
+  xy: 755, 87
+  size: 94, 94
+  orig: 94, 94
+  offset: 0, 0
+  index: -1
+hotbar/hotbar_selection
+  rotate: false
+  xy: 849, 87
+  size: 94, 94
+  orig: 94, 94
+  offset: 0, 0
+  index: -1
+hotbar/hotbar_selection2
+  rotate: false
+  xy: 943, 87
+  size: 181, 94
+  orig: 181, 94
+  offset: 0, 0
+  index: -1
+icon
+  rotate: false
+  xy: 654, 23
+  size: 40, 40
+  orig: 40, 40
+  offset: 0, 0
+  index: -1
+item
+  rotate: false
+  xy: 243, 87
+  size: 80, 80
+  orig: 80, 80
+  offset: 0, 0
+  index: -1
+item2
+  rotate: false
+  xy: 323, 87
+  size: 80, 80
+  orig: 80, 80
+  offset: 0, 0
+  index: -1
+levelup/level_up
+  rotate: false
+  xy: 0, 1126
+  size: 928, 665
+  orig: 928, 665
+  offset: 0, 0
+  index: -1
+order_time_popup/order_time_popup
+  rotate: false
+  xy: 694, 23
+  size: 30, 46
+  orig: 30, 46
+  offset: 0, 0
+  index: -1
+overlay/hud
+  rotate: false
+  xy: 0, 363
+  size: 360, 241
+  orig: 360, 241
+  offset: 0, 0
+  index: -1
+plant_book/info_card
+  rotate: false
+  xy: 1677, 183
+  size: 240, 180
+  orig: 240, 180
+  offset: 0, 0
+  index: -1
+popup/fertilizer_meter
+  rotate: false
+  xy: 1682, 0
+  size: 217, 23
+  orig: 217, 23
+  offset: 0, 0
+  index: -1
+popup/goal
+  rotate: false
+  xy: 434, 23
+  size: 56, 24
+  orig: 56, 24
+  offset: 0, 0
+  index: -1
+popup/pointer
+  rotate: false
+  xy: 65, 0
+  size: 17, 10
+  orig: 17, 10
+  offset: 0, 0
+  index: -1
+popup/popup2
+  rotate: false
+  xy: 965, 363
+  size: 300, 255
+  orig: 300, 255
+  offset: 0, 0
+  index: -1
+popup/quality_meter
+  rotate: false
+  xy: 0, 23
+  size: 217, 23
+  orig: 217, 23
+  offset: 0, 0
+  index: -1
+popup/water_meter
+  rotate: false
+  xy: 217, 23
+  size: 217, 23
+  orig: 217, 23
+  offset: 0, 0
+  index: -1
+shop/front_style
+  rotate: false
+  xy: 360, 363
+  size: 200, 250
+  orig: 200, 250
+  offset: 0, 0
+  index: -1
+shop/scrollbar
+  rotate: false
+  xy: 82, 0
+  size: 800, 20
+  orig: 800, 20
+  offset: 0, 0
+  index: -1
+shop/scrollbar_knob
+  rotate: false
+  xy: 882, 0
+  size: 800, 20
+  orig: 800, 20
+  offset: 0, 0
+  index: -1
+shop/shop
+  rotate: false
+  xy: 928, 1126
+  size: 1100, 688
+  orig: 1100, 688
+  offset: 0, 0
+  index: -1
+shop/shop_card
+  rotate: false
+  xy: 560, 363
+  size: 200, 250
+  orig: 200, 250
+  offset: 0, 0
+  index: -1
+soup_maker/card_highlight
+  rotate: false
+  xy: 760, 363
+  size: 205, 254
+  orig: 205, 254
+  offset: 0, 0
+  index: -1
+soup_maker/soup_maker
+  rotate: false
+  xy: 330, 698
+  size: 1100, 420
+  orig: 1100, 420
+  offset: 0, 0
+  index: -1
+ui/buttons/calendar_button
+  rotate: false
+  xy: 1404, 23
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+ui/buttons/calendar_button_clicked
+  rotate: false
+  xy: 1468, 23
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+ui/buttons/close_box
+  rotate: false
+  xy: 724, 23
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: -1
+ui/buttons/close_box_clicked
+  rotate: false
+  xy: 772, 23
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: -1
+ui/buttons/empty_button
+  rotate: false
+  xy: 820, 23
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: -1
+ui/buttons/empty_button_hover
+  rotate: false
+  xy: 868, 23
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: -1
+ui/buttons/enter
+  rotate: false
+  xy: 1124, 87
+  size: 96, 96
+  orig: 96, 96
+  offset: 0, 0
+  index: -1
+ui/buttons/enter_clicked
+  rotate: false
+  xy: 1220, 87
+  size: 96, 96
+  orig: 96, 96
+  offset: 0, 0
+  index: -1
+ui/buttons/flip
+  rotate: false
+  xy: 584, 23
+  size: 35, 35
+  orig: 35, 35
+  offset: 0, 0
+  index: -1
+ui/buttons/flip_clicked
+  rotate: false
+  xy: 619, 23
+  size: 35, 35
+  orig: 35, 35
+  offset: 0, 0
+  index: -1
+ui/buttons/info_button
+  rotate: false
+  xy: 1532, 23
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+ui/buttons/info_button_clicked
+  rotate: false
+  xy: 1596, 23
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+ui/buttons/inventory_button
+  rotate: false
+  xy: 1660, 23
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+ui/buttons/inventory_button_clicked
+  rotate: false
+  xy: 1724, 23
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+ui/buttons/open_box
+  rotate: false
+  xy: 916, 23
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: -1
+ui/buttons/open_box_clicked
+  rotate: false
+  xy: 964, 23
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: -1
+ui/buttons/remove_button
+  rotate: false
+  xy: 520, 23
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+ui/buttons/remove_button_clicked
+  rotate: false
+  xy: 552, 23
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+ui/buttons/remove_item
+  rotate: false
+  xy: 1012, 23
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: -1
+ui/buttons/remove_item_clicked
+  rotate: false
+  xy: 1060, 23
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: -1
+ui/buttons/settings_button
+  rotate: false
+  xy: 1788, 23
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+ui/buttons/settings_button_clicked
+  rotate: false
+  xy: 1852, 23
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+ui/buttons/split_item
+  rotate: false
+  xy: 1108, 23
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: -1
+ui/buttons/split_item_clicked
+  rotate: false
+  xy: 1156, 23
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: -1
+ui/icons/check
+  rotate: false
+  xy: 1254, 23
+  size: 50, 50
+  orig: 50, 50
+  offset: 0, 0
+  index: -1
+ui/icons/coin
+  rotate: false
+  xy: 490, 23
+  size: 30, 30
+  orig: 30, 30
+  offset: 0, 0
+  index: -1
+ui/icons/drop_arrow
+  rotate: false
+  xy: 1304, 23
+  size: 50, 50
+  orig: 50, 50
+  offset: 0, 0
+  index: -1
+ui/icons/happy
+  rotate: false
+  xy: 1916, 23
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+ui/icons/lock
+  rotate: false
+  xy: 1354, 23
+  size: 50, 50
+  orig: 50, 50
+  offset: 0, 0
+  index: -1
+ui/useBar
+  rotate: false
+  xy: 0, 0
+  size: 64, 6
+  orig: 64, 6
+  offset: 0, 0
+  index: -1
+ui/useBarOverlay
+  rotate: false
+  xy: 64, 0
+  size: 1, 6
+  orig: 1, 6
+  offset: 0, 0
+  index: -1
+world/cursor
+  rotate: false
+  xy: 1096, 183
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+world/cursor2
+  rotate: false
+  xy: 1224, 183
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1

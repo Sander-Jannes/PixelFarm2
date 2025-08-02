@@ -1,0 +1,1725 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.10.2" orientation="isometric" renderorder="right-down" width="128" height="129" tilewidth="128" tileheight="64" infinite="0" nextlayerid="14" nextobjectid="27">
+ <tileset firstgid="1" name="buildings" tilewidth="128" tileheight="128" tilecount="100" columns="10">
+  <image source="../images/tile_sets/blocks/buildings.png" width="1280" height="1280"/>
+  <tile id="0">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value="water_well"/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value="water_well"/>
+   </properties>
+  </tile>
+  <tile id="2">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="4">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="5">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="6">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="7">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="8">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="9">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="10">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value="fertilizer"/>
+   </properties>
+  </tile>
+  <tile id="11">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value="sell_point"/>
+   </properties>
+  </tile>
+  <tile id="12">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="13">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="14">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="15">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="16">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="17">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="18">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="19">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="20">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value="home"/>
+   </properties>
+  </tile>
+  <tile id="21">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value="soup_maker"/>
+   </properties>
+  </tile>
+  <tile id="22">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="23">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="24">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="25">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="26">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="27">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="28">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="29">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="30">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="31">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="32">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="33">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="34">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="35">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="36">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="37">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="38">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="39">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="40">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="41">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="42">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="43">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="44">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="45">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="46">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="47">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="48">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="49">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="50">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="51">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="52">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="53">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="54">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="55">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="56">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="57">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="58">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="59">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="60">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="61">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="62">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="63">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="64">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="65">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="66">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="67">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="68">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="69">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="70">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="71">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="72">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="73">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="74">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="75">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="76">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="77">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="78">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="79">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="80">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="81">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="82">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="83">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="84">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="85">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="86">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="87">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="88">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="89">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="90">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="91">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="92">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="93">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="94">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="95">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="96">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="97">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="98">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="99">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="101" name="tiles" tilewidth="128" tileheight="128" tilecount="100" columns="10">
+  <image source="../images/tile_sets/blocks/tiles.png" width="1280" height="1280"/>
+  <tile id="0">
+   <properties>
+    <property name="group" value="tiles"/>
+    <property name="name" value="modifiable"/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="group" value="tiles"/>
+    <property name="name" value="rotten_field"/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="2">
+   <properties>
+    <property name="group" value="tiles"/>
+    <property name="name" value="water"/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="group" value="tiles"/>
+    <property name="name" value="water"/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="4">
+   <properties>
+    <property name="group" value="tiles"/>
+    <property name="name" value="grass"/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="5">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="6">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="7">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="8">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="9">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="10">
+   <properties>
+    <property name="group" value="tiles"/>
+    <property name="name" value="grass"/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="11">
+   <properties>
+    <property name="group" value="tiles"/>
+    <property name="name" value="grass"/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="12">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="13">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value="field"/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="14">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value="rottenField"/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="15">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="16">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="17">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="18">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="19">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="20">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="21">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="22">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="23">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="24">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="25">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="26">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="27">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="28">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="29">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="30">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="31">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="32">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value="field"/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="33">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="34">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="35">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="36">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="37">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="38">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="39">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="40">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="41">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="42">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="43">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="44">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="45">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="46">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="47">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="48">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="49">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="50">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="51">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="52">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="53">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="54">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="55">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="56">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="57">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="58">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="59">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="60">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="61">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value="empty"/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="62">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="63">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="64">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="65">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="66">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="67">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="68">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="69">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="70">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="71">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="72">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="73">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="74">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="75">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="76">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="77">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="78">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="79">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="80">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="81">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="82">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="83">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="84">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="85">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="86">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="87">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="88">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="89">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="90">
+   <properties>
+    <property name="group" value="tiles"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="91">
+   <properties>
+    <property name="group" value="tiles"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="92">
+   <properties>
+    <property name="group" value="tiles"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="93">
+   <properties>
+    <property name="group" value="tiles"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="94">
+   <properties>
+    <property name="group" value="tiles"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="95">
+   <properties>
+    <property name="group" value="tiles"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="96">
+   <properties>
+    <property name="group" value="tiles"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="97">
+   <properties>
+    <property name="group" value="tiles"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="98">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="99">
+   <properties>
+    <property name="group" value=""/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="201" name="crops" tilewidth="128" tileheight="128" tilecount="40" columns="4">
+  <image source="../images/tile_sets/blocks/crops.png" width="512" height="1280"/>
+  <tile id="0">
+   <properties>
+    <property name="group" value="crops"/>
+    <property name="level" type="int" value="1"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="group" value="crops"/>
+    <property name="level" type="int" value="2"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="2">
+   <properties>
+    <property name="group" value="crops"/>
+    <property name="level" type="int" value="3"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="group" value="crops"/>
+    <property name="level" type="int" value="4"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="4">
+   <properties>
+    <property name="group" value="crops"/>
+    <property name="level" type="int" value="1"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="5">
+   <properties>
+    <property name="group" value="crops"/>
+    <property name="level" type="int" value="2"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="6">
+   <properties>
+    <property name="group" value="crops"/>
+    <property name="level" type="int" value="3"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="7">
+   <properties>
+    <property name="group" value="crops"/>
+    <property name="level" type="int" value="4"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="8">
+   <properties>
+    <property name="group" value="crops"/>
+    <property name="level" type="int" value="1"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="9">
+   <properties>
+    <property name="group" value="crops"/>
+    <property name="level" type="int" value="2"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="10">
+   <properties>
+    <property name="group" value="crops"/>
+    <property name="level" type="int" value="3"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="11">
+   <properties>
+    <property name="group" value="crops"/>
+    <property name="level" type="int" value="4"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="12">
+   <properties>
+    <property name="group" value="crops"/>
+    <property name="level" type="int" value="1"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="13">
+   <properties>
+    <property name="group" value="crops"/>
+    <property name="level" type="int" value="2"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="14">
+   <properties>
+    <property name="group" value="crops"/>
+    <property name="level" type="int" value="3"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="15">
+   <properties>
+    <property name="group" value="crops"/>
+    <property name="level" type="int" value="4"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="16">
+   <properties>
+    <property name="group" value="crops"/>
+    <property name="level" type="int" value="1"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="17">
+   <properties>
+    <property name="group" value="crops"/>
+    <property name="level" type="int" value="2"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="18">
+   <properties>
+    <property name="group" value="crops"/>
+    <property name="level" type="int" value="3"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="19">
+   <properties>
+    <property name="group" value="crops"/>
+    <property name="level" type="int" value="4"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="20">
+   <properties>
+    <property name="group" value="crops"/>
+    <property name="level" type="int" value="1"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="21">
+   <properties>
+    <property name="group" value="crops"/>
+    <property name="level" type="int" value="2"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="22">
+   <properties>
+    <property name="group" value="crops"/>
+    <property name="level" type="int" value="3"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="23">
+   <properties>
+    <property name="group" value="crops"/>
+    <property name="level" type="int" value="4"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="24">
+   <properties>
+    <property name="group" value="crops"/>
+    <property name="level" type="int" value="1"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="25">
+   <properties>
+    <property name="group" value="crops"/>
+    <property name="level" type="int" value="2"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="26">
+   <properties>
+    <property name="group" value="crops"/>
+    <property name="level" type="int" value="3"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="27">
+   <properties>
+    <property name="group" value="crops"/>
+    <property name="level" type="int" value="4"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="28">
+   <properties>
+    <property name="group" value="crops"/>
+    <property name="level" type="int" value="1"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="29">
+   <properties>
+    <property name="group" value="crops"/>
+    <property name="level" type="int" value="2"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="30">
+   <properties>
+    <property name="group" value="crops"/>
+    <property name="level" type="int" value="3"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="31">
+   <properties>
+    <property name="group" value="crops"/>
+    <property name="level" type="int" value="4"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="32">
+   <properties>
+    <property name="group" value="crops"/>
+    <property name="level" type="int" value="1"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="33">
+   <properties>
+    <property name="group" value="crops"/>
+    <property name="level" type="int" value="2"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="34">
+   <properties>
+    <property name="group" value="crops"/>
+    <property name="level" type="int" value="3"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="35">
+   <properties>
+    <property name="group" value="crops"/>
+    <property name="level" type="int" value="4"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="36">
+   <properties>
+    <property name="group" value="crops"/>
+    <property name="level" type="int" value="1"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="37">
+   <properties>
+    <property name="group" value="crops"/>
+    <property name="level" type="int" value="1"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="38">
+   <properties>
+    <property name="group" value="crops"/>
+    <property name="level" type="int" value="1"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="39">
+   <properties>
+    <property name="group" value="crops"/>
+    <property name="level" type="int" value="1"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="241" source="tilesets/trees2.tsx"/>
+ <tileset firstgid="261" source="tilesets/decoration2.tsx"/>
+ <tileset firstgid="301" source="tilesets/decoration2x.tsx"/>
+ <tileset firstgid="302" source="tilesets/buildings256.tsx"/>
+ <tileset firstgid="306" source="tilesets/roads2.tsx"/>
+ <tileset firstgid="354" name="car" tilewidth="128" tileheight="128" tilecount="9" columns="9">
+  <image source="../images/tile_sets/animations/car.png" width="1152" height="128"/>
+  <tile id="0">
+   <properties>
+    <property name="group" value="car"/>
+    <property name="name" value=""/>
+   </properties>
+   <animation>
+    <frame tileid="0" duration="500"/>
+    <frame tileid="1" duration="500"/>
+    <frame tileid="2" duration="500"/>
+    <frame tileid="3" duration="500"/>
+    <frame tileid="4" duration="500"/>
+    <frame tileid="5" duration="500"/>
+    <frame tileid="6" duration="500"/>
+    <frame tileid="7" duration="500"/>
+    <frame tileid="8" duration="500"/>
+   </animation>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="group" value="car"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="2">
+   <properties>
+    <property name="group" value="car"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="group" value="car"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="4">
+   <properties>
+    <property name="group" value="car"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="5">
+   <properties>
+    <property name="group" value="car"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="6">
+   <properties>
+    <property name="group" value="car"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="7">
+   <properties>
+    <property name="group" value="car"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="8">
+   <properties>
+    <property name="group" value="car"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer id="1" name="ground" width="128" height="129">
+  <data encoding="base64" compression="zlib">
+   eJzt2UFuozAUBuDkTHOBWfQEs+kRsmzU+y+qaIrEuM/2M5nEtHyLTwok4ML/MLZ7PZ1OVwAAAAAAAAAAAAAAAAAAAAAAAAAAAIABbyu171rHzf77uT//Mk/Z/kzRs15+LmvA838svXqIslcL30Mvp1a/MHIe9qHsw1t9f6sWov21mlAX8711ZPKPzpetEebnX8soem/33ue9uonOozbm5l/LOVM3/6Mfl//c/Gu10MpmS2bl8y73/WSf/c1t+/3Tst0aO8j4ZxnNNVM/s6/paHprM711v9G2ymPW+TO/Dlr5R335yJivty48+x4wViOjx2XXftTC8zO9Z612JL/M+oD8n59/L5+Rdf1eP79ljYHH5p9d46ltb2nX/HDffp3H/Rn8/exr5K/M/2kyfcDr+ev3rbnEsn35NPs+HE1mDN7rn9f7b/m33ulRO5fTv/l7Dzy/BqLMt8zX1/lnj7sE1MC8OihrIKqT2trg0v9n5/q1/NXAvBq4Z41uef575y/bqdXA7PtxJK33fG/dZtl+Dcb0rbHAuk3P/9zsR/rs277fwXzuJfH819oos5f/PtTqoBzr1+Z2tTqrjSFmX+/RlfnU9kdz/VrWI+159veRfy/XMv/MfD+T/0jt8Pg66M31a3XTqodWH9Nrl+dl3/qcmeuV27381/v0AfO1xmtR/mV2mTpqtasO5osyXvLfmtnoWEH+82ug1Bv/Z87Zamv2NVPPbMl/S1a994L89ycat0X5t979mXUh2X8PUf61ccLIOeW/f4/IR+4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEQ+AJ2/Lnc=
+  </data>
+ </layer>
+ <layer id="8" name="modify" width="128" height="129" visible="0" locked="1">
+  <data encoding="base64" compression="zlib">
+   eJzt1TEKAjEARUEvu/e/gqQQrFzENS/RGUibIu9DbjcAAAAAAAAAAAAAAAAAAAAAAJjjeDr8h+Pk8LvO2tvB/l61fKe/Dezn3b42sL9vNLeBPcxobwdrmt3eBtZS9beDXt3eBjp1cxvo1K1tYK7n960b28BcdU8b6NU99e/VTW1gDXVX/Xt1Wxto1V1toHVFC/339GmL44J7bKBxZQf/wF5m99J/LXU//Vt1P/1bdT8baNXt9G/V7WygV7fTv1W3079Vt7OBXt1O/1bdTv9e3U//Xt1Q+1bdUf9e3VL7Vt1T/17dVPte3Vb/NdSNte/VrfXv1b31X4f2DNozaM+gPYP2DHrzoD/6oz/aM2iP9gAAAAAAAAAAAAAAAAAAAAAAAABc5Q75Z92O
+  </data>
+ </layer>
+ <layer id="2" name="decoration" width="128" height="129">
+  <data encoding="base64" compression="zlib">
+   eJzt2s1q20AUBtBMQbLd1LaySKCBlmSRtJv0/d8ry2xq4Znqdiq5KQQspeeAsCLLJvDN3PmRLy4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOBtbdPxdZ/O+3/wNp4nrr+c+MzVIfsmDec7bWGR6oxPZV606VgD7g/HOue+ze3hSjtYlG3IcEqpD82J+7ZyX5y+rzdpPLupMaEYawurdLqNcF5NyKepxuxSA147F4hzv/oz5oXzVOfSj+OfD8f1yHF3OD4c7rnM997k16ZqJ/fVd16G+QDzdzORU3+9De/t0jDHa6u68XGkHd3Jf7Z2oQ+P5f+UjtfLeBHnh6s874/rvybf/yl8x1S74nzKGF7n1vtR5VWun6rjq7APVOd9k+sC81D349tcx0tu30byi2uDTagZ9Tyib1dfc91/yK9f0p9zA86nr/mlv8a5fJ3bdcivCffHOvCYjsf3fDyG10eZz1Lfb5uqT5Z825x/r/TzdRr2dcf29FahnljvzVNc3/fn3UT2feZ1/d+Ev3/t8Yb3y95Row3MVqzZbaj/5b2Y8UP6vU/34jhxW+Vb1oIl/23yDAjmpvTJl3Be79GX67vcn/e5FnShb1+Fz9ZrwrpuMC/bND4+l/repiH7cv5UzR1ira+/+zXPjDmPsTF5bE+ny324HXkvrhluQ01owpxiM9E+mJd9qPHrvB6M7aFJw9w+/raj1oWa4ncfy9DvAXS5z5b5esmu5Ff29bsq0/JsP+4hr9PQnliOkn03klvs62Xs2Odx4dRa/2+/F2Ee6vl7U+0DjIl5d9U6X+1fntfu05SxoPzec+pZoH2f9yOO5XFdd2p9b+2/fDHrOJbvRvZ1y/qgvpdl+dfszPX/X88XwzPkyHM/eD+M5wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAW/kJL/0y5A==
+  </data>
+ </layer>
+ <objectgroup id="13" name="lights">
+  <object id="1" name="lantern" x="3778.1" y="4034.53">
+   <point/>
+  </object>
+ </objectgroup>
+</map>

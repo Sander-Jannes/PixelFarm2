@@ -1,0 +1,59 @@
+{
+  "background": "grid",
+  "slotInfo": [
+    {
+      "slotType": 1,
+      "class": "com.sj.pixelfarm.core.itemgrid.ItemStackSlot",
+      "selectImage": "chest/inventory_selection1",
+      "size": [80, 80]
+    },
+    {
+      "slotType": 2,
+      "class": "com.sj.pixelfarm.core.itemgrid.ItemStackSlot",
+      "selectImage": "chest/inventory_selection1",
+      "size": [165, 80]
+    }
+  ],
+  "slots": [
+    {
+      "number": 1,
+      "slotType": 2,
+      "pos": [5, 5]
+    },
+    {
+      "number": 2,
+      "slotType": 1,
+      "pos": [175, 5]
+    },
+    {
+      "number": 3,
+      "slotType": 1,
+      "pos": [5, 90]
+    },
+    {
+      "number": 4,
+      "slotType": 1,
+      "pos": [90, 90]
+    },
+    {
+      "number": 5,
+      "slotType": 1,
+      "pos": [175, 90]
+    },
+    {
+      "number": 6,
+      "slotType": 1,
+      "pos": [5, 175]
+    },
+    {
+      "number": 7,
+      "slotType": 1,
+      "pos": [90, 175]
+    },
+    {
+      "number": 8,
+      "slotType": 1,
+      "pos": [175, 175]
+    }
+  ]
+}

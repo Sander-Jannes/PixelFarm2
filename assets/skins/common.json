@@ -1,0 +1,244 @@
+{
+  "Color": {
+    "white": { "hex": "FDFDFD" },
+    "turquoise": { "hex": "5A8B97" },
+    "gray": { "hex": "808080" },
+    "blue": { "hex": "0000FF" },
+    "black": { "hex": "000000"}
+  },
+  "BitmapFont": {
+    "64x": {
+      "file": "fonts/Welbut64.fnt",
+      "scaledSize": 64,
+      "markupEnabled": true
+    },
+    "52x": {
+      "file": "fonts/Welbut64.fnt",
+      "scaledSize": 52,
+      "markupEnabled": true
+    },
+    "48x": {
+      "file": "fonts/Welbut64.fnt",
+      "scaledSize": 48,
+      "markupEnabled": true
+    },
+    "32x": {
+      "file": "fonts/Welbut64.fnt",
+      "scaledSize": 32,
+      "markupEnabled": true
+    },
+    "28x": {
+      "file": "fonts/Welbut64.fnt",
+      "scaledSize": 28,
+      "markupEnabled": true
+    },
+    "26x": {
+      "file": "fonts/Welbut64.fnt",
+      "scaledSize": 26,
+      "markupEnabled": true
+    },
+    "24x": {
+      "file": "fonts/Welbut64.fnt",
+      "scaledSize": 24,
+      "markupEnabled": true
+    },
+    "20x": {
+      "file": "fonts/Welbut64.fnt",
+      "scaledSize": 20,
+      "markupEnabled": true
+    },
+    "18x": {
+      "file": "fonts/Welbut64.fnt",
+      "scaledSize": 18,
+      "markupEnabled": true
+    },
+    "17x": {
+      "file": "fonts/Welbut64.fnt",
+      "scaledSize": 17,
+      "markupEnabled": true
+    },
+    "16x": {
+      "file": "fonts/Welbut64.fnt",
+      "scaledSize": 16,
+      "markupEnabled": true
+    },
+    "15x": {
+      "file": "fonts/Welbut64.fnt",
+      "scaledSize": 15,
+      "markupEnabled": true
+    },
+    "14x": {
+      "file": "fonts/Welbut64.fnt",
+      "scaledSize": 14,
+      "markupEnabled": true
+    },
+    "13x": {
+      "file": "fonts/Welbut64.fnt",
+      "scaledSize": 13,
+      "markupEnabled": true
+    },
+    "12x": {
+      "file": "fonts/Welbut64.fnt",
+      "scaledSize": 12,
+      "markupEnabled": true
+    },
+    "10x": {
+      "file": "fonts/Welbut64.fnt",
+      "scaledSize": 10,
+      "markupEnabled": true
+    },
+    "8x": {
+      "file": "fonts/Welbut64.fnt",
+      "scaledSize": 8,
+      "markupEnabled": true
+    }
+  },
+  "LabelStyle": {
+    "default": {
+      "font": "24x",
+      "fontColor": "white"
+    },
+    "48x": {
+      "font": "48x",
+      "fontColor": "white"
+    },
+    "32x": {
+      "font": "32x",
+      "fontColor": "white"
+    },
+    "28x": {
+      "font": "28x",
+      "fontColor": "white"
+    },
+    "26x": {
+      "font": "26x",
+      "fontColor": "white"
+    },
+    "20x": {
+      "font": "20x",
+      "fontColor": "white"
+    },
+    "18x": {
+      "font": "18x",
+      "fontColor": "white"
+    },
+    "17x": {
+      "font": "17x",
+      "fontColor": "white"
+    },
+    "16x": {
+      "font": "16x",
+      "fontColor": "white"
+    },
+    "15x": {
+      "font": "15x",
+      "fontColor": "white"
+    },
+    "14x": {
+      "font": "14x",
+      "fontColor": "white"
+    },
+    "13x": {
+      "font": "13x",
+      "fontColor": "white"
+    },
+    "12x": {
+      "font": "12x",
+      "fontColor": "white"
+    }
+  },
+  "ScrollPaneStyle": {
+    "default": {
+      "hScroll": "shop/scrollbar",
+      "hScrollKnob": "shop/scrollbar_knob"
+    }
+  },
+  "ButtonStyle": {
+    "card-remove-button": {
+      "up": "ui/buttons/remove_button",
+      "down": "ui/buttons/remove_button_clicked",
+      "over": "ui/buttons/remove_button_clicked"
+    },
+    "inventory-button": {
+      "up": "ui/buttons/inventory_button",
+      "down": "ui/buttons/inventory_button_clicked",
+      "over": "ui/buttons/inventory_button_clicked"
+    },
+    "calendar-button": {
+      "up": "ui/buttons/calendar_button",
+      "down": "ui/buttons/calendar_button_clicked",
+      "over": "ui/buttons/calendar_button_clicked"
+    },
+    "settings-button": {
+      "up": "ui/buttons/settings_button",
+      "down": "ui/buttons/settings_button_clicked",
+      "over": "ui/buttons/settings_button_clicked"
+    },
+    "info-button": {
+      "up": "ui/buttons/info_button",
+      "down": "ui/buttons/info_button_clicked",
+      "over": "ui/buttons/info_button_clicked"
+    },
+    "enter-button": {
+      "up": "ui/buttons/enter",
+      "down": "ui/buttons/enter_clicked",
+      "over": "ui/buttons/enter_clicked"
+    },
+    "open-box": {
+      "up": "ui/buttons/open_box",
+      "down": "ui/buttons/open_box_clicked",
+      "over": "ui/buttons/open_box_clicked"
+    },
+    "close-box": {
+      "up": "ui/buttons/close_box",
+      "down": "ui/buttons/close_box_clicked",
+      "over": "ui/buttons/close_box_clicked"
+    },
+    "remove-item": {
+      "up": "ui/buttons/remove_item",
+      "down": "ui/buttons/remove_item_clicked",
+      "over": "ui/buttons/remove_item_clicked"
+    },
+    "split-item": {
+      "up": "ui/buttons/split_item",
+      "over": "ui/buttons/split_item_clicked",
+      "down": "ui/buttons/split_item_clicked"
+    }
+  },
+  "ImageButtonStyle": {
+    "empty_button": {
+      "up": "ui/buttons/empty_button",
+      "down": "ui/buttons/empty_button",
+      "over": "ui/buttons/empty_button"
+    },
+    "flip-button": {
+      "up": "ui/buttons/flip",
+      "down": "ui/buttons/flip_clicked",
+      "over": "ui/buttons/flip_clicked"
+    }
+  },
+  "TextButtonStyle": {
+    "shop-button": {
+      "font": "20x",
+      "fontColor": "white",
+      "overFontColor": "turquoise",
+      "checkedFontColor": "turquoise"
+    },
+    "main-screen": {
+      "font": "48x",
+      "fontColor": "white",
+      "overFontColor": "turquoise",
+      "checkedFontColor": "turquoise"
+    },
+    "shop-card-button": {
+      "font": "20x",
+      "fontColor": "white",
+      "overFontColor": "turquoise"
+    },
+    "cooking-button": {
+      "font": "32x",
+      "fontColor": "white",
+      "overFontColor": "turquoise"
+    }
+  }
+}
