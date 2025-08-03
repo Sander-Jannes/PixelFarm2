@@ -42,11 +42,13 @@ public class GameScreen implements Screen {
         ItemGrid grid = new ItemGrid(GridLoader.load("gridconfig/hotbar.json", Assets::getAtlasTexture), 64, Entities.HOTBAR);
         grid.setPosition(Gdx.graphics.getWidth() / 2f - grid.getWidth() / 2f,40);
 
+        grid.setObjToSlot(1, PoolManager.obtain(Items.lettuce_seeds, 64, Item.Quality.NONE));
+        grid.setObjToSlot(2, PoolManager.obtain(Items.eggplant_seeds, 64, Item.Quality.NONE));
+        grid.setObjToSlot(3, PoolManager.obtain(Items.onion_seeds, 64, Item.Quality.NONE));
+        grid.setObjToSlot(4, PoolManager.obtain(Items.cucumber_seeds, 64, Item.Quality.NONE));
+        grid.setObjToSlot(5, PoolManager.obtain(Items.broccoli_seeds, 64, Item.Quality.NONE));
+        grid.setObjToSlot(6, PoolManager.obtain(Items.scythe, 1, Item.Quality.NONE));
         grid.setObjToSlot(7, PoolManager.obtain(Items.shovel, 64, Item.Quality.BAD));
-        grid.setObjToSlot(5, PoolManager.obtain(Items.scythe, 1, Item.Quality.NONE));
-        grid.setObjToSlot(6, PoolManager.obtain(Items.lettuce_seeds, 64, Item.Quality.NONE));
-        grid.setObjToSlot(2, PoolManager.obtain(Items.lettuce_seeds, 64, Item.Quality.NONE));
-        grid.setObjToSlot(3, PoolManager.obtain(Items.carrot_seeds, 64, Item.Quality.NONE));
 
         CropInfoPopup popup = new CropInfoPopup(20, Gdx.graphics.getHeight() - 255 - 20, 200);
 

@@ -1,24 +1,29 @@
 package com.sj.pixelfarm.core.item;
 
 
-import com.sj.pixelfarm.core.input.Actions;
+import com.sj.pixelfarm.core.item.actions.ActionInfo;
+import com.sj.pixelfarm.core.item.actions.ActionTarget;
+import com.sj.pixelfarm.core.item.actions.Actions;
 import com.sj.pixelfarm.core.input.Interactions;
+import com.sj.pixelfarm.core.item.actions.ActionProps;
 import com.sj.pixelfarm.world.TileType;
-import com.sj.pixelfarm.world.World;
 
 
 public class Items {
 
     public static Item
         lettuce, carrot, tomato, cauliflower, broccoli, pumpkin, cucumber, onion, eggplant,
-        lettuce_seeds, carrot_seeds,
+        lettuce_seeds, carrot_seeds, tomato_seeds, cauliflower_seeds, broccoli_seeds, pumpkin_seeds, cucumber_seeds, onion_seeds, eggplant_seeds,
         carrot_soup, tomato_soup, cauliflower_soup, broccoli_soup, pumpkin_soup,
         scythe, shovel, rake;
 
     public static void load() {
-
         lettuce = new Item(ItemType.LETTUCE, 1) {{
             description = "";
+            interactionMap.put(
+                Interactions.LEFT_RELEASE,
+                new ActionInfo(Actions.SELL, ActionTarget.HOME, new ActionProps.Sell(10, 5))
+            );
         }};
 
         carrot = new Item(ItemType.CARROT, 1) {{
@@ -57,8 +62,8 @@ public class Items {
             description = "";
             interactionMap.put(
                 Interactions.COMBO_HOLD,
-                new ActionInfo(Actions.PLANT, "group", "fields", World.Layers.GROUND,
-                    new PlantProps(TileType.LETTUCE, 2f, 99f, 0, 0, 4, Items.lettuce))
+                new ActionInfo(Actions.PLANT, ActionTarget.FIELDS,
+                    new ActionProps.Plant(TileType.LETTUCE, 5f, 99f, 0, 0, 4, Items.lettuce))
             );
         }};
 
@@ -66,8 +71,71 @@ public class Items {
             description = "";
             interactionMap.put(
                 Interactions.COMBO_HOLD,
-                new ActionInfo(Actions.PLANT, "group", "fields", World.Layers.GROUND,
-                    new PlantProps(TileType.CARROT, 2f, 99f, 0, 0, 4, Items.carrot))
+                new ActionInfo(Actions.PLANT, ActionTarget.FIELDS,
+                    new ActionProps.Plant(TileType.CARROT, 2f, 99f, 0, 0, 4, Items.carrot))
+            );
+        }};
+
+        tomato_seeds = new Item(ItemType.TOMATO_SEEDS, 1) {{
+            description = "";
+            interactionMap.put(
+                Interactions.COMBO_HOLD,
+                new ActionInfo(Actions.PLANT, ActionTarget.FIELDS,
+                    new ActionProps.Plant(TileType.TOMATO, 2f, 99f, 0, 0, 4, Items.tomato))
+            );
+        }};
+
+        cauliflower_seeds = new Item(ItemType.CAULIFLOWER_SEEDS, 1) {{
+            description = "";
+            interactionMap.put(
+                Interactions.COMBO_HOLD,
+                new ActionInfo(Actions.PLANT, ActionTarget.FIELDS,
+                    new ActionProps.Plant(TileType.CAULIFLOWER, 2f, 99f, 0, 0, 4, Items.cauliflower))
+            );
+        }};
+
+        broccoli_seeds = new Item(ItemType.BROCCOLI_SEEDS, 1) {{
+            description = "";
+            interactionMap.put(
+                Interactions.COMBO_HOLD,
+                new ActionInfo(Actions.PLANT, ActionTarget.FIELDS,
+                    new ActionProps.Plant(TileType.BROCCOLI, 2f, 99f, 0, 0, 4, Items.broccoli))
+            );
+        }};
+
+        pumpkin_seeds = new Item(ItemType.PUMPKIN_SEEDS, 1) {{
+            description = "";
+            interactionMap.put(
+                Interactions.COMBO_HOLD,
+                new ActionInfo(Actions.PLANT, ActionTarget.FIELDS,
+                    new ActionProps.Plant(TileType.PUMPKIN, 2f, 99f, 0, 0, 4, Items.pumpkin))
+            );
+        }};
+
+        cucumber_seeds = new Item(ItemType.CUCUMBER_SEEDS, 1) {{
+            description = "";
+            interactionMap.put(
+                Interactions.COMBO_HOLD,
+                new ActionInfo(Actions.PLANT, ActionTarget.FIELDS,
+                    new ActionProps.Plant(TileType.CUCUMBER, 2f, 99f, 0, 0, 4, Items.cucumber))
+            );
+        }};
+
+        onion_seeds = new Item(ItemType.ONION_SEEDS, 1) {{
+            description = "";
+            interactionMap.put(
+                Interactions.COMBO_HOLD,
+                new ActionInfo(Actions.PLANT, ActionTarget.FIELDS,
+                    new ActionProps.Plant(TileType.ONION, 2f, 99f, 0, 0, 4, Items.onion))
+            );
+        }};
+
+        eggplant_seeds = new Item(ItemType.EGGPLANT_SEEDS, 1) {{
+            description = "";
+            interactionMap.put(
+                Interactions.COMBO_HOLD,
+                new ActionInfo(Actions.PLANT, ActionTarget.FIELDS,
+                    new ActionProps.Plant(TileType.EGGPLANT, 2f, 99f, 0, 0, 4, Items.eggplant))
             );
         }};
 
@@ -94,8 +162,8 @@ public class Items {
         scythe = new Item(ItemType.SCYTHE, 1) {{
             description = "";
             interactionMap.put(
-                Interactions.COMBO_HOLD,
-                new ActionInfo(Actions.HARVEST, "group", "crops", World.Layers.DECORATION, null)
+                Interactions.LEFT_HOLD,
+                new ActionInfo(Actions.HARVEST, ActionTarget.CROPS, null)
             );
         }};
 
@@ -103,7 +171,7 @@ public class Items {
             description = "";
             interactionMap.put(
                 Interactions.COMBO_HOLD,
-                new ActionInfo(Actions.MAP_CHANGE, "group", "tiles", World.Layers.GROUND, new MapChangeProps(TileType.FIELD))
+                new ActionInfo(Actions.MAP_CHANGE, ActionTarget.TILES, new ActionProps.MapChange(TileType.FIELD))
             );
         }};
 

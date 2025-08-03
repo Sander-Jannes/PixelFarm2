@@ -18,8 +18,12 @@ public class DesktopInputListener extends InputAdapter {
 
     @Override
     public boolean touchDown(int screenX, int screenY, int pointer, int button) {
-        /* Remove the actions */
+        // Remove the actions
         Events.fire(new EventType.RemoveActionBar(new Vector2(screenX, screenY)));
+
+        // Hide the crop info
+        Events.fire(new EventType.HideCropInfoPopupEvent());
+
         return false;
     }
 }

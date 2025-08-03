@@ -1,4 +1,4 @@
-package com.sj.pixelfarm.core.input;
+package com.sj.pixelfarm.core.item.actions;
 
 public enum Actions {
     SELL,

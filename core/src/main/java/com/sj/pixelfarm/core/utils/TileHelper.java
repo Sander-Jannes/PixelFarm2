@@ -2,6 +2,7 @@ package com.sj.pixelfarm.core.utils;
 
 import com.badlogic.gdx.maps.tiled.TiledMapTile;
 import com.sj.pixelfarm.core.item.Item;
+import com.sj.pixelfarm.core.item.actions.ActionProps;
 import com.sj.pixelfarm.world.TileSetNames;
 
 import java.util.function.Consumer;
@@ -74,15 +75,14 @@ public class TileHelper {
             transfer(source, "quality");
             transfer(source, "item");
             transfer(source, "props");
-
-            Item.PlantProps plantProperties = getProperty("props", Item.PlantProps.class);
+            ActionProps.Plant plantProperties = getProperty("props", ActionProps.Plant.class);
             put("timeTillRotten", plantProperties.timeTillRotten());
             put("growTime", plantProperties.growTimePerLevel());
             put("waterLevel", plantProperties.waterLevel());
             put("fertilizerLevel", plantProperties.fertilizerLevel());
         }
 
-        public void init(Item.PlantProps props) {
+        public void init(ActionProps.Plant props) {
             put("water", 0f);
             put("fertilizer", 0f);
             put("quality", Logic.itemQualityToTileQuality(Item.Quality.GOOD));

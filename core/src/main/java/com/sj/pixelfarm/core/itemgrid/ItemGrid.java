@@ -36,7 +36,7 @@ public class ItemGrid extends GridBase<ItemStack, ItemStackSlot> {
         actionBar = createActionBar(bar -> {
             Button split = createButton(ButtonStyles.SPLIT_ITEM, button -> splitSlot(clickedSlot));
             Button remove = createButton(ButtonStyles.REMOVE_ITEM, button -> clickedSlot.destroyObj(true));
-            bar.space(10);
+            bar.space(5);
             bar.addState(1, split, remove);
             bar.setState(1);
         });
@@ -120,7 +120,7 @@ public class ItemGrid extends GridBase<ItemStack, ItemStackSlot> {
 
         if (clickedSlot != null && !clickedSlot.isEmpty()) {
             Vector2 stagePos = localToStageCoordinates(new Vector2(clickedSlot.getX(), clickedSlot.getY()));
-            actionBar.setPosition(stagePos.x + clickedSlot.getWidth() / 2 + actionBar.getWidth() / 2, stagePos.y + clickedSlot.getHeight() + 20);
+            actionBar.setPosition(stagePos.x + clickedSlot.getWidth() / 2 + actionBar.getWidth() / 2, stagePos.y + clickedSlot.getHeight() + 10);
             getStage().getRoot().addActor(actionBar);
             UIEffects.applyBounceEffect(actionBar);
         }

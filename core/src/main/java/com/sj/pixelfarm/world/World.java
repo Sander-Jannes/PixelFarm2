@@ -17,6 +17,9 @@ import com.sj.pixelfarm.core.input.Interactions;
 import com.sj.pixelfarm.core.input.events.EventType;
 import com.sj.pixelfarm.core.input.events.Events;
 import com.sj.pixelfarm.core.item.Item;
+import com.sj.pixelfarm.core.item.actions.ActionInfo;
+import com.sj.pixelfarm.core.item.actions.ActionProps;
+import com.sj.pixelfarm.core.item.actions.ActionTarget;
 import com.sj.pixelfarm.core.itemgrid.ItemStack;
 import com.sj.pixelfarm.core.itemgrid.ItemStackSlot;
 import com.sj.pixelfarm.core.mem.Assets;
@@ -90,37 +93,37 @@ public class World extends Actor implements Disposable {
         if (itemStackSlot.isEmpty()) return;
 
         ItemStack itemStack = itemStackSlot.getObj();
-        Item.ActionInfo info = itemStack.item.interactionMap.get(interaction);
         GridPoint2 pos = WorldUtils.getGridPosFromMouse(viewport);
+        ActionInfo actionInfo = itemStack.item.interactionMap.get(interaction);
 
-        if (info == null) return;
+        if (actionInfo == null) return;
 
-        TiledMapTile tile = worldMap.getTile(pos, info.layer());
+        ActionTarget target = actionInfo.target();
+        TiledMapTile tile = worldMap.getTile(pos, target.layer);
 
         TileHelper.processTile(tile, t -> {
-            if (t.equals(info.targetProperty(), info.targetName())) {
-                switch (info.action()) {
+            if (t.equals(target.property, target.name)) {
+                switch (actionInfo.action()) {
                     case HARVEST: {
                         if (t.isHarvestable()) {
                             Item harvestItem = t.getProperty("item", Item.class);
-                            int amount = t.getProperty("props", Item.PlantProps.class).harvestQuantity();
+                            int amount = t.getProperty("props", ActionProps.Plant.class).harvestQuantity();
 
                             Events.fire(new EventType.PutItemInGridEvent(
                                 PoolManager.obtain(harvestItem, amount, t.getItemQuality()),
                                 Entities.HOTBAR,
                                 () -> {
-                                    worldMap.removeCell(pos, info.layer());
+                                    worldMap.removeCell(pos, target.layer);
                                     Events.fire(new EventType.ShowPopupObject(harvestItem.image, "+" + amount, UIEffects::applyFadeOutEffect));
                                 }));
                         }
-
                         break;
                     }
 
                     case MAP_CHANGE: {
                         if (worldMap.getTile(pos, Layers.DECORATION) != null) return;
 
-                        Item.MapChangeProps props = (Item.MapChangeProps) info.props();
+                        ActionProps.MapChange props = (ActionProps.MapChange) actionInfo.props();
                         worldMap.setCell(pos, Layers.GROUND, props.tile());
                         Events.fire(new EventType.ShowPopupObject(itemStack.item.image, "-1", UIEffects::applyFadeDownEffect));
                         itemStack.addAmount(-1);
@@ -130,12 +133,18 @@ public class World extends Actor implements Disposable {
                     case PLANT: {
                         if (worldMap.getTile(pos, Layers.DECORATION) != null) return;
 
-                        Item.PlantProps props = (Item.PlantProps) info.props();
+                        ActionProps.Plant props = (ActionProps.Plant) actionInfo.props();
                         TiledMapTileLayer.Cell cell = worldMap.setCell(pos, Layers.DECORATION, props.crop());
                         TileHelper.processTile(cell.getTile(), crop -> crop.init(props));
                         Events.fire(new EventType.ShowPopupObject(itemStack.item.image, "-1", UIEffects::applyFadeDownEffect));
                         itemStack.addAmount(-1);
                         break;
+                    }
+
+                    case SELL: {
+                        ActionProps.Sell props = (ActionProps.Sell) actionInfo.props();
+                        System.out.println(props.money() * itemStack.amount + " " + props.xp() * itemStack.amount);
+                        itemStackSlot.destroyObj(true);
                     }
                 }
             }

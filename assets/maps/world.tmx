@@ -5,7 +5,7 @@
   <tile id="0">
    <properties>
     <property name="group" value="buildings"/>
-    <property name="name" value="water_well"/>
+    <property name="name" value="home"/>
    </properties>
   </tile>
   <tile id="1">
@@ -1714,7 +1714,7 @@
  </layer>
  <layer id="2" name="decoration" width="128" height="129">
   <data encoding="base64" compression="zlib">
-   eJzt2s1u00AUBtDOwk4KJHEXrcQCRBctbMr7v1eX3RArM8plGJsiVYpdzpGsuI4TVfpm7vw4V1cAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC2dun0ekiX/T94G88T119mPnNzzL5L5/O9trBKdcZzmRd9OtWA++Oxzbnvcnu40Q5WZRcynFLqQzdz307uqzP29S61s5saE4pWW9ik+TbCZXUhn64as0sNeO1cIM796s+YFy5Tncs4jn8+HreN49tEhl3VTu6r+z6G+QDLdzeR03i9D+/t03mO11d140OjHU21Hy5vH/pwK/+ndLpexos4P9zkeX9c/3X5/k/hO6baFZdTxvA6t9HPKq9yfa6Ob8I+UJ33Xa4LLEPdj0d9yO17I7+4NrgONaOeR4zt6muu+w/59Uv6c27A5Yw1v/TXOJevc7sN+XXh/lgHHtPp+JGPx/D6KPNFGvttV/XJkm+f8x+Vfr5N533d1p7eJtQT671liuv78XyYyH7MvK7/1+Hv1v5g2TvqtIHFijW7D/W/vBczfki/9+nR3LOAshYs+e+SZ0CwNKVPvoTzeo++XN/n/nzItWAIffsmfLZeE9Z1g2XZpfb4XOp7n87Zl/Onau4Qa3393a95ZsxltMbk1p7OkPtw33ivtY4v43+ZU1xPtA+W5RBq/DavB2N76NJ5bh9/21EbQk3xu491GPcAhtxny3y9ZFfyK/v6Q5VpebYf95C36dyeWI+S/dDILfb1MnYc8rgwt9b/2+9FWIZ6/t5V+wAtMe+hWuer/evz2n2aMhaU33tOPQu07/N+xLE8ruvm1vfW/usXs45j+b6xr1vWB/W9rMu/Zmeu//96vjo/Q44894P3w3gOAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALyVX9ZjMmM=
+   eJzt2s1O20AUBlBmYSfQJjELkLpoBQtoN/T934slm2JlRrmdjl0qIcWm50hWjONESN/MnR/n4gIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN7XLh1fD+m8/wfv43ni+svMZ65fs+/S6XyvLaxSnfFc5kWfjjXg/vXY5tx3uT1cawersgsZTin1oZu5byf31Rn7epfa2U2NCUWrLWzSfBvhvLqQT1eN2aUGvHUuEOd+9WfMC5epzmUcx7+8HjeN4y7fW0fZVe3kvrrhU5gPsHy3EzmN1/vw3j6d5nh9VTeuGu3oTv6LtQ99uJX/UzpeL+NFnB9u8rw/rv+6fP/n8B1T7YrzKWN4ndvoZ5VXuT5XxzdhH6jO+zbXBZah7sejPuT2vZFfXBtchppRzyPGdvUt1/2H/Po1/Tk34HzGml/6a5zL17ndhPy6cH+sA4/pePzIx2N4fZT5Io39tqv6ZMm3z/mPSj/fptO+bmtPbxPqifXeMsX1/Xg+TGQ/Zl7X/8vwd2t/sOwdddrAYsWa3Yf6X96LGT+k3/v0aO5ZQFkLlvx3yTMgWJrSJ1/Ceb1HX67vc38+5FowhL59HT5brwnrusGy7FJ7fC71vU+n7Mv5UzV3iLW+/u63PDPmPFpjcmtPZ8h9uG+811rHl/G/zCkuJ9oHy3IINX6b14OxPXTpNLePv+2oDaGm+N3HOox7AEPus2W+XrIr+ZV9/aHKtDzbj3vI23RqT6xHyX5o5Bb7ehk7DnlcmFvr/+33IixDPX/vqn2Alpj3UK3z1f71ees+TRkLyu89p54F2vf5OOJYHtd1c+t7a//1i1nHsXzf2Nct64P6XtblX7Mz1/9/PV+cniFHnvvBx2E8BwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADeyy9tejJk
   </data>
  </layer>
 </map>
