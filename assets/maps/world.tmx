@@ -1714,12 +1714,7 @@
  </layer>
  <layer id="2" name="decoration" width="128" height="129">
   <data encoding="base64" compression="zlib">
-   eJzt2s1q20AUBtBMQbLd1LaySKCBlmSRtJv0/d8ry2xq4Znqdiq5KQQspeeAsCLLJvDN3PmRLy4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOBtbdPxdZ/O+3/wNp4nrr+c+MzVIfsmDec7bWGR6oxPZV606VgD7g/HOue+ze3hSjtYlG3IcEqpD82J+7ZyX5y+rzdpPLupMaEYawurdLqNcF5NyKepxuxSA147F4hzv/oz5oXzVOfSj+OfD8f1yHF3OD4c7rnM997k16ZqJ/fVd16G+QDzdzORU3+9De/t0jDHa6u68XGkHd3Jf7Z2oQ+P5f+UjtfLeBHnh6s874/rvybf/yl8x1S74nzKGF7n1vtR5VWun6rjq7APVOd9k+sC81D349tcx0tu30byi2uDTagZ9Tyib1dfc91/yK9f0p9zA86nr/mlv8a5fJ3bdcivCffHOvCYjsf3fDyG10eZz1Lfb5uqT5Z825x/r/TzdRr2dcf29FahnljvzVNc3/fn3UT2feZ1/d+Ev3/t8Yb3y95Row3MVqzZbaj/5b2Y8UP6vU/34jhxW+Vb1oIl/23yDAjmpvTJl3Be79GX67vcn/e5FnShb1+Fz9ZrwrpuMC/bND4+l/repiH7cv5UzR1ira+/+zXPjDmPsTF5bE+ny324HXkvrhluQ01owpxiM9E+mJd9qPHrvB6M7aFJw9w+/raj1oWa4ncfy9DvAXS5z5b5esmu5Ff29bsq0/JsP+4hr9PQnliOkn03klvs62Xs2Odx4dRa/2+/F2Ee6vl7U+0DjIl5d9U6X+1fntfu05SxoPzec+pZoH2f9yOO5XFdd2p9b+2/fDHrOJbvRvZ1y/qgvpdl+dfszPX/X88XwzPkyHM/eD+M5wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAW/kJL/0y5A==
+   eJzt2s1u00AUBtDOwk4KJHEXrcQCRBctbMr7v1eX3RArM8plGJsiVYpdzpGsuI4TVfpm7vw4V1cAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC2dun0ekiX/T94G88T119mPnNzzL5L5/O9trBKdcZzmRd9OtWA++Oxzbnvcnu40Q5WZRcynFLqQzdz307uqzP29S61s5saE4pWW9ik+TbCZXUhn64as0sNeO1cIM796s+YFy5Tncs4jn8+HreN49tEhl3VTu6r+z6G+QDLdzeR03i9D+/t03mO11d140OjHU21Hy5vH/pwK/+ndLpexos4P9zkeX9c/3X5/k/hO6baFZdTxvA6t9HPKq9yfa6Ob8I+UJ33Xa4LLEPdj0d9yO17I7+4NrgONaOeR4zt6muu+w/59Uv6c27A5Yw1v/TXOJevc7sN+XXh/lgHHtPp+JGPx/D6KPNFGvttV/XJkm+f8x+Vfr5N533d1p7eJtQT671liuv78XyYyH7MvK7/1+Hv1v5g2TvqtIHFijW7D/W/vBczfki/9+nR3LOAshYs+e+SZ0CwNKVPvoTzeo++XN/n/nzItWAIffsmfLZeE9Z1g2XZpfb4XOp7n87Zl/Onau4Qa3393a95ZsxltMbk1p7OkPtw33ivtY4v43+ZU1xPtA+W5RBq/DavB2N76NJ5bh9/21EbQk3xu491GPcAhtxny3y9ZFfyK/v6Q5VpebYf95C36dyeWI+S/dDILfb1MnYc8rgwt9b/2+9FWIZ6/t5V+wAtMe+hWuer/evz2n2aMhaU33tOPQu07/N+xLE8ruvm1vfW/usXs45j+b6xr1vWB/W9rMu/Zmeu//96vjo/Q44894P3w3gOAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALyVX9ZjMmM=
   </data>
  </layer>
- <objectgroup id="13" name="lights">
-  <object id="1" name="lantern" x="3778.1" y="4034.53">
-   <point/>
-  </object>
- </objectgroup>
 </map>

@@ -1,6 +1,7 @@
 package com.sj.pixelfarm.core.input.events;
 
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.maps.tiled.TiledMapTile;
 import com.badlogic.gdx.math.Vector2;
 import com.sj.pixelfarm.core.input.Interactions;
 import com.sj.pixelfarm.core.itemgrid.ItemGrid;
@@ -22,4 +23,8 @@ public class EventType {
     public record DropItemOnWorld(ItemStackSlot itemStackSlot, Interactions interaction) { }
 
     public record ShowPopupObject(TextureRegion image, String text, UIEffect effectApplier) { }
+
+    public record ShowCropInfoPopupEvent(TiledMapTile tile) { }
+
+    public record HideCropInfoPopupEvent() { }
 }

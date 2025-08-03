@@ -4,7 +4,8 @@ public enum TileType {
 
     FIELD("tiles", 14),
     ROTTEN_FIELD("tiles", 1),
-    LETTUCE("crops", 1);
+    LETTUCE("crops", 1),
+    CARROT("crops", 5);
 
     public final String tilesetName;
     public final int id;

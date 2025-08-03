@@ -49,10 +49,24 @@ public final class UIUtils {
         return bar;
     }
 
-    public static ImageButton createImageButton(LabelStyles styleName, Consumer<ImageButton> action) {
+    public static ImageButton createImageButton(ButtonStyles styleName, Consumer<ImageButton> action) {
         ImageButton button = new ImageButton(Assets.getSkin("common"), styleName.getName());
         Events.addClickListener(button, () -> action.accept(button));
         return button;
+    }
+
+    public static Stack createMeter(String meterTexturePath, String pointerPath, String name) {
+        Stack meterStack = new Stack();
+        Image meter = createImage(meterTexturePath);
+        meterStack.add(meter);
+
+        Image pointer = createImage(pointerPath);
+        Container<Image> pointerContainer = new Container<>(pointer);
+        pointerContainer.setName(name);
+        pointerContainer.left();
+        meterStack.add(pointerContainer);
+
+        return meterStack;
     }
 
     public static TextButton createTextButton(String text, LabelStyles styleName, Consumer<TextButton> action) {

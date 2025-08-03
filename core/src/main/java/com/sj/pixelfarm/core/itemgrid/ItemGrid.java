@@ -35,7 +35,7 @@ public class ItemGrid extends GridBase<ItemStack, ItemStackSlot> {
 
         actionBar = createActionBar(bar -> {
             Button split = createButton(ButtonStyles.SPLIT_ITEM, button -> splitSlot(clickedSlot));
-            Button remove = createButton(ButtonStyles.REMOVE_ITEM, button -> clickedSlot.destroyObj(false));
+            Button remove = createButton(ButtonStyles.REMOVE_ITEM, button -> clickedSlot.destroyObj(true));
             bar.space(10);
             bar.addState(1, split, remove);
             bar.setState(1);
@@ -55,7 +55,7 @@ public class ItemGrid extends GridBase<ItemStack, ItemStackSlot> {
             if (!getName().equals(e.name())) return;
 
             for (ItemStackSlot slot : getSlots()) {
-                if (tryMergeItem(e.stack(), slot)) {
+                if (slot.canMergeWith(e.stack(), maxSlotCapacity) && tryMergeItem(e.stack(), slot)) {
                     e.onSuccess().run();
                     return;
                 }
@@ -137,17 +137,25 @@ public class ItemGrid extends GridBase<ItemStack, ItemStackSlot> {
 
         if (targetSlot == null || dropSlot == null) return false;
 
-        if (targetSlot.isEmpty() && targetSlot.equals(dropSlot)) {
-            targetSlot.setObj(dropSlot.getObj());
+        if (targetSlot.equals(dropSlot)) {
+            if (targetSlot.isEmpty()) {
+                targetSlot.setObj(dropSlot.getObj());
+
+            } else if (targetSlot.canMergeWith(dropSlot.getObj(), maxSlotCapacity)) {
+                tryMergeItem(dropSlot.getObj(), targetSlot);
+
+            } else {
+                dropSlot.swapObj(targetSlot);
+                ItemStackSlot oldSlot = getSlotByNumber(dropSlot.getNumber());
+                oldSlot.setObj(dropSlot.getObj());
+            }
             return true;
         }
 
-        return tryMergeItem(dropSlot.getObj(), targetSlot);
+        return false;
     }
 
     private boolean tryMergeItem(ItemStack dropItem, ItemStackSlot targetSlot) {
-        if (!targetSlot.canMergeWith(dropItem, maxSlotCapacity)) return false;
-
         int total = targetSlot.getObj().amount + dropItem.amount;
         if (total <= maxSlotCapacity) {
             targetSlot.getObj().addStack(dropItem);

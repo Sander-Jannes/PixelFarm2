@@ -1,0 +1,56 @@
+{
+  "background": "hotbar/hotbar",
+  "slotInfo": [
+    {
+      "slotType": 1,
+      "class": "com.sj.pixelfarm.core.itemgrid.ItemStackSlot",
+      "selectImage": "hotbar/hotbar_selection",
+      "highlightImage": "hotbar/hotbar_forced_selection",
+      "size": [94, 94]
+    },
+    {
+      "slotType": 2,
+      "class": "com.sj.pixelfarm.core.itemgrid.ItemStackSlot",
+      "selectImage": "hotbar/hotbar_selection2",
+      "highlightImage": "",
+      "size": [188, 94]
+    }
+  ],
+  "slots": [
+    {
+      "number": 1,
+      "slotType": 1,
+      "pos": [3, 4]
+    },
+    {
+      "number": 2,
+      "slotType": 1,
+      "pos": [102, 4]
+    },
+    {
+      "number": 3,
+      "slotType": 1,
+      "pos": [201, 4]
+    },
+    {
+      "number": 4,
+      "slotType": 1,
+      "pos": [300, 4]
+    },
+    {
+      "number": 5,
+      "slotType": 1,
+      "pos": [399, 4]
+    },
+    {
+      "number": 6,
+      "slotType": 1,
+      "pos": [498, 4]
+    },
+    {
+      "number": 7,
+      "slotType": 2,
+      "pos": [597, 4]
+    }
+  ]
+}

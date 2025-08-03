@@ -61,7 +61,7 @@ public class ItemStack extends SlotObject implements Pool.Poolable {
         this.amount += n;
 
         if (this.amount == 0) {
-            getParent().destroyObj(false);
+            getParent().destroyObj(true);
             return;
         }
 

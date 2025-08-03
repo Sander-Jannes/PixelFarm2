@@ -60,6 +60,12 @@ public class Slot<T extends SlotObject> extends Container<T> {
 
     public boolean isEmpty() { return obj == null; }
 
+    public void swapObj(Slot<T> other) {
+        T copy = other.getObj();
+        other.setObj(obj);
+        setObj(copy);
+    }
+
     public void detachObj() {
         if (obj != null) {
             removeActor(obj);

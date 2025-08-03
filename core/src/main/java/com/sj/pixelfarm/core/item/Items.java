@@ -11,7 +11,7 @@ public class Items {
 
     public static Item
         lettuce, carrot, tomato, cauliflower, broccoli, pumpkin, cucumber, onion, eggplant,
-        lettuce_seeds,
+        lettuce_seeds, carrot_seeds,
         carrot_soup, tomato_soup, cauliflower_soup, broccoli_soup, pumpkin_soup,
         scythe, shovel, rake;
 
@@ -58,7 +58,16 @@ public class Items {
             interactionMap.put(
                 Interactions.COMBO_HOLD,
                 new ActionInfo(Actions.PLANT, "group", "fields", World.Layers.GROUND,
-                    new PlantProps(TileType.LETTUCE, 1f, 99f, 0, 0, 4, Items.lettuce))
+                    new PlantProps(TileType.LETTUCE, 2f, 99f, 0, 0, 4, Items.lettuce))
+            );
+        }};
+
+        carrot_seeds = new Item(ItemType.CARROT_SEEDS, 1) {{
+            description = "";
+            interactionMap.put(
+                Interactions.COMBO_HOLD,
+                new ActionInfo(Actions.PLANT, "group", "fields", World.Layers.GROUND,
+                    new PlantProps(TileType.CARROT, 2f, 99f, 0, 0, 4, Items.carrot))
             );
         }};
 

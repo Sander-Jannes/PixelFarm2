@@ -19,7 +19,7 @@ box_info/box_info_selection1
   index: -1
 box_info/box_info_selection3
   rotate: false
-  xy: 1352, 183
+  xy: 1253, 183
   size: 82, 147
   orig: 82, 147
   offset: 0, 0
@@ -47,7 +47,7 @@ calendar/day_selection
   index: -1
 calendar/day_selection2
   rotate: false
-  xy: 878, 183
+  xy: 779, 183
   size: 90, 120
   orig: 90, 120
   offset: 0, 0
@@ -68,7 +68,7 @@ calendar/order_details
   index: -1
 car
   rotate: false
-  xy: 968, 183
+  xy: 869, 183
   size: 128, 128
   orig: 128, 128
   offset: 0, 0
@@ -96,14 +96,14 @@ chest/inventory_selection2
   index: -1
 chest/inventory_selection3
   rotate: false
-  xy: 1434, 183
+  xy: 1335, 183
   size: 80, 163
   orig: 80, 163
   offset: 0, 0
   index: -1
 chest/inventory_selection4
   rotate: false
-  xy: 1514, 183
+  xy: 1415, 183
   size: 163, 163
   orig: 163, 163
   offset: 0, 0
@@ -118,8 +118,8 @@ grid
 hotbar/hotbar
   rotate: false
   xy: 0, 183
-  size: 878, 100
-  orig: 878, 100
+  size: 779, 100
+  orig: 779, 100
   offset: 0, 0
   index: -1
 hotbar/hotbar_forced_selection
@@ -187,7 +187,7 @@ overlay/hud
   index: -1
 plant_book/info_card
   rotate: false
-  xy: 1677, 183
+  xy: 1578, 183
   size: 240, 180
   orig: 240, 180
   offset: 0, 0
@@ -502,14 +502,14 @@ ui/useBarOverlay
   index: -1
 world/cursor
   rotate: false
-  xy: 1096, 183
+  xy: 997, 183
   size: 128, 128
   orig: 128, 128
   offset: 0, 0
   index: -1
 world/cursor2
   rotate: false
-  xy: 1224, 183
+  xy: 1125, 183
   size: 128, 128
   orig: 128, 128
   offset: 0, 0

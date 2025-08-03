@@ -100,8 +100,10 @@ public abstract class GridBase<T extends SlotObject, U extends Slot<T>> extends 
         return null;
     }
 
+    @Override
     public void setSelectable(boolean value) { this.isSelectable = value; }
 
+    @Override
     public final void setObjToSlot(int slotNumber, T item) {
         U slot = getSlotByNumber(slotNumber);
 
@@ -110,6 +112,7 @@ public abstract class GridBase<T extends SlotObject, U extends Slot<T>> extends 
         }
     }
 
+    @Override
     public void reset(boolean hasPool) {
         for (U slot : slots) {
             slot.destroyObj(hasPool);

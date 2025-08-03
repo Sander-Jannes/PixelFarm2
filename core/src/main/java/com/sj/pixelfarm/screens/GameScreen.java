@@ -9,6 +9,7 @@ import com.badlogic.gdx.utils.ScreenUtils;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
 import com.sj.pixelfarm.*;
 import com.sj.pixelfarm.core.Entities;
+import com.sj.pixelfarm.core.card.CropInfoPopup;
 import com.sj.pixelfarm.core.grid.GridLoader;
 import com.sj.pixelfarm.core.input.listeners.WorldInputListener;
 import com.sj.pixelfarm.core.item.Item;
@@ -38,16 +39,19 @@ public class GameScreen implements Screen {
         world = new World(worldViewport);
         worldInputListener = new WorldInputListener(world, stage);
 
-        ItemGrid grid = new ItemGrid(GridLoader.load("grid_config.json", Assets::getAtlasTexture), 64, Entities.HOTBAR);
-        grid.setPosition(50,50);
+        ItemGrid grid = new ItemGrid(GridLoader.load("gridconfig/hotbar.json", Assets::getAtlasTexture), 64, Entities.HOTBAR);
+        grid.setPosition(Gdx.graphics.getWidth() / 2f - grid.getWidth() / 2f,40);
 
-        grid.setObjToSlot(1, PoolManager.obtain(Items.shovel, 64, Item.Quality.BAD));
+        grid.setObjToSlot(7, PoolManager.obtain(Items.shovel, 64, Item.Quality.BAD));
         grid.setObjToSlot(5, PoolManager.obtain(Items.scythe, 1, Item.Quality.NONE));
         grid.setObjToSlot(6, PoolManager.obtain(Items.lettuce_seeds, 64, Item.Quality.NONE));
         grid.setObjToSlot(2, PoolManager.obtain(Items.lettuce_seeds, 64, Item.Quality.NONE));
-        grid.setObjToSlot(3, PoolManager.obtain(Items.lettuce_seeds, 64, Item.Quality.NONE));
+        grid.setObjToSlot(3, PoolManager.obtain(Items.carrot_seeds, 64, Item.Quality.NONE));
+
+        CropInfoPopup popup = new CropInfoPopup(20, Gdx.graphics.getHeight() - 255 - 20, 200);
 
         stage.addActor(grid);
+        stage.addActor(popup);
         main.multiplexer.addProcessor(stage);
         main.multiplexer.addProcessor(worldInputListener);
 
