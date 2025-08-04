@@ -3,12 +3,13 @@ package com.sj.pixelfarm.core.utils;
 import com.badlogic.gdx.maps.tiled.TiledMapTile;
 import com.sj.pixelfarm.core.item.Item;
 import com.sj.pixelfarm.core.item.actions.ActionProps;
+import com.sj.pixelfarm.core.item.actions.ActionTarget;
 import com.sj.pixelfarm.world.TileSetNames;
 
 import java.util.function.Consumer;
 
 
-public class TileHelper {
+public final class TileHelper {
 
     private static final Tile helperTile = new Tile();
 
@@ -46,6 +47,10 @@ public class TileHelper {
 
         public boolean equals(String key, Object value) {
             return tile != null && tile.getProperties().get(key).equals(value);
+        }
+
+        public boolean evaluateActionTarget(ActionTarget target) {
+            return equals(target.property, target.name);
         }
 
         public boolean isHarvestable() {

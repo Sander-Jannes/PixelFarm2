@@ -4,9 +4,9 @@ import com.sj.pixelfarm.world.World;
 
 public enum ActionTarget {
     HOME("name", "home", World.Layers.DECORATION),
-    FIELDS("group", "fields", World.Layers.GROUND),
+    FIELD("name", "field", World.Layers.GROUND),
     CROPS("group", "crops", World.Layers.DECORATION),
-    TILES("group", "tiles", World.Layers.GROUND);
+    GRASS("group", "grass", World.Layers.GROUND);
 
     public final String property;
     public final String name;

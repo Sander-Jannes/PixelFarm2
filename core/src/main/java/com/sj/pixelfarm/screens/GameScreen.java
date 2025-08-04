@@ -24,9 +24,9 @@ import com.sj.pixelfarm.world.World;
 
 public class GameScreen implements Screen {
 
-    public Stage stage;
-    public World world;
-    public WorldInputListener worldInputListener;
+    private final Stage stage;
+    private final World world;
+    private final WorldInputListener worldInputListener;
 
     public GameScreen(Main main) {
         OrthographicCamera camera = new OrthographicCamera();

@@ -5,7 +5,7 @@ import com.sj.pixelfarm.core.item.Item;
 import com.sj.pixelfarm.core.itemgrid.ItemStack;
 
 
-public class PoolManager {
+public final class PoolManager {
 
     @SuppressWarnings("unchecked")
     public static <T extends ItemStack> T obtain(Item item, int amount, Item.Quality quality) {

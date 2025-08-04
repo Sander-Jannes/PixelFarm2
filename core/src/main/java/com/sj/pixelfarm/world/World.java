@@ -31,22 +31,24 @@ import com.sj.pixelfarm.core.utils.TileHelper;
 public class World extends Actor implements Disposable {
 
     /** Tile scale in pixels */
-    private final static float SCALE = 128f;
+    private static final float SCALE = 128f;
     /** Inverse scale */
-    private final static float INV_SCALE = 1.f/SCALE;
+    private static final float INV_SCALE = 1.f/SCALE;
     /** The amount of zoom per scroll */
-    private final static float ZOOM = 0.1f;
+    private static final float ZOOM = 0.1f;
     /** How far you can zoom out */
-    private final static float MAX_ZOOM = 100f;
+    private static final float MAX_ZOOM = 100f;
     /** How far you can zoom in, 0 is close to the map  */
-    private final static float MIN_ZOOM = 0.5f;
+    private static final float MIN_ZOOM = 0.5f;
+    private static final int[] ground = new int[] { Layers.GROUND };
+    private static final int[] decoration = new int[] { Layers.DECORATION };
 
     private final IsometricTiledMapRenderer renderer;
-    public final ExtendViewport viewport;
-    public OrthographicCamera worldCamera;
-    public WorldMap worldMap = new WorldMap();
+    private final OrthographicCamera worldCamera;
 
-    /* Cursor */
+    public final ExtendViewport viewport;
+    public final WorldMap worldMap = new WorldMap();
+
     private static final TextureRegion cursorImage = Assets.getAtlasTexture("world/cursor");
     private final Vector2 cursorBlitPos = new Vector2();
 
@@ -65,12 +67,13 @@ public class World extends Actor implements Disposable {
     }
 
     public void draw() {
-        // Update de camera en stel de renderer in
         worldCamera.update();
         renderer.setView(worldCamera);
-        renderer.render();
 
-        // Render de cursor op de batch van de renderer
+        renderer.render(ground);
+
+        renderer.render(decoration);
+
         renderCursor();
     }
 
@@ -92,8 +95,8 @@ public class World extends Actor implements Disposable {
     public void dropItem(ItemStackSlot itemStackSlot, Interactions interaction) {
         if (itemStackSlot.isEmpty()) return;
 
-        ItemStack itemStack = itemStackSlot.getObj();
         GridPoint2 pos = WorldUtils.getGridPosFromMouse(viewport);
+        ItemStack itemStack = itemStackSlot.getObj();
         ActionInfo actionInfo = itemStack.item.interactionMap.get(interaction);
 
         if (actionInfo == null) return;
@@ -102,7 +105,7 @@ public class World extends Actor implements Disposable {
         TiledMapTile tile = worldMap.getTile(pos, target.layer);
 
         TileHelper.processTile(tile, t -> {
-            if (t.equals(target.property, target.name)) {
+            if (t.evaluateActionTarget(target)) {
                 switch (actionInfo.action()) {
                     case HARVEST: {
                         if (t.isHarvestable()) {

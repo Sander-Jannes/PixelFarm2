@@ -2,8 +2,9 @@ package com.sj.pixelfarm.world;
 
 public enum TileType {
 
-    FIELD("tiles", 14),
-    ROTTEN_FIELD("tiles", 1),
+    FIELD("tiles", 3),
+    ROTTEN_FIELD("tiles", 2),
+
     LETTUCE("crops", 1),
     CARROT("crops", 5),
     TOMATO("crops", 9),

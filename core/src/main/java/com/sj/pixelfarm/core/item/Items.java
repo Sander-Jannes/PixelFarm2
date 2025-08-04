@@ -62,7 +62,7 @@ public class Items {
             description = "";
             interactionMap.put(
                 Interactions.COMBO_HOLD,
-                new ActionInfo(Actions.PLANT, ActionTarget.FIELDS,
+                new ActionInfo(Actions.PLANT, ActionTarget.FIELD,
                     new ActionProps.Plant(TileType.LETTUCE, 5f, 99f, 0, 0, 4, Items.lettuce))
             );
         }};
@@ -71,7 +71,7 @@ public class Items {
             description = "";
             interactionMap.put(
                 Interactions.COMBO_HOLD,
-                new ActionInfo(Actions.PLANT, ActionTarget.FIELDS,
+                new ActionInfo(Actions.PLANT, ActionTarget.FIELD,
                     new ActionProps.Plant(TileType.CARROT, 2f, 99f, 0, 0, 4, Items.carrot))
             );
         }};
@@ -80,7 +80,7 @@ public class Items {
             description = "";
             interactionMap.put(
                 Interactions.COMBO_HOLD,
-                new ActionInfo(Actions.PLANT, ActionTarget.FIELDS,
+                new ActionInfo(Actions.PLANT, ActionTarget.FIELD,
                     new ActionProps.Plant(TileType.TOMATO, 2f, 99f, 0, 0, 4, Items.tomato))
             );
         }};
@@ -89,7 +89,7 @@ public class Items {
             description = "";
             interactionMap.put(
                 Interactions.COMBO_HOLD,
-                new ActionInfo(Actions.PLANT, ActionTarget.FIELDS,
+                new ActionInfo(Actions.PLANT, ActionTarget.FIELD,
                     new ActionProps.Plant(TileType.CAULIFLOWER, 2f, 99f, 0, 0, 4, Items.cauliflower))
             );
         }};
@@ -98,7 +98,7 @@ public class Items {
             description = "";
             interactionMap.put(
                 Interactions.COMBO_HOLD,
-                new ActionInfo(Actions.PLANT, ActionTarget.FIELDS,
+                new ActionInfo(Actions.PLANT, ActionTarget.FIELD,
                     new ActionProps.Plant(TileType.BROCCOLI, 2f, 99f, 0, 0, 4, Items.broccoli))
             );
         }};
@@ -107,7 +107,7 @@ public class Items {
             description = "";
             interactionMap.put(
                 Interactions.COMBO_HOLD,
-                new ActionInfo(Actions.PLANT, ActionTarget.FIELDS,
+                new ActionInfo(Actions.PLANT, ActionTarget.FIELD,
                     new ActionProps.Plant(TileType.PUMPKIN, 2f, 99f, 0, 0, 4, Items.pumpkin))
             );
         }};
@@ -116,7 +116,7 @@ public class Items {
             description = "";
             interactionMap.put(
                 Interactions.COMBO_HOLD,
-                new ActionInfo(Actions.PLANT, ActionTarget.FIELDS,
+                new ActionInfo(Actions.PLANT, ActionTarget.FIELD,
                     new ActionProps.Plant(TileType.CUCUMBER, 2f, 99f, 0, 0, 4, Items.cucumber))
             );
         }};
@@ -125,7 +125,7 @@ public class Items {
             description = "";
             interactionMap.put(
                 Interactions.COMBO_HOLD,
-                new ActionInfo(Actions.PLANT, ActionTarget.FIELDS,
+                new ActionInfo(Actions.PLANT, ActionTarget.FIELD,
                     new ActionProps.Plant(TileType.ONION, 2f, 99f, 0, 0, 4, Items.onion))
             );
         }};
@@ -134,7 +134,7 @@ public class Items {
             description = "";
             interactionMap.put(
                 Interactions.COMBO_HOLD,
-                new ActionInfo(Actions.PLANT, ActionTarget.FIELDS,
+                new ActionInfo(Actions.PLANT, ActionTarget.FIELD,
                     new ActionProps.Plant(TileType.EGGPLANT, 2f, 99f, 0, 0, 4, Items.eggplant))
             );
         }};
@@ -171,7 +171,7 @@ public class Items {
             description = "";
             interactionMap.put(
                 Interactions.COMBO_HOLD,
-                new ActionInfo(Actions.MAP_CHANGE, ActionTarget.TILES, new ActionProps.MapChange(TileType.FIELD))
+                new ActionInfo(Actions.MAP_CHANGE, ActionTarget.GRASS, new ActionProps.MapChange(TileType.FIELD))
             );
         }};
 
