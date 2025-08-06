@@ -36,6 +36,7 @@ public class GameScreen implements Screen {
         OrthographicCamera worldCamera = new OrthographicCamera();
         worldCamera.position.set(Settings.WORLD_OFFSET_X, Settings.WORLD_OFFSET_Y, 0);
         ExtendViewport worldViewport = new ExtendViewport(10, 10, worldCamera);
+
         world = new World(worldViewport);
         worldInputListener = new WorldInputListener(world, stage);
 
@@ -48,7 +49,6 @@ public class GameScreen implements Screen {
         grid.setObjToSlot(4, PoolManager.obtain(Items.cucumber_seeds, 64, Item.Quality.NONE));
         grid.setObjToSlot(5, PoolManager.obtain(Items.broccoli_seeds, 64, Item.Quality.NONE));
         grid.setObjToSlot(6, PoolManager.obtain(Items.scythe, 1, Item.Quality.NONE));
-        grid.setObjToSlot(7, PoolManager.obtain(Items.shovel, 64, Item.Quality.BAD));
 
         CropInfoPopup popup = new CropInfoPopup(20, Gdx.graphics.getHeight() - 255 - 20, 200);
 
@@ -65,7 +65,7 @@ public class GameScreen implements Screen {
         ScreenUtils.clear(0.15f, 0.15f, 0.2f, 1f);
 
         worldInputListener.update();
-        world.draw();
+        world.draw(delta);
         stage.draw();
         stage.act(delta);
     }

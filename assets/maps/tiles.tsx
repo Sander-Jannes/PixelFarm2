@@ -25,7 +25,7 @@
  <tile id="3">
   <properties>
    <property name="group" value="tiles"/>
-   <property name="name" value=""/>
+   <property name="name" value="sellPoint"/>
    <property name="selectable" type="bool" value="true"/>
   </properties>
  </tile>
@@ -420,6 +420,27 @@
    <property name="name" value=""/>
    <property name="selectable" type="bool" value="true"/>
   </properties>
+  <animation>
+   <frame tileid="50" duration="150"/>
+   <frame tileid="51" duration="150"/>
+   <frame tileid="52" duration="150"/>
+   <frame tileid="53" duration="150"/>
+   <frame tileid="54" duration="150"/>
+   <frame tileid="55" duration="150"/>
+   <frame tileid="56" duration="150"/>
+   <frame tileid="57" duration="150"/>
+   <frame tileid="58" duration="150"/>
+   <frame tileid="59" duration="150"/>
+   <frame tileid="58" duration="150"/>
+   <frame tileid="57" duration="150"/>
+   <frame tileid="56" duration="150"/>
+   <frame tileid="55" duration="150"/>
+   <frame tileid="54" duration="150"/>
+   <frame tileid="53" duration="150"/>
+   <frame tileid="52" duration="150"/>
+   <frame tileid="51" duration="150"/>
+   <frame tileid="50" duration="150"/>
+  </animation>
  </tile>
  <tile id="60">
   <properties>

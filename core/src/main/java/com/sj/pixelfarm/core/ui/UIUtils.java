@@ -69,12 +69,6 @@ public final class UIUtils {
         return meterStack;
     }
 
-    public static TextButton createTextButton(String text, LabelStyles styleName, Consumer<TextButton> action) {
-        TextButton button = new TextButton(text, Assets.getSkin("common"), styleName.getName());
-        Events.addClickListener(button, () -> action.accept(button));
-        return button;
-    }
-
     public static Label createLabel(String text, LabelStyles styleName, @Null Color color, @Null Integer align) {
         Label l = new Label(text, Assets.getSkin("common"), styleName.getName());
         if (color != null) l.setColor(color);
@@ -82,8 +76,10 @@ public final class UIUtils {
         return l;
     }
 
-    public static Image createImage(String texture) {
-        return new Image(Assets.getAtlasTexture(texture));
+    public static TextButton createTextButton(String text, LabelStyles styleName, Consumer<TextButton> action) {
+        TextButton button = new TextButton(text, Assets.getSkin("common"), styleName.getName());
+        Events.addClickListener(button, () -> action.accept(button));
+        return button;
     }
 
     public static ScrollPane createScrollPane(Actor actor, Consumer<ScrollPane> action) {
@@ -95,5 +91,9 @@ public final class UIUtils {
     public static Container<Label> createLabelContainer(String text, LabelStyles styleName, @Null Color color, @Null Integer align) {
         Label label = createLabel(text, styleName, color, align);
         return new Container<>(label);
+    }
+
+    private static Image createImage(String texture) {
+        return new Image(Assets.getAtlasTexture(texture));
     }
 }

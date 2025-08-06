@@ -1,13 +1,20 @@
 package com.sj.pixelfarm.world;
 
+import com.badlogic.gdx.maps.MapObject;
+import com.badlogic.gdx.maps.MapObjects;
+import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.badlogic.gdx.maps.tiled.*;
 import com.badlogic.gdx.maps.tiled.tiles.StaticTiledMapTile;
 import com.badlogic.gdx.math.GridPoint2;
+import com.badlogic.gdx.math.Polygon;
+import com.badlogic.gdx.math.Rectangle;
+import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Disposable;
 import com.badlogic.gdx.utils.Null;
 import com.sj.pixelfarm.Settings;
 import com.sj.pixelfarm.core.utils.TileHelper;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 
@@ -15,6 +22,7 @@ public final class WorldMap implements Disposable {
 
     private final TiledMap map;
     private final HashMap<String, Integer> offsets = new HashMap<>();
+    public ArrayList<Polygon> fields = new ArrayList<>();
 
     public WorldMap() {
         map = new TmxMapLoader().load(Settings.WORLD_MAP);
@@ -24,6 +32,37 @@ public final class WorldMap implements Disposable {
             System.out.println(tileSet.getName() + " " + tileSet.size());
             offsets.put(tileSet.getName(), start);
             start += tileSet.size();
+        }
+
+        parseFields();
+    }
+
+    private void parseFields() {
+        MapObjects objects = map.getLayers().get(World.Layers.BUY).getObjects();
+        for (MapObject obj : objects) {
+            if (obj instanceof RectangleMapObject rectObj) {
+                Rectangle rect = rectObj.getRectangle();
+                rect.y = 8192 - rect.y;
+
+                int x = Math.round(rect.x / 64f);
+                int y = Math.round(128 - (rect.y / 64f));
+                int wt = Math.round(rect.width / 64f);
+                int ht = Math.round(rect.height / 64f);
+                float hw = 0.5f * wt;
+                float qw = 0.25f * wt;
+                float hh = 0.5f * ht;
+                float qh = 0.25f * ht;
+
+                Vector2 t = WorldUtils.gridToVec(new GridPoint2(x, y));
+                t.add(0.f, 0.25f);
+
+                fields.add(new Polygon(new float[] {
+                    t.x, t.y,
+                    t.x + hh, t.y + qh,
+                    t.x + hh + hw, t.y + qh - qw,
+                    t.x + hw, t.y - qw,
+                }));
+            }
         }
     }
 

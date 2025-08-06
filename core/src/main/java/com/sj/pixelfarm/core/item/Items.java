@@ -22,47 +22,79 @@ public class Items {
             description = "";
             interactionMap.put(
                 Interactions.LEFT_RELEASE,
-                new ActionInfo(Actions.SELL, ActionTarget.HOME, new ActionProps.Sell(10, 5))
+                new ActionInfo(Actions.SELL, ActionTarget.CAR, new ActionProps.Sell(10, 5))
             );
         }};
 
         carrot = new Item(ItemType.CARROT, 1) {{
             description = "";
+            interactionMap.put(
+                Interactions.LEFT_RELEASE,
+                new ActionInfo(Actions.SELL, ActionTarget.CAR, new ActionProps.Sell(10, 5))
+            );
         }};
 
         tomato = new Item(ItemType.TOMATO, 1) {{
             description = "";
+            interactionMap.put(
+                Interactions.LEFT_RELEASE,
+                new ActionInfo(Actions.SELL, ActionTarget.CAR, new ActionProps.Sell(10, 5))
+            );
         }};
 
         cauliflower = new Item(ItemType.CAULIFLOWER, 1) {{
             description = "";
+            interactionMap.put(
+                Interactions.LEFT_RELEASE,
+                new ActionInfo(Actions.SELL, ActionTarget.CAR, new ActionProps.Sell(10, 5))
+            );
         }};
 
         broccoli = new Item(ItemType.BROCCOLI, 1) {{
             description = "";
+            interactionMap.put(
+                Interactions.LEFT_RELEASE,
+                new ActionInfo(Actions.SELL, ActionTarget.CAR, new ActionProps.Sell(10, 5))
+            );
         }};
 
         pumpkin = new Item(ItemType.PUMPKIN, 1) {{
             description = "";
+            interactionMap.put(
+                Interactions.LEFT_RELEASE,
+                new ActionInfo(Actions.SELL, ActionTarget.CAR, new ActionProps.Sell(10, 5))
+            );
         }};
 
         cucumber = new Item(ItemType.CUCUMBER, 1){{
             description = "";
+            interactionMap.put(
+                Interactions.LEFT_RELEASE,
+                new ActionInfo(Actions.SELL, ActionTarget.CAR, new ActionProps.Sell(10, 5))
+            );
         }};
 
         onion = new Item(ItemType.ONION, 1) {{
             description = "";
+            interactionMap.put(
+                Interactions.LEFT_RELEASE,
+                new ActionInfo(Actions.SELL, ActionTarget.CAR, new ActionProps.Sell(10, 5))
+            );
         }};
 
         eggplant = new Item(ItemType.EGGPLANT, 1) {{
             description = "";
+            interactionMap.put(
+                Interactions.LEFT_RELEASE,
+                new ActionInfo(Actions.SELL, ActionTarget.CAR, new ActionProps.Sell(10, 5))
+            );
         }};
 
         lettuce_seeds = new Item(ItemType.LETTUCE_SEEDS, 1) {{
             description = "";
             interactionMap.put(
                 Interactions.COMBO_HOLD,
-                new ActionInfo(Actions.PLANT, ActionTarget.FIELD,
+                new ActionInfo(Actions.PLANT, ActionTarget.FIELDS,
                     new ActionProps.Plant(TileType.LETTUCE, 5f, 99f, 0, 0, 4, Items.lettuce))
             );
         }};
@@ -71,7 +103,7 @@ public class Items {
             description = "";
             interactionMap.put(
                 Interactions.COMBO_HOLD,
-                new ActionInfo(Actions.PLANT, ActionTarget.FIELD,
+                new ActionInfo(Actions.PLANT, ActionTarget.FIELDS,
                     new ActionProps.Plant(TileType.CARROT, 2f, 99f, 0, 0, 4, Items.carrot))
             );
         }};
@@ -80,7 +112,7 @@ public class Items {
             description = "";
             interactionMap.put(
                 Interactions.COMBO_HOLD,
-                new ActionInfo(Actions.PLANT, ActionTarget.FIELD,
+                new ActionInfo(Actions.PLANT, ActionTarget.FIELDS,
                     new ActionProps.Plant(TileType.TOMATO, 2f, 99f, 0, 0, 4, Items.tomato))
             );
         }};
@@ -89,7 +121,7 @@ public class Items {
             description = "";
             interactionMap.put(
                 Interactions.COMBO_HOLD,
-                new ActionInfo(Actions.PLANT, ActionTarget.FIELD,
+                new ActionInfo(Actions.PLANT, ActionTarget.FIELDS,
                     new ActionProps.Plant(TileType.CAULIFLOWER, 2f, 99f, 0, 0, 4, Items.cauliflower))
             );
         }};
@@ -98,7 +130,7 @@ public class Items {
             description = "";
             interactionMap.put(
                 Interactions.COMBO_HOLD,
-                new ActionInfo(Actions.PLANT, ActionTarget.FIELD,
+                new ActionInfo(Actions.PLANT, ActionTarget.FIELDS,
                     new ActionProps.Plant(TileType.BROCCOLI, 2f, 99f, 0, 0, 4, Items.broccoli))
             );
         }};
@@ -107,7 +139,7 @@ public class Items {
             description = "";
             interactionMap.put(
                 Interactions.COMBO_HOLD,
-                new ActionInfo(Actions.PLANT, ActionTarget.FIELD,
+                new ActionInfo(Actions.PLANT, ActionTarget.FIELDS,
                     new ActionProps.Plant(TileType.PUMPKIN, 2f, 99f, 0, 0, 4, Items.pumpkin))
             );
         }};
@@ -116,7 +148,7 @@ public class Items {
             description = "";
             interactionMap.put(
                 Interactions.COMBO_HOLD,
-                new ActionInfo(Actions.PLANT, ActionTarget.FIELD,
+                new ActionInfo(Actions.PLANT, ActionTarget.FIELDS,
                     new ActionProps.Plant(TileType.CUCUMBER, 2f, 99f, 0, 0, 4, Items.cucumber))
             );
         }};
@@ -125,7 +157,7 @@ public class Items {
             description = "";
             interactionMap.put(
                 Interactions.COMBO_HOLD,
-                new ActionInfo(Actions.PLANT, ActionTarget.FIELD,
+                new ActionInfo(Actions.PLANT, ActionTarget.FIELDS,
                     new ActionProps.Plant(TileType.ONION, 2f, 99f, 0, 0, 4, Items.onion))
             );
         }};
@@ -134,7 +166,7 @@ public class Items {
             description = "";
             interactionMap.put(
                 Interactions.COMBO_HOLD,
-                new ActionInfo(Actions.PLANT, ActionTarget.FIELD,
+                new ActionInfo(Actions.PLANT, ActionTarget.FIELDS,
                     new ActionProps.Plant(TileType.EGGPLANT, 2f, 99f, 0, 0, 4, Items.eggplant))
             );
         }};

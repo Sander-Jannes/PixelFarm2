@@ -88,6 +88,10 @@ public class ItemStack extends SlotObject implements Pool.Poolable {
         return quality == other.quality && item.equals(other.item);
     }
 
+    public boolean equalsWithAmount(ItemStack other) {
+        return amount == other.amount && equals(other);
+    }
+
     @Override
     public ItemStackSlot getParent() {
         return (ItemStackSlot) super.getParent();

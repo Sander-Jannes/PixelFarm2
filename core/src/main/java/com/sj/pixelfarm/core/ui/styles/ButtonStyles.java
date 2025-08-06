@@ -1,6 +1,7 @@
 package com.sj.pixelfarm.core.ui.styles;
 
 public enum ButtonStyles {
+    ENTER("enter-button"),
     OPEN_BOX("open-box"),
     CLOSE_BOX("close-box"),
     REMOVE_ITEM("remove-item"),

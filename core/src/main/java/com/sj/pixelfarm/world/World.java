@@ -1,15 +1,18 @@
 package com.sj.pixelfarm.world;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.maps.tiled.TiledMapTile;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.maps.tiled.renderers.IsometricTiledMapRenderer;
-import com.badlogic.gdx.math.GridPoint2;
-import com.badlogic.gdx.math.Vector2;
-import com.badlogic.gdx.scenes.scene2d.Actor;
+import com.badlogic.gdx.math.*;
+import com.badlogic.gdx.scenes.scene2d.ui.Button;
+import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.Disposable;
+import com.badlogic.gdx.utils.Null;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
 import com.sj.pixelfarm.*;
 import com.sj.pixelfarm.core.Entities;
@@ -24,14 +27,18 @@ import com.sj.pixelfarm.core.itemgrid.ItemStack;
 import com.sj.pixelfarm.core.itemgrid.ItemStackSlot;
 import com.sj.pixelfarm.core.mem.Assets;
 import com.sj.pixelfarm.core.mem.PoolManager;
+import com.sj.pixelfarm.core.ui.actionbar.ActionBar;
 import com.sj.pixelfarm.core.ui.effects.UIEffects;
+import com.sj.pixelfarm.core.ui.styles.ButtonStyles;
 import com.sj.pixelfarm.core.utils.TileHelper;
 
+import static com.sj.pixelfarm.core.ui.UIUtils.*;
 
-public class World extends Actor implements Disposable {
+
+public class World implements Disposable {
 
     /** Tile scale in pixels */
-    private static final float SCALE = 128f;
+    public static final float SCALE = 128f;
     /** Inverse scale */
     private static final float INV_SCALE = 1.f/SCALE;
     /** The amount of zoom per scroll */
@@ -41,40 +48,86 @@ public class World extends Actor implements Disposable {
     /** How far you can zoom in, 0 is close to the map  */
     private static final float MIN_ZOOM = 0.5f;
     private static final int[] ground = new int[] { Layers.GROUND };
+    private static final int[] modify = new int[] { Layers.EDIT};
     private static final int[] decoration = new int[] { Layers.DECORATION };
+    private static final int[] buy = new int[] { Layers.DECORATION };
+    private static final TextureRegion cursorImage = Assets.getAtlasTexture("world/cursor");
+
+    private final Car car = new Car();
 
     private final IsometricTiledMapRenderer renderer;
-    private final OrthographicCamera worldCamera;
+    private final OrthographicCamera camera;
+    private final Vector2 cursorBlitPos = new Vector2();
 
     public final ExtendViewport viewport;
     public final WorldMap worldMap = new WorldMap();
 
-    private static final TextureRegion cursorImage = Assets.getAtlasTexture("world/cursor");
-    private final Vector2 cursorBlitPos = new Vector2();
-
     public float lastX, lastY;
     public boolean dragging;
+    public boolean editMode = false;
+
+    private static final Vector2 mousePos = new Vector2();
+
+    private final ShapeRenderer shapeRenderer = new ShapeRenderer();
+    public @Null Polygon selectedField = null;
+    public ActionBar actionBar;
 
     public World(ExtendViewport vp) {
-        setName(Entities.WORLD);
-        setBounds(0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
-
         viewport = vp;
-        worldCamera = (OrthographicCamera) viewport.getCamera();
+        camera = (OrthographicCamera) viewport.getCamera();
         renderer = new IsometricTiledMapRenderer(worldMap.getMap(), INV_SCALE);
+
+        actionBar = createActionBar(bar -> {
+            Button enter = createButton(ButtonStyles.ENTER, button -> {});
+            bar.space(5);
+            bar.addState(1, enter);
+            bar.setState(1);
+        });
 
         Events.on(EventType.DropItemOnWorld.class, e -> dropItem(e.itemStackSlot(), e.interaction()));
     }
 
-    public void draw() {
-        worldCamera.update();
-        renderer.setView(worldCamera);
+    public void showActionBar(Vector2 pos) {
+        viewport.unproject(pos);
+        if (editMode && selectedField != null && selectedField.contains(pos)) {
+            Events.fire(new EventType.ShowActionBarEvent(actionBar));
+        }
+    }
+
+    public void draw(float delta) {
+        camera.update();
+        renderer.setView(camera);
 
         renderer.render(ground);
+        if (editMode) {
+            renderer.render(modify);
 
+            Gdx.gl.glLineWidth(4f);
+            shapeRenderer.setProjectionMatrix(camera.combined);
+            shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
+            shapeRenderer.setColor(Color.BLACK);
+
+            for (Polygon polygon : worldMap.fields) {
+                if (polygon.contains(mousePos)) {
+                    shapeRenderer.polygon(polygon.getVertices());
+                    selectedField = polygon;
+                }
+            }
+
+            shapeRenderer.end();
+            Gdx.gl.glLineWidth(1f);
+
+        } else {
+            selectedField = null;
+            renderCursor();
+        }
         renderer.render(decoration);
 
-        renderCursor();
+        car.drive(delta);
+        car.draw(renderer.getBatch());
+
+        mousePos.set(Gdx.input.getX(), Gdx.input.getY());
+        viewport.unproject(mousePos);
     }
 
     private void renderCursor() {
@@ -146,8 +199,14 @@ public class World extends Actor implements Disposable {
 
                     case SELL: {
                         ActionProps.Sell props = (ActionProps.Sell) actionInfo.props();
-                        System.out.println(props.money() * itemStack.amount + " " + props.xp() * itemStack.amount);
-                        itemStackSlot.destroyObj(true);
+                        System.out.println(car.getPosition() + " " + pos);
+
+                        if (car.getPosition().equals(pos)) {
+                            if (car.acceptOrder(itemStack)) {
+                                System.out.println(props.money() * itemStack.amount + " " + props.xp() * itemStack.amount);
+                                itemStackSlot.destroyObj(true);
+                            }
+                        }
                     }
                 }
             }
@@ -165,22 +224,18 @@ public class World extends Actor implements Disposable {
         float deltaY = (pos.y - lastY) / SCALE;
 
         if (dragging
-                && worldCamera.position.x >= lowerX + deltaX && worldCamera.position.x <= upperX + deltaX
-                && worldCamera.position.y >= lowerY + deltaY && worldCamera.position.y <= upperY + deltaY) {
+                && camera.position.x >= lowerX + deltaX && camera.position.x <= upperX + deltaX
+                && camera.position.y >= lowerY + deltaY && camera.position.y <= upperY + deltaY) {
 
-            worldCamera.translate(-deltaX * worldCamera.zoom, deltaY * worldCamera.zoom);
-            worldCamera.update();
+            camera.translate(-deltaX * camera.zoom, deltaY * camera.zoom);
+            camera.update();
             lastX = pos.x;
             lastY = pos.y;
         }
     }
 
     public boolean interactScroll(float amountY) {
-        if (amountY == 1) {
-            if (worldCamera.zoom <= MAX_ZOOM) worldCamera.zoom += ZOOM;
-        } else {
-            if (worldCamera.zoom >= MIN_ZOOM) worldCamera.zoom -= ZOOM;
-        }
+        camera.zoom = MathUtils.clamp(camera.zoom + amountY * ZOOM, MIN_ZOOM, MAX_ZOOM);
         return true;
     }
 
@@ -188,12 +243,13 @@ public class World extends Actor implements Disposable {
     public void dispose() {
         worldMap.dispose();
         renderer.dispose();
+        shapeRenderer.dispose();
     }
 
     public static class Layers {
         public static final int GROUND = 0;
-        public static final int MODIFY = 1;
+        public static final int EDIT = 1;
         public static final int DECORATION = 2;
-        public static final int LIGHTS = 3;
+        public static final int BUY = 3;
     }
 }

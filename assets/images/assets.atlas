@@ -327,14 +327,14 @@ ui/buttons/empty_button_hover
   index: -1
 ui/buttons/enter
   rotate: false
-  xy: 1124, 87
+  xy: 1214, 87
   size: 96, 96
   orig: 96, 96
   offset: 0, 0
   index: -1
 ui/buttons/enter_clicked
   rotate: false
-  xy: 1220, 87
+  xy: 1310, 87
   size: 96, 96
   orig: 96, 96
   offset: 0, 0
@@ -498,6 +498,13 @@ ui/useBarOverlay
   xy: 64, 0
   size: 1, 6
   orig: 1, 6
+  offset: 0, 0
+  index: -1
+world/car
+  rotate: false
+  xy: 1124, 87
+  size: 90, 94
+  orig: 90, 94
   offset: 0, 0
   index: -1
 world/cursor

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="isometric" renderorder="right-down" width="128" height="128" tilewidth="128" tileheight="64" infinite="0" nextlayerid="4" nextobjectid="1">
+<map version="1.10" tiledversion="1.10.2" orientation="isometric" renderorder="right-down" width="128" height="128" tilewidth="128" tileheight="64" infinite="0" nextlayerid="7" nextobjectid="62">
  <tileset firstgid="1" name="crops" tilewidth="128" tileheight="128" tilecount="40" columns="4">
   <image source="../images/tile_sets/blocks/crops.png" width="512" height="1280"/>
   <tile id="0">
@@ -247,6 +247,711 @@
  <tileset firstgid="141" source="roads.tsx"/>
  <tileset firstgid="189" source="decoration.tsx"/>
  <tileset firstgid="229" source="trees2.tsx"/>
+ <tileset firstgid="249" name="buildings256" tilewidth="256" tileheight="256" tilecount="4" columns="2">
+  <image source="../images/tile_sets/blocks/buildings256.png" width="512" height="512"/>
+  <tile id="0">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="2">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="group" value="buildings"/>
+    <property name="name" value=""/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="253" name="fields" tilewidth="128" tileheight="128" tilecount="48" columns="6">
+  <image source="../images/tile_sets/blocks/fields.png" width="768" height="1024"/>
+  <tile id="0">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="2">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="4">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="5">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="6">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="7">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="8">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="9">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="10">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="11">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="12">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="13">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="14">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="15">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="16">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="17">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="18">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="19">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="20">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="21">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="22">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="23">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="24">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="25">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="26">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="27">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="28">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="29">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="30">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="31">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="32">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="33">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="34">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="35">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="36">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="37">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="38">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="39">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="40">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="41">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="42">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="43">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="44">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="45">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="46">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="47">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="301" name="fields2" tilewidth="128" tileheight="128" tilecount="48" columns="6">
+  <image source="../images/tile_sets/blocks/fields2.png" width="768" height="1024"/>
+  <tile id="0">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="2">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="4">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="5">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="6">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="7">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="8">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="9">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="10">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="11">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="12">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="13">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="14">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="15">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="16">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="17">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="18">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="19">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="20">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="21">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="22">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="23">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="24">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="25">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="26">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="27">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="28">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="29">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="30">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="31">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="32">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="33">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="34">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="35">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="36">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="37">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="38">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="39">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="40">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="41">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="42">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="43">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="44">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="45">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="46">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="47">
+   <properties>
+    <property name="group" value="fields"/>
+    <property name="name" value=""/>
+    <property name="selectable" type="bool" value="true"/>
+   </properties>
+  </tile>
+ </tileset>
  <layer id="1" name="ground" width="128" height="128">
   <data encoding="csv">
 52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,
@@ -294,30 +999,30 @@
 52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,53,52,52,52,52,53,52,52,52,52,52,52,52,52,52,52,52,53,53,52,52,52,52,52,52,53,53,52,52,52,51,51,52,51,51,52,52,52,52,52,52,52,52,52,52,52,52,52,51,52,52,52,52,52,52,52,52,52,52,52,52,51,51,52,52,52,52,51,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,51,52,52,52,52,52,52,52,52,52,52,
 52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,52,52,52,52,52,52,52,52,52,53,52,52,52,52,52,53,53,52,51,52,52,52,52,52,52,52,52,52,53,52,52,52,52,52,52,52,52,52,52,52,52,51,51,52,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,51,52,52,52,52,51,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,51,51,52,52,52,52,52,52,52,52,
 52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,51,52,52,52,52,52,52,52,52,53,52,52,52,52,52,52,52,53,52,51,51,51,51,51,51,51,52,52,53,53,52,52,52,52,52,52,52,52,52,52,52,52,52,51,53,53,53,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,52,52,52,52,52,51,51,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,52,52,52,52,52,52,52,52,
-52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,52,52,52,52,52,52,52,52,52,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,51,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,52,52,52,52,52,52,51,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,
-52,52,52,52,52,52,52,52,52,52,52,52,52,51,51,52,52,52,52,52,52,52,52,52,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,51,52,52,52,52,52,52,52,51,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,
-52,52,52,52,52,52,52,52,52,52,52,52,52,51,52,52,52,52,52,52,52,52,52,52,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,52,52,51,51,52,52,52,52,51,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,
-52,52,52,52,52,53,53,52,52,52,52,52,52,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,52,53,53,52,52,52,52,51,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,51,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,52,52,52,52,52,52,52,52,52,52,51,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,53,53,53,53,53,53,
-52,52,52,52,52,53,52,52,52,52,52,52,52,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,52,52,53,53,52,52,51,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,52,52,51,51,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,52,52,52,52,52,52,52,52,52,52,52,52,51,52,52,52,52,52,53,53,53,53,53,53,53,53,53,53,53,53,52,52,52,52,52,52,52,
+52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,52,52,52,52,52,52,52,52,52,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,52,52,52,52,52,52,52,52,52,52,52,52,331,302,344,52,51,51,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,52,52,52,52,52,52,51,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,
+52,52,52,52,52,52,52,52,52,52,52,52,52,51,51,52,52,52,52,52,52,52,52,52,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,307,52,52,52,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,51,52,52,52,52,52,52,52,51,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,
+52,52,52,52,52,52,52,52,52,52,52,52,52,51,52,52,52,52,52,52,52,52,52,52,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,52,52,52,52,52,52,317,334,313,300,52,52,52,331,313,52,52,52,52,52,53,331,313,51,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,52,52,51,51,52,52,52,52,51,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,
+52,52,52,52,52,53,53,52,52,52,52,52,52,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,52,53,53,52,52,52,52,343,325,51,332,52,52,269,286,265,52,52,52,52,52,331,333,313,52,51,51,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,52,52,52,52,52,52,52,52,52,52,51,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,53,53,53,53,53,53,
+52,52,52,52,52,53,52,52,52,52,52,52,52,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,52,52,53,53,52,52,51,283,254,265,307,52,52,295,277,300,52,52,52,52,52,300,307,348,52,53,52,52,51,51,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,52,52,52,52,52,52,52,52,52,52,52,52,51,52,52,52,52,52,53,53,53,53,53,53,53,53,53,53,53,53,52,52,52,52,52,52,52,
 52,52,52,52,52,53,52,52,52,52,52,52,52,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,53,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,53,53,52,52,51,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,52,52,52,52,52,53,53,53,53,53,53,53,53,53,53,53,53,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,
-52,52,52,52,52,53,52,52,52,52,52,52,52,51,52,52,52,52,52,52,52,52,52,52,52,52,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,52,52,53,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,53,53,53,53,53,53,53,53,53,53,53,53,52,52,52,52,52,52,52,52,52,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,
-52,52,52,52,53,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,51,51,51,53,53,52,52,52,52,52,52,52,52,52,52,53,53,53,53,52,52,52,52,52,52,53,53,53,53,53,53,53,53,53,53,53,53,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,
-52,52,52,52,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,52,52,52,52,52,52,52,52,52,52,53,51,51,52,52,52,52,52,52,52,52,52,53,52,52,52,52,52,52,52,52,53,53,53,53,53,53,53,53,53,53,53,53,52,52,52,52,52,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,51,52,52,52,52,52,52,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,
-52,53,52,52,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,52,52,52,52,52,52,52,52,52,52,53,52,52,52,52,52,52,52,53,53,53,53,53,53,53,53,53,53,53,53,53,51,52,52,52,52,52,52,53,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,51,51,51,52,52,52,52,52,52,52,52,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,
-52,53,53,52,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,52,52,52,52,52,52,52,52,52,52,53,53,53,53,53,53,53,53,52,52,52,52,52,53,53,52,52,52,52,52,52,52,52,52,52,52,52,52,53,53,53,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,51,52,52,52,52,52,52,52,52,52,52,52,51,51,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,
-52,53,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,52,52,52,52,52,52,52,52,52,52,53,52,53,52,52,52,52,52,52,52,52,52,52,52,53,52,52,52,52,52,52,52,52,51,52,52,52,53,53,53,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,51,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,
-52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,52,52,52,52,52,52,52,52,52,52,53,52,52,53,52,52,52,52,52,52,52,52,52,52,53,52,52,52,52,52,51,51,51,51,52,53,53,53,53,52,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,51,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,
-52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,52,52,52,52,52,52,52,52,52,52,53,52,52,52,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,51,52,53,52,52,53,53,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,51,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,
-52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,53,52,52,52,52,52,52,51,52,53,53,52,52,53,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,52,52,52,52,52,52,52,52,52,52,52,52,52,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,51,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,
-52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,51,52,53,53,52,52,53,52,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,51,52,52,52,52,52,53,53,52,52,52,52,52,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,51,51,51,52,52,52,52,52,52,52,52,52,52,52,53,
-52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,142,142,142,142,142,142,142,142,142,142,142,142,142,142,142,142,142,142,142,142,142,142,142,142,142,142,142,142,142,142,142,142,142,142,142,142,142,142,142,142,142,142,173,142,142,142,142,142,142,142,142,142,142,142,142,142,142,142,142,142,142,142,142,142,142,142,142,142,142,142,142,142,142,142,142,142,142,142,142,142,142,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,51,51,51,51,51,52,52,52,52,52,52,53,52,
-52,52,52,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,52,52,53,52,52,52,52,52,53,52,53,52,52,51,51,52,52,52,52,52,53,52,52,172,178,172,52,52,52,52,52,52,52,52,52,53,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,52,52,51,51,51,52,52,52,52,53,52,52,
-52,52,52,53,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,52,52,53,52,52,52,52,52,52,52,52,53,52,51,51,51,52,52,52,53,53,52,171,179,179,179,153,51,51,51,51,51,53,53,53,53,53,52,52,52,52,52,52,52,53,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,52,52,52,
-52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,52,52,52,52,52,52,52,52,52,53,52,52,52,52,52,52,52,53,53,53,52,52,51,52,52,52,53,52,52,52,147,147,147,52,52,52,52,52,52,52,52,51,52,52,53,52,52,52,52,52,52,52,53,52,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,52,52,52,52,
-53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,52,52,52,52,52,52,52,52,52,53,53,52,52,52,52,52,53,53,52,52,53,52,52,52,52,52,53,52,52,52,52,51,51,51,51,52,52,52,52,52,52,51,51,52,52,53,52,52,52,52,52,52,53,53,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,52,52,52,52,52,
-52,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,52,52,52,52,52,52,52,52,52,52,52,52,52,51,53,53,53,52,52,52,52,53,52,52,52,53,53,51,51,51,52,51,51,51,52,52,52,52,52,52,52,52,51,51,51,52,53,52,52,52,52,52,52,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,52,52,52,52,52,52,
+52,52,52,52,52,53,52,52,52,52,52,52,52,51,52,52,52,52,52,52,52,52,52,52,52,52,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,52,52,53,53,52,52,52,52,52,52,52,52,52,52,52,52,348,283,296,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,53,53,53,53,53,53,53,53,53,53,53,53,52,52,52,52,52,52,52,52,52,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,
+52,52,52,52,53,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,51,51,51,53,53,52,52,52,52,52,52,52,52,52,52,53,269,268,259,52,172,52,52,52,52,53,53,53,53,53,53,53,53,53,53,53,53,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,
+52,52,52,52,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,52,52,52,52,52,52,52,52,52,52,53,51,51,52,52,52,52,52,52,52,52,52,284,300,52,52,52,52,52,52,52,53,53,53,295,277,348,155,159,53,53,53,53,52,52,52,52,52,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,51,52,52,52,52,52,52,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,
+52,53,52,52,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,52,52,52,52,52,52,52,52,52,52,53,52,52,52,52,52,52,52,53,53,53,53,259,332,53,53,53,53,53,53,53,51,52,52,52,52,52,178,331,344,315,313,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,51,51,51,52,52,52,52,52,52,52,52,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,
+52,53,53,52,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,52,52,52,52,52,52,52,52,52,52,53,53,53,53,53,53,53,53,52,52,52,52,331,319,53,331,313,52,52,52,52,157,174,142,142,142,142,159,300,337,319,300,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,51,52,52,52,52,52,52,52,52,52,52,52,51,51,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,
+52,53,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,52,52,52,52,52,52,52,52,52,52,53,52,53,52,52,52,52,52,52,52,52,52,52,52,53,300,300,52,52,52,52,169,168,51,52,52,52,51,53,53,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,51,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,
+52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,52,52,52,52,52,52,52,52,52,52,53,52,52,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,169,168,51,52,332,284,284,53,348,283,265,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,51,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,
+52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,52,52,52,52,52,52,52,52,52,52,53,52,52,52,53,52,52,52,52,52,52,52,52,348,284,269,268,52,52,52,52,169,168,51,52,338,290,290,53,283,296,332,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,51,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,
+52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,53,52,52,52,52,52,52,51,52,53,53,52,52,53,53,52,52,52,52,52,52,52,283,271,295,277,52,52,52,52,169,168,51,52,307,259,259,52,52,259,307,52,52,52,52,52,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,51,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,
+52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,51,52,53,53,52,52,53,52,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,169,168,51,51,52,52,52,52,52,53,53,52,52,52,52,52,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,51,51,51,52,52,52,52,52,52,52,52,52,52,52,53,
+52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,51,51,51,51,158,158,158,158,158,158,158,158,158,158,158,158,158,158,158,158,158,158,158,158,158,158,158,158,158,158,158,158,158,158,158,158,158,158,158,158,158,158,158,176,170,158,158,158,158,158,158,158,158,158,158,158,158,158,158,158,158,158,158,158,158,158,158,158,158,158,158,158,158,158,158,158,158,158,158,158,158,158,158,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,51,51,51,51,51,52,52,52,52,52,52,53,52,
+52,52,52,53,52,52,52,52,52,52,52,52,52,52,51,52,51,52,51,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,166,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,52,52,51,51,51,52,52,52,52,53,52,52,
+52,52,52,53,53,52,52,52,52,52,52,52,52,52,51,51,51,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,52,52,53,52,52,52,52,52,52,52,52,53,52,51,51,51,52,52,52,53,53,52,52,52,52,52,52,52,51,51,51,51,53,53,53,53,53,52,52,52,52,52,52,52,53,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,52,52,52,
+52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,52,52,52,52,52,52,52,51,52,52,52,52,52,52,52,52,52,53,52,52,52,52,52,52,52,53,53,53,52,52,51,52,52,52,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,52,52,53,52,52,52,52,52,52,52,53,52,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,52,52,52,52,
+53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,51,52,52,52,52,52,52,51,52,52,52,52,52,52,52,52,52,53,53,52,52,52,52,52,53,53,52,52,53,52,52,52,52,52,53,52,52,52,52,51,51,51,51,52,52,52,52,52,52,51,51,52,52,53,52,52,52,52,52,52,53,53,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,52,52,52,52,52,
+52,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,52,52,52,52,52,52,51,52,52,52,52,52,52,52,52,52,52,52,52,52,51,53,53,53,52,52,52,52,53,52,52,52,53,53,51,51,51,52,51,51,51,52,52,52,52,52,52,52,52,51,51,51,52,53,52,52,52,52,52,52,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,52,52,52,52,52,52,
 52,52,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,52,52,52,52,52,52,52,52,52,52,52,52,52,53,53,51,51,51,51,52,52,52,53,52,52,53,52,52,52,52,51,51,52,52,52,52,52,52,52,52,52,52,52,52,51,51,51,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,52,52,52,52,52,52,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,52,52,52,52,52,52,52,
-52,52,52,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,52,52,52,52,52,52,52,52,52,52,52,52,52,53,52,52,52,51,51,51,51,51,53,52,52,52,52,52,52,52,51,51,52,52,53,52,52,52,52,52,52,52,52,52,52,51,52,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,52,52,52,52,52,52,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,52,52,52,52,52,52,52,52,
+52,52,52,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,51,51,52,52,52,52,51,52,52,52,52,52,52,52,52,52,52,52,52,52,53,52,52,52,51,51,51,51,51,53,52,52,52,52,52,52,52,51,51,52,52,53,52,52,52,52,52,52,52,52,52,52,51,52,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,52,52,52,52,52,52,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,52,52,52,52,52,52,52,52,
 52,52,52,52,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,52,52,52,52,52,52,52,52,52,52,53,52,52,52,52,52,52,52,52,52,52,52,52,52,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,51,52,52,52,52,52,51,51,52,52,52,52,52,52,52,52,52,52,52,52,52,53,52,52,52,52,52,52,52,52,52,
 52,52,52,52,52,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,52,52,52,52,52,52,52,52,53,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,52,52,52,52,52,52,52,52,52,52,
 52,52,52,52,52,52,53,53,52,52,52,51,51,51,52,51,51,51,51,51,51,51,52,52,52,51,52,52,52,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,52,52,52,52,52,52,52,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,53,52,52,52,52,52,52,52,52,52,52,52,
@@ -373,13 +1078,13 @@
 52,52,52,52,52,52,52,52,52,52,53,53,52,52,52,52,52,52,52,52,52,52,53,53,52,52,52,52,52,52,52,52,52,52,53,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,53,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,
 52,52,52,52,52,52,52,52,52,52,52,53,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,53,53,53,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,
 52,52,52,52,52,52,52,52,52,52,52,52,53,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,51,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,52,52,53,53,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,
-52,52,52,52,52,52,52,52,52,52,52,52,52,53,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,52,52,52,52,52,53,53,53,52,52,52,52,52,52,52,52,52,52,52,52,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,
-52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,53,52,52,52,52,52,52,52,53,53,53,53,53,52,52,52,52,52,52,53,53,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,
-52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,53,53,53,53,53,53,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,
-52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52
+41,41,41,52,52,52,52,52,52,52,52,52,52,53,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,52,52,52,52,52,53,53,53,52,52,52,52,52,52,52,52,52,52,52,52,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,
+41,41,41,41,52,52,52,52,52,52,52,52,52,52,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,53,52,52,52,52,52,52,52,53,53,53,53,53,52,52,52,52,52,52,53,53,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,
+41,41,41,41,52,52,52,52,52,52,52,52,52,52,52,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,53,53,53,53,53,53,53,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,
+41,41,41,41,52,52,52,52,52,52,52,52,52,52,52,53,53,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52,52
 </data>
  </layer>
- <layer id="2" name="modify" width="128" height="128" visible="0" locked="1">
+ <layer id="2" name="edit" width="128" height="128">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -554,28 +1259,28 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,200,0,0,0,190,0,0,0,0,0,231,0,201,0,0,198,0,0,0,0,0,232,0,0,0,0,198,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,239,0,0,0,0,0,0,0,0,232,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,239,0,0,0,231,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,239,0,0,0,0,0,0,190,0,0,0,0,0,0,198,0,0,0,0,0,0,0,0,0,0,239,0,0,0,0,0,0,0,0,0,201,0,0,0,0,198,0,191,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,198,0,0,0,0,0,0,0,0,0,0,0,239,0,0,0,0,192,0,0,0,0,0,239,0,0,0,0,0,0,0,0,239,0,0,0,239,0,0,0,0,0,0,0,0,0,0,0,0,201,0,239,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,198,0,0,0,0,0,0,0,0,0,0,0,239,0,0,0,0,192,0,0,0,0,0,239,0,190,0,0,0,193,0,0,239,0,0,0,239,0,0,0,0,0,0,0,0,0,0,0,0,201,0,239,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,190,0,0,239,0,0,0,0,0,0,0,0,200,0,0,0,0,0,239,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,200,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,239,0,0,0,0,0,0,0,0,0,0,232,198,0,0,0,0,0,192,0,0,0,197,0,0,0,0,197,0,0,0,0,0,201,0,0,232,0,0,0,0,0,200,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,197,0,0,0,0,0,0,0,0,0,0,0,0,0,231,0,0,0,0,0,0,0,0,0,0,0,0,0,0,239,0,0,0,0,0,0,0,0,0,0,0,0,239,0,239,0,0,0,0,231,0,0,0,0,201,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,198,0,0,0,0,0,229,0,200,0,0,198,0,0,0,0,197,0,0,197,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,197,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,192,0,0,0,0,0,0,0,231,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,197,0,0,239,0,0,0,0,0,0,0,0,0,0,0,0,0,239,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,239,0,0,0,0,190,0,0,0,198,0,0,0,0,0,239,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,239,0,0,0,0,0,197,197,199,0,0,0,0,0,232,0,201,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,229,0,0,0,0,0,0,0,0,0,0,0,192,0,0,232,192,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,231,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,197,0,0,0,239,0,197,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,201,0,232,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,239,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,197,0,0,239,0,0,0,0,0,0,0,0,0,0,0,0,0,197,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,192,0,0,0,0,200,0,0,192,0,0,0,0,0,0,0,192,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,239,0,0,197,0,0,239,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,239,0,0,0,0,0,0,0,0,0,0,197,197,0,0,0,0,239,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,198,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,229,0,0,197,0,0,231,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,199,0,239,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,198,0,0,0,0,0,0,0,0,0,0,0,0,0,0,197,0,197,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,239,0,0,0,0,0,197,0,0,0,0,0,0,231,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,197,0,192,0,231,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,197,0,0,0,0,0,239,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,239,0,0,0,0,0,0,0,0,0,0,0,192,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,239,0,0,0,0,0,0,0,0,239,0,0,0,0,0,0,197,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,198,239,0,0,0,239,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,239,0,189,0,0,197,0,0,0,239,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,239,0,0,0,0,0,0,0,0,0,0,0,231,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,198,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,199,0,0,0,198,0,0,0,0,197,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,239,0,0,0,0,0,0,0,0,0,0,232,198,0,0,0,0,0,192,0,190,0,197,0,0,190,0,197,0,0,0,0,0,201,0,0,232,0,0,0,0,0,200,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,197,0,0,0,0,0,0,0,0,0,0,0,0,0,231,0,0,0,0,0,0,0,198,0,0,0,0,0,0,239,0,0,0,0,0,0,0,0,0,0,0,0,239,0,239,0,0,0,0,231,0,0,0,0,201,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,198,0,0,0,0,0,229,0,200,0,0,198,0,0,0,0,197,0,0,197,0,193,0,193,0,0,0,0,0,0,0,193,0,0,0,0,0,0,0,197,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,192,0,0,0,0,0,0,0,231,0,0,0,0,0,0,0,0,0,0,0,0,0,0,190,189,0,197,0,0,0,0,0,201,0,0,0,0,197,0,0,239,0,0,0,0,0,0,0,0,0,0,0,0,0,239,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,239,0,0,0,0,190,0,0,0,198,0,0,0,0,0,239,0,0,0,193,0,0,0,0,0,0,239,0,0,0,0,0,197,0,225,0,0,0,0,239,0,0,0,0,0,197,197,199,0,0,0,0,0,232,0,201,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,229,0,0,0,0,0,0,0,0,0,0,0,192,0,190,232,192,0,0,195,0,0,193,0,0,0,0,0,0,0,0,0,0,0,197,0,0,0,0,0,0,0,0,0,0,0,0,231,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,197,0,0,0,239,0,197,0,0,0,0,0,0,0,0,0,0,0,0,189,0,0,0,0,0,197,0,0,0,0,0,0,0,0,0,0,0,201,0,232,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,239,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,197,0,0,239,0,0,0,0,0,0,0,0,0,0,0,0,0,197,0,198,0,0,0,197,0,0,0,0,0,199,0,0,0,0,239,0,0,0,0,198,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,192,0,0,0,0,200,0,0,192,0,0,0,0,0,0,0,192,0,0,201,198,0,0,0,0,0,0,239,0,0,0,0,199,0,197,0,190,0,197,0,0,189,0,190,0,0,0,239,0,0,197,0,0,239,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,239,0,0,0,0,0,0,0,0,0,0,197,197,0,0,0,0,239,201,0,189,0,0,0,0,0,0,197,0,0,0,0,198,0,0,0,0,0,0,199,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,198,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,229,0,0,197,0,0,231,0,0,0,0,0,0,0,0,0,0,0,0,239,189,0,199,0,0,249,0,0,0,0,0,0,0,0,239,0,0,0,189,0,189,0,0,0,199,0,239,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,198,0,0,0,0,0,0,0,0,0,0,0,0,0,0,197,0,197,0,0,189,0,0,0,0,0,0,0,189,0,197,0,0,0,0,0,0,0,0,0,0,197,0,0,239,0,0,0,0,0,197,0,0,0,0,0,0,231,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,197,0,192,0,231,0,0,0,0,0,0,0,0,0,0,198,197,206,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,189,0,0,0,197,0,0,0,0,0,239,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,239,0,0,0,0,0,0,0,0,0,0,0,239,0,0,0,0,0,201,190,239,206,0,0,206,239,0,190,0,239,0,0,197,199,0,198,190,0,0,0,0,197,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,239,0,0,0,0,0,0,0,0,239,0,0,0,0,0,0,197,0,0,0,197,0,189,0,0,197,199,206,0,0,206,197,0,0,0,0,0,0,0,0,0,0,0,0,0,197,0,0,0,0,0,0,0,198,239,0,0,0,239,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,239,0,189,0,0,197,0,0,0,239,0,0,0,0,0,0,0,0,0,0,193,0,0,206,0,0,206,0,0,0,0,0,0,0,0,197,0,189,0,0,0,0,0,0,0,0,239,0,0,0,0,0,0,0,0,0,0,0,231,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,198,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,239,0,0,0,0,189,191,239,206,0,0,206,239,0,0,0,197,239,0,0,0,0,0,0,197,0,0,189,0,199,0,0,0,198,0,0,0,0,197,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,213,0,0,214,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,189,0,0,0,0,0,0,0,0,0,0,0,0,0,191,0,189,0,0,0,189,189,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,199,0,0,191,0,0,0,0,0,0,0,0,0,0,0,0,0,201,0,0,199,0,0,191,0,0,199,0,0,0,0,0,199,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,191,0,0,0,0,0,200,0,0,199,0,197,0,0,0,201,0,197,0,0,0,199,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,189,0,0,0,0,0,199,0,0,0,0,0,0,0,0,192,198,199,0,0,0,0,0,199,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -643,4 +1348,17 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
+ <objectgroup id="6" name="buy" locked="1">
+  <object id="44" name="A" x="3191.54" y="3702.96" width="128" height="128"/>
+  <object id="47" name="B" x="3319.84" y="3702.86" width="128" height="128"/>
+  <object id="48" name="E" x="3191.63" y="2999.9" width="256" height="192"/>
+  <object id="49" name="C" x="3319.92" y="3511.25" width="128" height="128"/>
+  <object id="50" name="D" x="3127.25" y="3383.42" width="128" height="192"/>
+  <object id="51" name="F" x="3575.57" y="2872.57" width="192" height="320"/>
+  <object id="54" name="H" x="3894.42" y="3253.08" width="192" height="192"/>
+  <object id="56" name="I" x="4151.67" y="3446.83" width="256" height="128"/>
+  <object id="57" name="G" x="4088.33" y="2999.67" width="192" height="192"/>
+  <object id="58" name="J" x="3958.67" y="3638.67" width="192" height="192"/>
+  <object id="59" name="K" x="4216.39" y="3639.97" width="192" height="192"/>
+ </objectgroup>
 </map>
