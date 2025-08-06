@@ -10,7 +10,6 @@ import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.maps.tiled.renderers.IsometricTiledMapRenderer;
 import com.badlogic.gdx.math.*;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
-import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.Disposable;
 import com.badlogic.gdx.utils.Null;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
@@ -48,9 +47,8 @@ public class World implements Disposable {
     /** How far you can zoom in, 0 is close to the map  */
     private static final float MIN_ZOOM = 0.5f;
     private static final int[] ground = new int[] { Layers.GROUND };
-    private static final int[] modify = new int[] { Layers.EDIT};
+    private static final int[] edit = new int[] { Layers.EDIT};
     private static final int[] decoration = new int[] { Layers.DECORATION };
-    private static final int[] buy = new int[] { Layers.DECORATION };
     private static final TextureRegion cursorImage = Assets.getAtlasTexture("world/cursor");
 
     private final Car car = new Car();
@@ -85,6 +83,10 @@ public class World implements Disposable {
         });
 
         Events.on(EventType.DropItemOnWorld.class, e -> dropItem(e.itemStackSlot(), e.interaction()));
+        Events.on(EventType.ToggleEditMode.class, e -> {
+            editMode = !editMode;
+            selectedField = null;
+        });
     }
 
     public void showActionBar(Vector2 pos) {
@@ -98,14 +100,18 @@ public class World implements Disposable {
         camera.update();
         renderer.setView(camera);
 
+        // set mouse position
+        mousePos.set(Gdx.input.getX(), Gdx.input.getY());
+        viewport.unproject(mousePos);
+
         renderer.render(ground);
         if (editMode) {
-            renderer.render(modify);
+            renderer.render(edit);
 
-            Gdx.gl.glLineWidth(4f);
+            Gdx.gl.glLineWidth(5f);
             shapeRenderer.setProjectionMatrix(camera.combined);
             shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
-            shapeRenderer.setColor(Color.BLACK);
+            shapeRenderer.setColor(Color.valueOf("202e37"));
 
             for (Polygon polygon : worldMap.fields) {
                 if (polygon.contains(mousePos)) {
@@ -118,16 +124,12 @@ public class World implements Disposable {
             Gdx.gl.glLineWidth(1f);
 
         } else {
-            selectedField = null;
             renderCursor();
+            car.drive(delta);
         }
+
         renderer.render(decoration);
-
-        car.drive(delta);
         car.draw(renderer.getBatch());
-
-        mousePos.set(Gdx.input.getX(), Gdx.input.getY());
-        viewport.unproject(mousePos);
     }
 
     private void renderCursor() {

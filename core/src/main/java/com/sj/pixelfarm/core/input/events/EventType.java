@@ -13,6 +13,12 @@ import com.sj.pixelfarm.core.ui.effects.UIEffect;
 
 public class EventType {
 
+    public record NewDayEvent() { }
+
+    public record UpdateOverlayEvent() { }
+
+    public record UpdateClockEvent() { }
+
     public record TransferSlotEvent(ItemGrid source, Vector2 pos) { }
 
     public record PutItemInGridEvent(ItemStack stack, String name, Runnable onSuccess) { }
@@ -30,4 +36,6 @@ public class EventType {
     public record HideCropInfoPopupEvent() { }
 
     public record ShowActionBarEvent(ActionBar bar) { }
+
+    public record ToggleEditMode() { }
 }

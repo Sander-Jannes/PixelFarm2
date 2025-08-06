@@ -1,6 +1,8 @@
 package com.sj.pixelfarm.core;
 
+
 public class Entities {
+
     public static final String WORLD = "world";
     public static final String HOTBAR = "hotbar";
     public static final String ACTIVE_SLOT = "activeSlot";

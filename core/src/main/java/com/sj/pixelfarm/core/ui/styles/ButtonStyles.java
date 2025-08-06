@@ -6,7 +6,10 @@ public enum ButtonStyles {
     CLOSE_BOX("close-box"),
     REMOVE_ITEM("remove-item"),
     SPLIT_ITEM("split-item"),
-    FLIP_BUTTON("flip-button");
+    FLIP_BUTTON("flip-button"),
+    INFO_BUTTON("info-button"),
+    INVENTORY_BUTTON("inventory-button"),
+    CALENDAR_BUTTON("calendar-button");
 
     private final String name;
 

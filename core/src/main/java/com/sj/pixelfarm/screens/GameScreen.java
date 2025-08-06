@@ -9,6 +9,7 @@ import com.badlogic.gdx.utils.ScreenUtils;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
 import com.sj.pixelfarm.*;
 import com.sj.pixelfarm.core.Entities;
+import com.sj.pixelfarm.core.Vars;
 import com.sj.pixelfarm.core.card.CropInfoPopup;
 import com.sj.pixelfarm.core.grid.GridLoader;
 import com.sj.pixelfarm.core.input.listeners.WorldInputListener;
@@ -17,6 +18,7 @@ import com.sj.pixelfarm.core.item.Items;
 import com.sj.pixelfarm.core.itemgrid.ItemGrid;
 import com.sj.pixelfarm.core.mem.Assets;
 import com.sj.pixelfarm.core.mem.PoolManager;
+import com.sj.pixelfarm.core.ui.hud.OverlayMenu;
 import com.sj.pixelfarm.core.ui.UIEventProcessor;
 import com.sj.pixelfarm.tasks.TaskManager;
 import com.sj.pixelfarm.world.World;
@@ -51,9 +53,11 @@ public class GameScreen implements Screen {
         grid.setObjToSlot(6, PoolManager.obtain(Items.scythe, 1, Item.Quality.NONE));
 
         CropInfoPopup popup = new CropInfoPopup(20, Gdx.graphics.getHeight() - 255 - 20, 200);
+        OverlayMenu overlayMenu = new OverlayMenu();
 
         stage.addActor(grid);
         stage.addActor(popup);
+        stage.addActor(overlayMenu);
         main.multiplexer.addProcessor(stage);
         main.multiplexer.addProcessor(worldInputListener);
 
@@ -64,6 +68,7 @@ public class GameScreen implements Screen {
     public void render(float delta) {
         ScreenUtils.clear(0.15f, 0.15f, 0.2f, 1f);
 
+        Vars.clock.update(delta);
         worldInputListener.update();
         world.draw(delta);
         stage.draw();
@@ -72,7 +77,7 @@ public class GameScreen implements Screen {
 
     @Override
     public void show() {
-        TaskManager.initCropGrowTask(world.worldMap);
+        TaskManager.initCropGrowTask(world);
     }
 
     @Override

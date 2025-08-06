@@ -11,20 +11,20 @@ import com.sj.pixelfarm.core.utils.TileHelper;
 import com.sj.pixelfarm.world.TileSetNames;
 import com.sj.pixelfarm.world.TileType;
 import com.sj.pixelfarm.world.World;
-import com.sj.pixelfarm.world.WorldMap;
 
 
 public class TaskManager {
     public static final float TICK_RATE = 1f / com.sj.pixelfarm.Settings.FPS;
     private static final Timer timer = new Timer();
 
-    public static void initCropGrowTask(WorldMap map) {
+    public static void initCropGrowTask(World world) {
         final GridPoint2 tmpGridPoint2 = new GridPoint2();
+        TiledMapTileLayer layer = world.worldMap.getLayer(World.Layers.DECORATION);
 
         Timer.Task growTask = new Timer.Task() {
             @Override
             public void run() {
-                TiledMapTileLayer layer = map.getLayer(World.Layers.DECORATION);
+                if (world.editMode) return;
 
                 for (int row = 0; row < layer.getWidth(); row++) {
                     for (int col = 0; col < layer.getHeight(); col++) {
@@ -76,8 +76,8 @@ public class TaskManager {
 
                                 if (t.getProperty("timeTillRotten", Float.class) <= TICK_RATE) {
                                     tmpGridPoint2.set(finalRow, finalCol);
-                                    map.setCell(tmpGridPoint2, World.Layers.GROUND, TileType.ROTTEN_FIELD);
-                                    map.removeCell(tmpGridPoint2, World.Layers.DECORATION);
+                                    world.worldMap.setCell(tmpGridPoint2, World.Layers.GROUND, TileType.ROTTEN_FIELD);
+                                    world.worldMap.removeCell(tmpGridPoint2, World.Layers.DECORATION);
                                 }
                             }
 
@@ -86,7 +86,7 @@ public class TaskManager {
 
                             if (t.getProperty("growTime", Float.class) <= TICK_RATE) {
                                 tmpGridPoint2.set(finalRow, finalCol);
-                                map.upgradeCrop(tmpGridPoint2, World.Layers.DECORATION, tile);
+                                world.worldMap.upgradeCrop(tmpGridPoint2, World.Layers.DECORATION, tile);
                             }
                         });
                     }

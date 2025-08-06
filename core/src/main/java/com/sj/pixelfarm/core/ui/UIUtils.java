@@ -93,7 +93,7 @@ public final class UIUtils {
         return new Container<>(label);
     }
 
-    private static Image createImage(String texture) {
+    public static Image createImage(String texture) {
         return new Image(Assets.getAtlasTexture(texture));
     }
 }

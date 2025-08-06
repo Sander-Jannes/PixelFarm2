@@ -1,6 +1,5 @@
 package com.sj.pixelfarm.core.input.listeners;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputAdapter;
 import com.badlogic.gdx.maps.tiled.TiledMapTile;
@@ -28,15 +27,6 @@ public class WorldInputListener extends InputAdapter {
     public WorldInputListener(World world, Stage stage) {
         this.world = world;
         this.stage = stage;
-    }
-
-    @Override
-    public boolean keyDown (int keycode) {
-       if (keycode == Input.Keys.A) {
-            world.editMode = !world.editMode;
-           return true;
-       }
-       return false;
     }
 
     @Override
