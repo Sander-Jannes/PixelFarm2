@@ -10,8 +10,8 @@ public class FieldGroup {
 
     private final Color color = UIColors.fieldGroupColor.cpy();
     private final Polygon field;
-    private final int price;
 
+    public final int price;
     public boolean isUnlocked = false;
     public boolean isSelected = false;
 
@@ -34,10 +34,6 @@ public class FieldGroup {
 
     public boolean contains(Vector2 pos) {
         return field.contains(pos);
-    }
-
-    public String getPrice() {
-        return String.valueOf(price);
     }
 
     public void unlock() {

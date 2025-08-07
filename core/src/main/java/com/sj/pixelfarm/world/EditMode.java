@@ -40,8 +40,12 @@ public class EditMode implements Disposable {
             priceLabel.addActor(createLabel("", LabelStyles.X20, null, null));
 
             Button buy = createButton(ButtonStyles.BUY_BUTTON, button -> {
-                selectedField.unlock();
-                Vars.state.unlockedFields.add(selectedField);
+                if (Vars.state.money >= selectedField.price) {
+                    Vars.state.money -= selectedField.price;
+                    Events.fire(new EventType.UpdateOverlayEvent());
+                    selectedField.unlock();
+                    Vars.state.unlockedFields.add(selectedField);
+                }
             });
 
             bar.space(10);
@@ -61,7 +65,7 @@ public class EditMode implements Disposable {
             selectedField.isSelected = true;
             HorizontalGroup g = actionBar.getElement(1, 0, HorizontalGroup.class);
             Label l = (Label) g.getChild(1);
-            l.setText(selectedField.getPrice());
+            l.setText(selectedField.price);
             Events.fire(new EventType.ShowActionBarEvent(actionBar, world.viewport.project(selectedField.getCenter())));
         }
     }
@@ -73,13 +77,18 @@ public class EditMode implements Disposable {
     public void toggle() {
         editMode = !editMode;
         selectedField = null;
+
+        if (world.editMode.isActive()) {
+            world.worldMap.setLayerOpacity(World.Layers.DECORATION, 0.15f);
+        } else {
+            world.worldMap.setLayerOpacity(World.Layers.DECORATION, 1f);
+        }
     }
 
     public void draw() {
         shapeRenderer.setProjectionMatrix(world.viewport.getCamera().combined);
         shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
         Gdx.gl.glLineWidth(4f);
-        boolean drawSelected = false;
 
         for (FieldGroup field : fields) {
             shapeRenderer.setColor(field.getColor());
@@ -87,11 +96,12 @@ public class EditMode implements Disposable {
 
             if (field.contains(world.getMouse())) {
                 selectedField = field;
-                drawSelected = true;
+                shapeRenderer.setColor(UIColors.selectColor);
+                shapeRenderer.polygon(selectedField.getVertices());
             }
         }
 
-        if (drawSelected || (selectedField != null && selectedField.isSelected)) {
+        if (selectedField != null && selectedField.isSelected) {
             shapeRenderer.setColor(UIColors.selectColor);
             shapeRenderer.polygon(selectedField.getVertices());
         }

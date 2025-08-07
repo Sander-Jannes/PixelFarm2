@@ -53,12 +53,6 @@ public class Hud extends Card {
     }
 
     public void update() {
-        while (Vars.state.xp >= Vars.state.xpGoal) {
-            Vars.state.level++;
-            Vars.state.xp -= Vars.state.xpGoal;
-            Vars.state.xpGoal *= (int) 2.2f;
-        }
-
         updateLevelLabelText();
         updateMoneyLabel();
     }

@@ -143,6 +143,10 @@ public final class WorldMap implements Disposable {
         return (TiledMapTileLayer) map.getLayers().get(z);
     }
 
+    public void setLayerOpacity(int index, float opacity) {
+        getLayer(index).setOpacity(opacity);
+    }
+
     @Override
     public void dispose() {
         map.dispose();
