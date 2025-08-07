@@ -9,10 +9,12 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.utils.Null;
 import com.badlogic.gdx.utils.Scaling;
+import com.sj.pixelfarm.core.Entities;
 import com.sj.pixelfarm.core.input.events.Events;
 import com.sj.pixelfarm.core.mem.Assets;
 import com.sj.pixelfarm.core.ui.actionbar.ActionBar;
 import com.sj.pixelfarm.core.ui.effects.UIEffect;
+import com.sj.pixelfarm.core.ui.effects.UIEffects;
 import com.sj.pixelfarm.core.ui.styles.ButtonStyles;
 import com.sj.pixelfarm.core.ui.styles.LabelStyles;
 
@@ -74,6 +76,18 @@ public final class UIUtils {
         if (color != null) l.setColor(color);
         if (align != null) l.setAlignment(align);
         return l;
+    }
+
+    public static void createPopupObject(Stage stage, Vector2 mouse, String text, LabelStyles styleName, Color color, UIEffect effectApplier) {
+        Label message = createLabel(text, styleName, color, null);
+        message.setName(Entities.ERROR_MESSAGE);
+        message.setBounds(mouse.x - message.getWidth() / 2f, mouse.y + 10, message.getWidth() / 2f, message.getHeight() / 2f);
+        stage.addActor(message);
+        effectApplier.apply(message);
+    }
+
+    public static void createErrorMessage(Stage stage, Vector2 mouse, String text) {
+        createPopupObject(stage, mouse, text, LabelStyles.X20, Color.RED, UIEffects::applyErrorMessageEffect);
     }
 
     public static TextButton createTextButton(String text, LabelStyles styleName, Consumer<TextButton> action) {

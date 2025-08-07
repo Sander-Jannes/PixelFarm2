@@ -68,7 +68,10 @@ public class GameScreen implements Screen {
     public void render(float delta) {
         ScreenUtils.clear(0.15f, 0.15f, 0.2f, 1f);
 
-        Vars.clock.update(delta);
+        if (! world.editMode.isActive()) {
+            Vars.clock.update(delta);
+        }
+
         worldInputListener.update();
         world.draw(delta);
         stage.draw();

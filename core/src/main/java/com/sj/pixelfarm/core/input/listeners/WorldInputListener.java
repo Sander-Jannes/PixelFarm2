@@ -41,7 +41,7 @@ public class WorldInputListener extends InputAdapter {
             GridPoint2 gridPosition = WorldUtils.getGridPosFromMouse(world.viewport);
             TiledMapTile tile = world.worldMap.getTile(gridPosition, World.Layers.DECORATION);
 
-            world.showActionBar(tmpVector);
+            world.editMode.showActionBar(tmpVector);
 
             TileHelper.processTile(tile, t -> {
                 if (t.equals("group", "crops")) {

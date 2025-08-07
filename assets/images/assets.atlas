@@ -12,7 +12,7 @@ box_info/box_info
   index: -1
 box_info/box_info_selection1
   rotate: false
-  xy: 403, 87
+  xy: 467, 87
   size: 82, 82
   orig: 82, 82
   offset: 0, 0
@@ -26,21 +26,21 @@ box_info/box_info_selection3
   index: -1
 calendar/day_icon
   rotate: false
-  xy: 485, 87
+  xy: 549, 87
   size: 90, 90
   orig: 90, 90
   offset: 0, 0
   index: -1
 calendar/day_icon_completed
   rotate: false
-  xy: 575, 87
+  xy: 639, 87
   size: 90, 90
   orig: 90, 90
   offset: 0, 0
   index: -1
 calendar/day_selection
   rotate: false
-  xy: 665, 87
+  xy: 729, 87
   size: 90, 90
   orig: 90, 90
   offset: 0, 0
@@ -54,7 +54,7 @@ calendar/day_selection2
   index: -1
 calendar/order_completed
   rotate: false
-  xy: 1204, 23
+  xy: 1300, 23
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
@@ -82,14 +82,14 @@ chest/chest
   index: -1
 chest/inventory_selection1
   rotate: false
-  xy: 0, 87
+  xy: 64, 87
   size: 80, 80
   orig: 80, 80
   offset: 0, 0
   index: -1
 chest/inventory_selection2
   rotate: false
-  xy: 80, 87
+  xy: 144, 87
   size: 163, 80
   orig: 163, 80
   offset: 0, 0
@@ -124,21 +124,21 @@ hotbar/hotbar
   index: -1
 hotbar/hotbar_forced_selection
   rotate: false
-  xy: 755, 87
+  xy: 819, 87
   size: 94, 94
   orig: 94, 94
   offset: 0, 0
   index: -1
 hotbar/hotbar_selection
   rotate: false
-  xy: 849, 87
+  xy: 913, 87
   size: 94, 94
   orig: 94, 94
   offset: 0, 0
   index: -1
 hotbar/hotbar_selection2
   rotate: false
-  xy: 943, 87
+  xy: 1007, 87
   size: 181, 94
   orig: 181, 94
   offset: 0, 0
@@ -152,14 +152,14 @@ icon
   index: -1
 item
   rotate: false
-  xy: 243, 87
+  xy: 307, 87
   size: 80, 80
   orig: 80, 80
   offset: 0, 0
   index: -1
 item2
   rotate: false
-  xy: 323, 87
+  xy: 387, 87
   size: 80, 80
   orig: 80, 80
   offset: 0, 0
@@ -283,58 +283,72 @@ soup_maker/soup_maker
   orig: 1100, 420
   offset: 0, 0
   index: -1
-ui/buttons/calendar_button
-  rotate: false
-  xy: 1404, 23
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: -1
-ui/buttons/calendar_button_clicked
-  rotate: false
-  xy: 1468, 23
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: -1
-ui/buttons/close_box
+ui/buttons/buy
   rotate: false
   xy: 724, 23
   size: 48, 48
   orig: 48, 48
   offset: 0, 0
   index: -1
-ui/buttons/close_box_clicked
+ui/buttons/buy_clicked
   rotate: false
   xy: 772, 23
   size: 48, 48
   orig: 48, 48
   offset: 0, 0
   index: -1
-ui/buttons/empty_button
+ui/buttons/calendar_button
+  rotate: false
+  xy: 1500, 23
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+ui/buttons/calendar_button_clicked
+  rotate: false
+  xy: 1564, 23
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+ui/buttons/close_box
   rotate: false
   xy: 820, 23
   size: 48, 48
   orig: 48, 48
   offset: 0, 0
   index: -1
-ui/buttons/empty_button_hover
+ui/buttons/close_box_clicked
   rotate: false
   xy: 868, 23
   size: 48, 48
   orig: 48, 48
   offset: 0, 0
   index: -1
+ui/buttons/empty_button
+  rotate: false
+  xy: 916, 23
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: -1
+ui/buttons/empty_button_hover
+  rotate: false
+  xy: 964, 23
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: -1
 ui/buttons/enter
   rotate: false
-  xy: 1214, 87
+  xy: 1278, 87
   size: 96, 96
   orig: 96, 96
   offset: 0, 0
   index: -1
 ui/buttons/enter_clicked
   rotate: false
-  xy: 1310, 87
+  xy: 1374, 87
   size: 96, 96
   orig: 96, 96
   offset: 0, 0
@@ -355,42 +369,42 @@ ui/buttons/flip_clicked
   index: -1
 ui/buttons/info_button
   rotate: false
-  xy: 1532, 23
+  xy: 1628, 23
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: -1
 ui/buttons/info_button_clicked
   rotate: false
-  xy: 1596, 23
+  xy: 1692, 23
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: -1
 ui/buttons/inventory_button
   rotate: false
-  xy: 1660, 23
+  xy: 1756, 23
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: -1
 ui/buttons/inventory_button_clicked
   rotate: false
-  xy: 1724, 23
+  xy: 1820, 23
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: -1
 ui/buttons/open_box
   rotate: false
-  xy: 916, 23
+  xy: 1012, 23
   size: 48, 48
   orig: 48, 48
   offset: 0, 0
   index: -1
 ui/buttons/open_box_clicked
   rotate: false
-  xy: 964, 23
+  xy: 1060, 23
   size: 48, 48
   orig: 48, 48
   offset: 0, 0
@@ -411,49 +425,49 @@ ui/buttons/remove_button_clicked
   index: -1
 ui/buttons/remove_item
   rotate: false
-  xy: 1012, 23
+  xy: 1108, 23
   size: 48, 48
   orig: 48, 48
   offset: 0, 0
   index: -1
 ui/buttons/remove_item_clicked
   rotate: false
-  xy: 1060, 23
+  xy: 1156, 23
   size: 48, 48
   orig: 48, 48
   offset: 0, 0
   index: -1
 ui/buttons/settings_button
   rotate: false
-  xy: 1788, 23
+  xy: 1884, 23
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: -1
 ui/buttons/settings_button_clicked
   rotate: false
-  xy: 1852, 23
+  xy: 1948, 23
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: -1
 ui/buttons/split_item
   rotate: false
-  xy: 1108, 23
+  xy: 1204, 23
   size: 48, 48
   orig: 48, 48
   offset: 0, 0
   index: -1
 ui/buttons/split_item_clicked
   rotate: false
-  xy: 1156, 23
+  xy: 1252, 23
   size: 48, 48
   orig: 48, 48
   offset: 0, 0
   index: -1
 ui/icons/check
   rotate: false
-  xy: 1254, 23
+  xy: 1350, 23
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
@@ -467,21 +481,21 @@ ui/icons/coin
   index: -1
 ui/icons/drop_arrow
   rotate: false
-  xy: 1304, 23
+  xy: 1400, 23
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
   index: -1
 ui/icons/happy
   rotate: false
-  xy: 1916, 23
+  xy: 0, 87
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: -1
 ui/icons/lock
   rotate: false
-  xy: 1354, 23
+  xy: 1450, 23
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
@@ -502,7 +516,7 @@ ui/useBarOverlay
   index: -1
 world/car
   rotate: false
-  xy: 1124, 87
+  xy: 1188, 87
   size: 90, 94
   orig: 90, 94
   offset: 0, 0

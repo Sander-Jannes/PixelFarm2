@@ -1,7 +1,7 @@
 package com.sj.pixelfarm.core.ui.actionbar;
 
 import com.badlogic.gdx.math.Vector2;
-import com.badlogic.gdx.scenes.scene2d.Group;
+import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.ui.HorizontalGroup;
 import com.badlogic.gdx.utils.ObjectMap;
 import com.sj.pixelfarm.core.Entities;
@@ -13,12 +13,9 @@ import java.util.Arrays;
 import java.util.List;
 
 
-/**
- * A UI component representing an action bar with different button states.
- */
 public class ActionBar extends HorizontalGroup {
 
-    private final ObjectMap<Integer, ArrayList<Group>> state = new ObjectMap<>();
+    private final ObjectMap<Integer, ArrayList<Actor>> state = new ObjectMap<>();
 
     public ActionBar() {
         super();
@@ -29,7 +26,6 @@ public class ActionBar extends HorizontalGroup {
             Vector2 mouse = screenToLocalCoordinates(e.pos());
             if (hit(mouse.x, mouse.y, true) == null) {
                 remove();
-                Events.fire(new EventType.HideCurrentModalEvent());
             }
         });
     }
@@ -38,21 +34,25 @@ public class ActionBar extends HorizontalGroup {
         state.put(s, new ArrayList<>());
     }
 
-    public void addState(int s, Group... buttons) {
+    public void addState(int s, Actor... buttons) {
         state.put(s, new ArrayList<>(Arrays.asList(buttons)));
     }
 
-    public void addToState(int s, Group... buttons) {
-        List<Group> buttonList = state.get(s);
+    public void addToState(int s, Actor... buttons) {
+        List<Actor> buttonList = state.get(s);
         if (buttonList != null) buttonList.addAll(Arrays.asList(buttons));
     }
 
     public void setState(int s) {
         clearChildren();
-        List<Group> buttons = state.get(s);
+        List<Actor> buttons = state.get(s);
         if (buttons != null) {
             buttons.forEach(this::addActor);
         }
         layout();
+    }
+
+    public <T> T getElement(int s, int index, Class<T> clazz) {
+        return clazz.cast(state.get(s).get(index));
     }
 }

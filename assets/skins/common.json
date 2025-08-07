@@ -203,6 +203,11 @@
       "up": "ui/buttons/split_item",
       "over": "ui/buttons/split_item_clicked",
       "down": "ui/buttons/split_item_clicked"
+    },
+    "buy-button": {
+      "up": "ui/buttons/buy",
+      "down": "ui/buttons/buy_clicked",
+      "over": "ui/buttons/buy_clicked"
     }
   },
   "ImageButtonStyle": {

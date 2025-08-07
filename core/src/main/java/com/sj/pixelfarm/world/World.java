@@ -1,17 +1,13 @@
 package com.sj.pixelfarm.world;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.maps.tiled.TiledMapTile;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.maps.tiled.renderers.IsometricTiledMapRenderer;
 import com.badlogic.gdx.math.*;
-import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.utils.Disposable;
-import com.badlogic.gdx.utils.Null;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
 import com.sj.pixelfarm.*;
 import com.sj.pixelfarm.core.Entities;
@@ -26,12 +22,8 @@ import com.sj.pixelfarm.core.itemgrid.ItemStack;
 import com.sj.pixelfarm.core.itemgrid.ItemStackSlot;
 import com.sj.pixelfarm.core.mem.Assets;
 import com.sj.pixelfarm.core.mem.PoolManager;
-import com.sj.pixelfarm.core.ui.actionbar.ActionBar;
 import com.sj.pixelfarm.core.ui.effects.UIEffects;
-import com.sj.pixelfarm.core.ui.styles.ButtonStyles;
 import com.sj.pixelfarm.core.utils.TileHelper;
-
-import static com.sj.pixelfarm.core.ui.UIUtils.*;
 
 
 public class World implements Disposable {
@@ -51,6 +43,8 @@ public class World implements Disposable {
     private static final int[] decoration = new int[] { Layers.DECORATION };
     private static final TextureRegion cursorImage = Assets.getAtlasTexture("world/cursor");
 
+    private static final Vector2 tmpVec = new Vector2();
+
     private final Car car = new Car();
 
     private final IsometricTiledMapRenderer renderer;
@@ -62,66 +56,28 @@ public class World implements Disposable {
 
     public float lastX, lastY;
     public boolean dragging;
-    public boolean editMode = false;
 
-    private static final Vector2 mousePos = new Vector2();
-
-    private final ShapeRenderer shapeRenderer = new ShapeRenderer();
-    public @Null Polygon selectedField = null;
-    public ActionBar actionBar;
+    public EditMode editMode;
 
     public World(ExtendViewport vp) {
         viewport = vp;
         camera = (OrthographicCamera) viewport.getCamera();
         renderer = new IsometricTiledMapRenderer(worldMap.getMap(), INV_SCALE);
-
-        actionBar = createActionBar(bar -> {
-            Button enter = createButton(ButtonStyles.ENTER, button -> {});
-            bar.space(5);
-            bar.addState(1, enter);
-            bar.setState(1);
-        });
+        editMode = new EditMode(this, worldMap.fields);
 
         Events.on(EventType.DropItemOnWorld.class, e -> dropItem(e.itemStackSlot(), e.interaction()));
-        Events.on(EventType.ToggleEditMode.class, e -> {
-            editMode = !editMode;
-            selectedField = null;
-        });
-    }
-
-    public void showActionBar(Vector2 pos) {
-        viewport.unproject(pos);
-        if (editMode && selectedField != null && selectedField.contains(pos)) {
-            Events.fire(new EventType.ShowActionBarEvent(actionBar));
-        }
+        Events.on(EventType.ToggleEditMode.class, e -> editMode.toggle());
     }
 
     public void draw(float delta) {
         camera.update();
         renderer.setView(camera);
 
-        // set mouse position
-        mousePos.set(Gdx.input.getX(), Gdx.input.getY());
-        viewport.unproject(mousePos);
-
         renderer.render(ground);
-        if (editMode) {
+
+        if (editMode.isActive()) {
             renderer.render(edit);
-
-            Gdx.gl.glLineWidth(5f);
-            shapeRenderer.setProjectionMatrix(camera.combined);
-            shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
-            shapeRenderer.setColor(Color.valueOf("202e37"));
-
-            for (Polygon polygon : worldMap.fields) {
-                if (polygon.contains(mousePos)) {
-                    shapeRenderer.polygon(polygon.getVertices());
-                    selectedField = polygon;
-                }
-            }
-
-            shapeRenderer.end();
-            Gdx.gl.glLineWidth(1f);
+            editMode.draw();
 
         } else {
             renderCursor();
@@ -191,11 +147,20 @@ public class World implements Disposable {
                     case PLANT: {
                         if (worldMap.getTile(pos, Layers.DECORATION) != null) return;
 
-                        ActionProps.Plant props = (ActionProps.Plant) actionInfo.props();
-                        TiledMapTileLayer.Cell cell = worldMap.setCell(pos, Layers.DECORATION, props.crop());
-                        TileHelper.processTile(cell.getTile(), crop -> crop.init(props));
-                        Events.fire(new EventType.ShowPopupObject(itemStack.item.image, "-1", UIEffects::applyFadeDownEffect));
-                        itemStack.addAmount(-1);
+                        for (FieldGroup fieldGroup : editMode.fields) {
+                            if (fieldGroup.contains(getMouse())) {
+                                if (fieldGroup.isUnlocked) {
+                                    ActionProps.Plant props = (ActionProps.Plant) actionInfo.props();
+                                    TiledMapTileLayer.Cell cell = worldMap.setCell(pos, Layers.DECORATION, props.crop());
+                                    TileHelper.processTile(cell.getTile(), crop -> crop.init(props));
+                                    Events.fire(new EventType.ShowPopupObject(itemStack.item.image, "-1", UIEffects::applyFadeDownEffect));
+                                    itemStack.addAmount(-1);
+
+                                } else {
+                                    Events.fire(new EventType.ShowErrorMessage("Field is not unlocked!"));
+                                }
+                            }
+                        }
                         break;
                     }
 
@@ -213,6 +178,11 @@ public class World implements Disposable {
                 }
             }
         });
+    }
+
+    public Vector2 getMouse() {
+        tmpVec.set(Gdx.input.getX(), Gdx.input.getY());
+        return viewport.unproject(tmpVec);
     }
 
     public void interactLeftDrag(Vector2 pos) {
@@ -245,7 +215,6 @@ public class World implements Disposable {
     public void dispose() {
         worldMap.dispose();
         renderer.dispose();
-        shapeRenderer.dispose();
     }
 
     public static class Layers {

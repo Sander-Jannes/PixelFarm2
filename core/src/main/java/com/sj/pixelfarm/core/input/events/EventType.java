@@ -25,8 +25,6 @@ public class EventType {
 
     public record RemoveActionBar(Vector2 pos) { }
 
-    public record HideCurrentModalEvent() { }
-
     public record DropItemOnWorld(ItemStackSlot itemStackSlot, Interactions interaction) { }
 
     public record ShowPopupObject(TextureRegion image, String text, UIEffect effectApplier) { }
@@ -35,7 +33,9 @@ public class EventType {
 
     public record HideCropInfoPopupEvent() { }
 
-    public record ShowActionBarEvent(ActionBar bar) { }
+    public record ShowActionBarEvent(ActionBar bar, Vector2 pos) { }
 
     public record ToggleEditMode() { }
+
+    public record ShowErrorMessage(String text) { }
 }

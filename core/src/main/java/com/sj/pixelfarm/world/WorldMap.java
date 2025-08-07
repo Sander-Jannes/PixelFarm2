@@ -22,7 +22,7 @@ public final class WorldMap implements Disposable {
 
     private final TiledMap map;
     private final HashMap<String, Integer> offsets = new HashMap<>();
-    public ArrayList<Polygon> fields = new ArrayList<>();
+    public ArrayList<FieldGroup> fields = new ArrayList<>();
 
     public WorldMap() {
         map = new TmxMapLoader().load(Settings.WORLD_MAP);
@@ -56,12 +56,13 @@ public final class WorldMap implements Disposable {
                 Vector2 t = WorldUtils.gridToVec(new GridPoint2(x, y));
                 t.add(0.f, 0.25f);
 
-                fields.add(new Polygon(new float[] {
+                fields.add(new FieldGroup(new Polygon(new float[] {
                     t.x, t.y,
                     t.x + hh, t.y + qh,
                     t.x + hh + hw, t.y + qh - qw,
                     t.x + hw, t.y - qw,
-                }));
+                }),
+                    rectObj.getProperties().get("price", Integer.class)));
             }
         }
     }

@@ -1,6 +1,9 @@
 package com.sj.pixelfarm.state;
 
 
+import com.badlogic.gdx.utils.Array;
+import com.sj.pixelfarm.world.FieldGroup;
+
 public final class GameState {
 
     /* Represents the amount of money the player currently has in the game. */
@@ -19,5 +22,6 @@ public final class GameState {
     public int currentDay;
 
     public float currentTime;
-}
 
+    public final Array<FieldGroup> unlockedFields = new Array<>();
+}

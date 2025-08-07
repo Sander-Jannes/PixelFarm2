@@ -24,7 +24,7 @@ public class TaskManager {
         Timer.Task growTask = new Timer.Task() {
             @Override
             public void run() {
-                if (world.editMode) return;
+                if (world.editMode.isActive()) return;
 
                 for (int row = 0; row < layer.getWidth(); row++) {
                     for (int col = 0; col < layer.getHeight(); col++) {

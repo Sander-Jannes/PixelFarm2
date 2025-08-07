@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="isometric" renderorder="right-down" width="128" height="128" tilewidth="128" tileheight="64" infinite="0" nextlayerid="7" nextobjectid="62">
+<map version="1.10" tiledversion="1.10.2" orientation="isometric" renderorder="right-down" width="128" height="128" tilewidth="128" tileheight="64" infinite="0" nextlayerid="7" nextobjectid="95">
  <tileset firstgid="1" name="crops" tilewidth="128" tileheight="128" tilecount="40" columns="4">
   <image source="../images/tile_sets/blocks/crops.png" width="512" height="1280"/>
   <tile id="0">
@@ -1348,17 +1348,61 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <objectgroup id="6" name="buy" visible="0" locked="1">
-  <object id="44" name="A" x="3191.54" y="3702.96" width="128" height="128"/>
-  <object id="47" name="B" x="3319.84" y="3702.86" width="128" height="128"/>
-  <object id="48" name="E" x="3191.63" y="2999.9" width="256" height="192"/>
-  <object id="49" name="C" x="3319.92" y="3511.25" width="128" height="128"/>
-  <object id="50" name="D" x="3127.25" y="3383.42" width="128" height="192"/>
-  <object id="51" name="F" x="3575.57" y="2872.57" width="192" height="320"/>
-  <object id="54" name="H" x="3894.42" y="3253.08" width="192" height="192"/>
-  <object id="56" name="I" x="4151.67" y="3446.83" width="256" height="128"/>
-  <object id="57" name="G" x="4088.33" y="2999.67" width="192" height="192"/>
-  <object id="58" name="J" x="3958.67" y="3638.67" width="192" height="192"/>
-  <object id="59" name="K" x="4216.39" y="3639.97" width="192" height="192"/>
+ <objectgroup id="6" name="buy">
+  <object id="84" name="A" x="3190.36" y="3702.3" width="128" height="128">
+   <properties>
+    <property name="price" type="int" value="194"/>
+   </properties>
+  </object>
+  <object id="85" name="B" x="3319.57" y="3702.54" width="128" height="128">
+   <properties>
+    <property name="price" type="int" value="200"/>
+   </properties>
+  </object>
+  <object id="86" name="E" x="3189.14" y="2998.3" width="256" height="192">
+   <properties>
+    <property name="price" type="int" value="35"/>
+   </properties>
+  </object>
+  <object id="87" name="C" x="3317.43" y="3509.65" width="128" height="128">
+   <properties>
+    <property name="price" type="int" value="215"/>
+   </properties>
+  </object>
+  <object id="88" name="D" x="3124.76" y="3381.82" width="128" height="192">
+   <properties>
+    <property name="price" type="int" value="250"/>
+   </properties>
+  </object>
+  <object id="89" name="F" x="3573.08" y="2870.97" width="192" height="320">
+   <properties>
+    <property name="price" type="int" value="400"/>
+   </properties>
+  </object>
+  <object id="90" name="H" x="3891.93" y="3251.48" width="192" height="192">
+   <properties>
+    <property name="price" type="int" value="0"/>
+   </properties>
+  </object>
+  <object id="91" name="I" x="4149.18" y="3445.23" width="256" height="128">
+   <properties>
+    <property name="price" type="int" value="0"/>
+   </properties>
+  </object>
+  <object id="92" name="G" x="4085.84" y="2998.07" width="192" height="192">
+   <properties>
+    <property name="price" type="int" value="0"/>
+   </properties>
+  </object>
+  <object id="93" name="J" x="3956.18" y="3637.07" width="192" height="192">
+   <properties>
+    <property name="price" type="int" value="0"/>
+   </properties>
+  </object>
+  <object id="94" name="K" x="4213.9" y="3638.37" width="192" height="192">
+   <properties>
+    <property name="price" type="int" value="0"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>

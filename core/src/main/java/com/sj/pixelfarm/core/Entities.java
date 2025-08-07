@@ -14,8 +14,8 @@ public class Entities {
     public static final String OVERLAY_MENU = "overlayMenu";
     public static final String POPUP = "popup";
     public static final String BOX_INFO = "boxInfo";
-    public static final String ORDER_TIME_POPUP = "orderTimePpoup";
     public static final String PLANT_BOOK = "plantBook";
     public static final String ORDER_DETAILS = "orderDetails";
     public static final String S0UP_MAKER = "soup_maker";
+    public static final String ERROR_MESSAGE = "error_message";
 }
