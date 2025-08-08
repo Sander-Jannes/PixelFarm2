@@ -14,6 +14,7 @@ import com.badlogic.gdx.utils.Disposable;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
 import com.sj.pixelfarm.*;
 import com.sj.pixelfarm.core.Entities;
+import com.sj.pixelfarm.core.Vars;
 import com.sj.pixelfarm.core.input.Interactions;
 import com.sj.pixelfarm.core.input.events.EventType;
 import com.sj.pixelfarm.core.input.events.Events;
@@ -27,6 +28,7 @@ import com.sj.pixelfarm.core.mem.Assets;
 import com.sj.pixelfarm.core.mem.PoolManager;
 import com.sj.pixelfarm.core.ui.effects.UIEffects;
 import com.sj.pixelfarm.core.utils.TileHelper;
+import jdk.jfr.Event;
 
 import java.util.ArrayList;
 
@@ -51,7 +53,6 @@ public class World implements Disposable {
     private static final Vector2 tmpVec = new Vector2();
 
     private final Car car;
-    private final ArrayList<Car> cars = new ArrayList<>();
 
     private final IsometricTiledMapRenderer renderer;
     private final OrthographicCamera camera;
@@ -73,11 +74,12 @@ public class World implements Disposable {
         editMode = new EditMode(this, worldMap.fields);
 
         MapObjects objects = worldMap.getLayer(World.Layers.CAR, MapLayer.class).getObjects();
-        car = new Car(new Car.Path(
+
+        car = new Car(new GridPoint2[] {
             WorldUtils.getRectanglePos(((RectangleMapObject) objects.get("start")).getRectangle()),
             WorldUtils.getRectanglePos(((RectangleMapObject) objects.get("end")).getRectangle()),
             WorldUtils.getRectanglePos(((RectangleMapObject) objects.get("pickup")).getRectangle())
-        ));
+        });
 
         Events.on(EventType.DropItemOnWorld.class, e -> dropItem(e.itemStackSlot(), e.interaction()));
         Events.on(EventType.ToggleEditMode.class, e -> editMode.toggle());
@@ -96,6 +98,7 @@ public class World implements Disposable {
 
         } else {
             renderCursor();
+
             car.drive(delta);
         }
 
@@ -181,12 +184,13 @@ public class World implements Disposable {
 
                     case SELL: {
                         ActionProps.Sell props = (ActionProps.Sell) actionInfo.props();
-//                        System.out.println(car.getPosition() + " " + pos);
 
                         if (car.getPosition().equals(pos)) {
                             if (car.acceptOrder(itemStack)) {
-                                System.out.println(props.money() * itemStack.amount + " " + props.xp() * itemStack.amount);
                                 itemStackSlot.destroyObj(true);
+                                Vars.state.money += props.money() * itemStack.amount;
+                                Vars.state.xp += props.xp() * itemStack.amount;
+                                Events.fire(new EventType.UpdateOverlayEvent());
                             }
                         }
                         break;

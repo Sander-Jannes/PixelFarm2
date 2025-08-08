@@ -16,10 +16,10 @@ public class Car {
     private float time = 0f;
     private final ItemStack order = PoolManager.obtain(Items.cucumber, 4, Item.Quality.GOOD);
     private final Path path;
-    private boolean drive = true;
+    private boolean drive = false;
 
-    public Car(Path path) {
-        this.path = path;
+    public Car(GridPoint2[] points) {
+        this.path = new Path(points[0], points[1], points[2]);
     }
 
     public void start() {
@@ -29,8 +29,11 @@ public class Car {
 
     public void drive(float delta) {
         if (drive) {
-            if (!path.update(delta)) {
+            path.update(delta / 8f);
+
+            if (path.reachedEnd()) {
                 drive = false;
+                path.reset();
             }
         }
     }
@@ -90,19 +93,16 @@ public class Car {
             stop.set(end);
         }
 
-        public boolean update(float alpha) {
-            if (end.equals(stop) && start.x >= stop.x) {
-                reset();
-                return false;
-            }
+        public boolean reachedEnd() {
+            return end.equals(stop) && start.x >= stop.x - 1f;
+        }
 
+        public void update(float alpha) {
             if (reachedStop || start.x >= stop.x) {
                 reachedStop = true;
-                return true;
+                return;
             }
-
             start.lerp(end, alpha);
-            return true;
         }
     }
 }
