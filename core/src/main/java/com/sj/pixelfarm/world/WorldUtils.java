@@ -1,10 +1,7 @@
 package com.sj.pixelfarm.world;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.math.GridPoint2;
-import com.badlogic.gdx.math.Matrix4;
-import com.badlogic.gdx.math.Vector2;
-import com.badlogic.gdx.math.Vector3;
+import com.badlogic.gdx.math.*;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
 
 
@@ -17,6 +14,7 @@ public final class WorldUtils {
     private static final Vector2 mousePos = new Vector2();
     private static final Vector2 tmpGridToVec = new Vector2();
     private static final float TILE_OFFSET = 0.06f;
+    private static final int worldHeightInPx = 8192 ;
 
     static {
         isoTransform = new Matrix4();
@@ -49,5 +47,12 @@ public final class WorldUtils {
         viewport.unproject(mousePos);
         mousePos.y -= 0.25f;
         return getGridPos(mousePos);
+    }
+
+    public static GridPoint2 getRectanglePos(Rectangle rect) {
+        rect.y = worldHeightInPx - rect.y;
+        int x = Math.round(rect.x / 64f);
+        int y = Math.round(128 - (rect.y / 64f));
+        return new GridPoint2(x, y);
     }
 }

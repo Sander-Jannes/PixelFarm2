@@ -19,7 +19,7 @@ public class TaskManager {
 
     public static void initCropGrowTask(World world) {
         final GridPoint2 tmpGridPoint2 = new GridPoint2();
-        TiledMapTileLayer layer = world.worldMap.getLayer(World.Layers.DECORATION);
+        TiledMapTileLayer layer = world.worldMap.getLayer(World.Layers.DECORATION, TiledMapTileLayer.class);
 
         Timer.Task growTask = new Timer.Task() {
             @Override

@@ -1,5 +1,6 @@
 package com.sj.pixelfarm.world;
 
+import com.badlogic.gdx.maps.MapLayer;
 import com.badlogic.gdx.maps.MapObject;
 import com.badlogic.gdx.maps.MapObjects;
 import com.badlogic.gdx.maps.objects.RectangleMapObject;
@@ -42,18 +43,14 @@ public final class WorldMap implements Disposable {
         for (MapObject obj : objects) {
             if (obj instanceof RectangleMapObject rectObj) {
                 Rectangle rect = rectObj.getRectangle();
-                rect.y = 8192 - rect.y;
+                Vector2 t = WorldUtils.gridToVec(WorldUtils.getRectanglePos(rect));
 
-                int x = Math.round(rect.x / 64f);
-                int y = Math.round(128 - (rect.y / 64f));
                 int wt = Math.round(rect.width / 64f);
                 int ht = Math.round(rect.height / 64f);
                 float hw = 0.5f * wt;
                 float qw = 0.25f * wt;
                 float hh = 0.5f * ht;
                 float qh = 0.25f * ht;
-
-                Vector2 t = WorldUtils.gridToVec(new GridPoint2(x, y));
                 t.add(0.f, 0.25f);
 
                 fields.add(new FieldGroup(new Polygon(new float[] {
@@ -86,7 +83,7 @@ public final class WorldMap implements Disposable {
     }
 
     public @Null TiledMapTile getTile(int row, int col, int z) {
-        TiledMapTileLayer.Cell cell = getLayer(z).getCell(row, col);
+        TiledMapTileLayer.Cell cell = getLayer(z, TiledMapTileLayer.class).getCell(row, col);
 
         if (cell != null) {
             return cell.getTile();
@@ -128,7 +125,7 @@ public final class WorldMap implements Disposable {
     }
 
     private TiledMapTileLayer.Cell createCell(GridPoint2 pos, int z) {
-        TiledMapTileLayer layer = getLayer(z);
+        TiledMapTileLayer layer = getLayer(z, TiledMapTileLayer.class);
         TiledMapTileLayer.Cell cell = new TiledMapTileLayer.Cell();
         layer.setCell(pos.x, pos.y, cell);
         return cell;
@@ -139,12 +136,12 @@ public final class WorldMap implements Disposable {
         return layer.getCell(pos.x, pos.y);
     }
 
-    public TiledMapTileLayer getLayer(int z) {
-        return (TiledMapTileLayer) map.getLayers().get(z);
+    public <T extends MapLayer> T getLayer(int z, Class<T> clazz) {
+        return clazz.cast(map.getLayers().get(z));
     }
 
     public void setLayerOpacity(int index, float opacity) {
-        getLayer(index).setOpacity(opacity);
+        getLayer(index, TiledMapTileLayer.class).setOpacity(opacity);
     }
 
     @Override

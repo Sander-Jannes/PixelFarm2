@@ -3,6 +3,9 @@ package com.sj.pixelfarm.world;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.maps.MapLayer;
+import com.badlogic.gdx.maps.MapObjects;
+import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.badlogic.gdx.maps.tiled.TiledMapTile;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.maps.tiled.renderers.IsometricTiledMapRenderer;
@@ -25,6 +28,8 @@ import com.sj.pixelfarm.core.mem.PoolManager;
 import com.sj.pixelfarm.core.ui.effects.UIEffects;
 import com.sj.pixelfarm.core.utils.TileHelper;
 
+import java.util.ArrayList;
+
 
 public class World implements Disposable {
 
@@ -45,7 +50,8 @@ public class World implements Disposable {
 
     private static final Vector2 tmpVec = new Vector2();
 
-    private final Car car = new Car();
+    private final Car car;
+    private final ArrayList<Car> cars = new ArrayList<>();
 
     private final IsometricTiledMapRenderer renderer;
     private final OrthographicCamera camera;
@@ -63,10 +69,19 @@ public class World implements Disposable {
         viewport = vp;
         camera = (OrthographicCamera) viewport.getCamera();
         renderer = new IsometricTiledMapRenderer(worldMap.getMap(), INV_SCALE);
+
         editMode = new EditMode(this, worldMap.fields);
+
+        MapObjects objects = worldMap.getLayer(World.Layers.CAR, MapLayer.class).getObjects();
+        car = new Car(new Car.Path(
+            WorldUtils.getRectanglePos(((RectangleMapObject) objects.get("start")).getRectangle()),
+            WorldUtils.getRectanglePos(((RectangleMapObject) objects.get("end")).getRectangle()),
+            WorldUtils.getRectanglePos(((RectangleMapObject) objects.get("pickup")).getRectangle())
+        ));
 
         Events.on(EventType.DropItemOnWorld.class, e -> dropItem(e.itemStackSlot(), e.interaction()));
         Events.on(EventType.ToggleEditMode.class, e -> editMode.toggle());
+        Events.on(EventType.StartCar.class, e -> car.start());
     }
 
     public void draw(float delta) {
@@ -85,7 +100,7 @@ public class World implements Disposable {
         }
 
         renderer.render(decoration);
-        car.draw(renderer.getBatch());
+        car.draw(renderer.getBatch(), delta);
     }
 
     private void renderCursor() {
@@ -166,7 +181,7 @@ public class World implements Disposable {
 
                     case SELL: {
                         ActionProps.Sell props = (ActionProps.Sell) actionInfo.props();
-                        System.out.println(car.getPosition() + " " + pos);
+//                        System.out.println(car.getPosition() + " " + pos);
 
                         if (car.getPosition().equals(pos)) {
                             if (car.acceptOrder(itemStack)) {
@@ -174,6 +189,7 @@ public class World implements Disposable {
                                 itemStackSlot.destroyObj(true);
                             }
                         }
+                        break;
                     }
                 }
             }
@@ -222,5 +238,6 @@ public class World implements Disposable {
         public static final int EDIT = 1;
         public static final int DECORATION = 2;
         public static final int BUY = 3;
+        public static final int CAR = 4;
     }
 }

@@ -78,7 +78,7 @@ public class EditMode implements Disposable {
         editMode = !editMode;
         selectedField = null;
 
-        if (world.editMode.isActive()) {
+        if (editMode) {
             world.worldMap.setLayerOpacity(World.Layers.DECORATION, 0.15f);
         } else {
             world.worldMap.setLayerOpacity(World.Layers.DECORATION, 1f);

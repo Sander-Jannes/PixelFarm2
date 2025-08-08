@@ -38,4 +38,6 @@ public class EventType {
     public record ToggleEditMode() { }
 
     public record ShowErrorMessage(String text) { }
+
+    public record StartCar() { }
 }

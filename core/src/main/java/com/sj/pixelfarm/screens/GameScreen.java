@@ -45,7 +45,7 @@ public class GameScreen implements Screen {
         ItemGrid grid = new ItemGrid(GridLoader.load("gridconfig/hotbar.json", Assets::getAtlasTexture), 64, Entities.HOTBAR);
         grid.setPosition(Gdx.graphics.getWidth() / 2f - grid.getWidth() / 2f,40);
 
-        grid.setObjToSlot(1, PoolManager.obtain(Items.lettuce_seeds, 64, Item.Quality.NONE));
+        grid.setObjToSlot(1, PoolManager.obtain(Items.cucumber, 4, Item.Quality.GOOD));
         grid.setObjToSlot(2, PoolManager.obtain(Items.eggplant_seeds, 64, Item.Quality.NONE));
         grid.setObjToSlot(3, PoolManager.obtain(Items.onion_seeds, 64, Item.Quality.NONE));
         grid.setObjToSlot(4, PoolManager.obtain(Items.cucumber_seeds, 64, Item.Quality.NONE));
