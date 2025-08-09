@@ -12,12 +12,14 @@ public class FieldGroup {
     private final Polygon field;
 
     public final int price;
+    public final int unlockLevel;
     public boolean isUnlocked = false;
     public boolean isSelected = false;
 
-    public FieldGroup(Polygon field, int price) {
+    public FieldGroup(Polygon field, int price, int unlockLevel) {
         this.field = field;
         this.price = price;
+        this.unlockLevel = unlockLevel;
     }
 
     public void setColor(Color color) {

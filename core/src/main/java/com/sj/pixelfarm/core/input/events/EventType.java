@@ -9,6 +9,7 @@ import com.sj.pixelfarm.core.itemgrid.ItemStack;
 import com.sj.pixelfarm.core.itemgrid.ItemStackSlot;
 import com.sj.pixelfarm.ui.actionbar.ActionBar;
 import com.sj.pixelfarm.core.ui.effects.UIEffect;
+import com.sj.pixelfarm.world.FieldGroup;
 
 
 public class EventType {

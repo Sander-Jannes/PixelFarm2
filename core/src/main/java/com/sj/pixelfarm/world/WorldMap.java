@@ -60,7 +60,8 @@ public final class WorldMap implements Disposable {
                     t.x + hh + hw, t.y + qh - qw,
                     t.x + hw, t.y - qw,
                 }),
-                    rectObj.getProperties().get("price", Integer.class)));
+                    rectObj.getProperties().get("price", Integer.class),
+                    rectObj.getProperties().get("unlockLevel", Integer.class)));
             }
         }
     }

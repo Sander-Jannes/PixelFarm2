@@ -10,11 +10,8 @@ import static com.badlogic.gdx.scenes.scene2d.actions.Actions.*;
 public final class UIEffects {
 
     public static void applyBounceEffect(Actor actor) {
-        float startX = actor.getX();
-        float startY = actor.getY();
-
         actor.addAction(Actions.sequence(
-                Actions.moveTo(startX, startY + 20, 0.1f, Interpolation.smooth),
+                Actions.moveTo(actor.getX(), actor.getY() + 20, 0.1f, Interpolation.smooth),
                 Actions.moveBy(0, -5, 0.08f, Interpolation.smooth),
                 Actions.moveBy(0, 3, 0.06f, Interpolation.smooth),
                 Actions.moveBy(0, -2, 0.05f, Interpolation.smooth)
@@ -49,15 +46,18 @@ public final class UIEffects {
         ));
     }
 
-    public static void applyFocus(Actor actor) {
+    public static void showNSeconds(Actor actor) {
         actor.addAction(sequence(
-                scaleBy(.07f, .07f, 0.08f)
+                Actions.delay(5),
+                Actions.removeActor()
         ));
     }
 
-    public static void applyUnFocus(Actor actor) {
-        actor.addAction(sequence(
-                scaleBy(-.07f, -.07f, 0.08f)
+    public static void applySqueezeEffect(Actor actor) {
+        actor.addAction(Actions.sequence(
+            Actions.scaleTo(0.9f, 0.9f, 0.05f, Interpolation.smooth),
+            Actions.scaleTo(1.05f, 1.05f, 0.08f, Interpolation.smooth),
+            Actions.scaleTo(1f, 1f, 0.05f, Interpolation.smooth)
         ));
     }
 }

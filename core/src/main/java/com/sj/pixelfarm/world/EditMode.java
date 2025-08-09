@@ -35,6 +35,7 @@ public class EditMode implements Disposable {
         this.fields = fields;
 
         actionBar = createActionBar(bar -> {
+            Label level = createLabel("", LabelStyles.X18, null, null);
             HorizontalGroup priceLabel = new HorizontalGroup().space(5);
             priceLabel.addActor(createImage("ui/icons/coin"));
             priceLabel.addActor(createLabel("", LabelStyles.X20, null, null));
@@ -43,12 +44,15 @@ public class EditMode implements Disposable {
                 if (Vars.state.money >= selectedField.price) {
                     Vars.state.money -= selectedField.price;
                     Events.fire(new EventType.UpdateOverlayEvent());
-                    selectedField.unlock();
                     Vars.state.unlockedFields.add(selectedField);
+                    selectedField.unlock();
+                } else {
+                    Events.fire(new EventType.ShowErrorMessage("Not enough money!"));
                 }
             });
 
             bar.space(10);
+            bar.addState(2, level);
             bar.addState(1, priceLabel, buy);
             bar.setState(1);
         });
@@ -63,9 +67,18 @@ public class EditMode implements Disposable {
 
         if (editMode && selectedField != null && !selectedField.isUnlocked && selectedField.contains(pos)) {
             selectedField.isSelected = true;
-            HorizontalGroup g = actionBar.getElement(1, 0, HorizontalGroup.class);
-            Label l = (Label) g.getChild(1);
-            l.setText(selectedField.price);
+
+            if (Vars.state.level >= selectedField.unlockLevel) {
+                HorizontalGroup g = actionBar.getElement(1, 0, HorizontalGroup.class);
+                Label l = (Label) g.getChild(1);
+                l.setText(selectedField.price);
+                actionBar.setState(1);
+            } else {
+                Label level = actionBar.getElement(2, 0, Label.class);
+                level.setText("Unlocked at level: " + selectedField.unlockLevel);
+                actionBar.setState(2);
+            }
+
             Events.fire(new EventType.ShowActionBarEvent(actionBar, world.viewport.project(selectedField.getCenter())));
         }
     }

@@ -22,7 +22,7 @@ public class UIEventProcessor {
         });
 
         Events.on(EventType.ShowActionBarEvent.class, e -> {
-            e.bar().setPosition(e.pos().x, e.pos().y);
+            e.bar().setPosition(e.pos().x, e.pos().y + 50);
             stage.addActor(e.bar());
             UIEffects.applyBounceEffect(e.bar());
         });

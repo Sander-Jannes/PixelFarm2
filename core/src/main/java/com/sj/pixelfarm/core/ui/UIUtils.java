@@ -29,6 +29,7 @@ public final class UIUtils {
 
     public static Button createButton(ButtonStyles styleName, Consumer<Button> action) {
         Button button = new Button(Assets.getSkin("common"), styleName.getName());
+        button.setOrigin(Align.center);
         Events.addClickListener(button, () -> action.accept(button));
         return button;
     }
@@ -82,12 +83,12 @@ public final class UIUtils {
         return l;
     }
 
-    public static void createPopupObject(Stage stage, Vector2 mouse, String text, LabelStyles styleName, Color color, UIEffect effectApplier) {
+    public static void createPopupObject(Stage stage, Vector2 mouse, String text, LabelStyles styleName, @Null Color color, @Null UIEffect effectApplier) {
         Label message = createLabel(text, styleName, color, null);
         message.setName(Entities.ERROR_MESSAGE);
         message.setBounds(mouse.x - message.getWidth() / 2f, mouse.y + 10, message.getWidth() / 2f, message.getHeight() / 2f);
         stage.addActor(message);
-        effectApplier.apply(message);
+        if (effectApplier != null) effectApplier.apply(message);
     }
 
     public static void createErrorMessage(Stage stage, Vector2 mouse, String text) {

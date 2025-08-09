@@ -18,4 +18,5 @@ public class Entities {
     public static final String ORDER_DETAILS = "orderDetails";
     public static final String S0UP_MAKER = "soup_maker";
     public static final String ERROR_MESSAGE = "error_message";
+    public static final String FIELD_GROUP_LEVEL = "field_group_level";
 }

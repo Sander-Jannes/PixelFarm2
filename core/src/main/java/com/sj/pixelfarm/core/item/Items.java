@@ -90,7 +90,7 @@ public class Items {
             );
         }};
 
-        lettuce_seeds = new Item(ItemType.LETTUCE_SEEDS, 1, 1) {{
+        lettuce_seeds = new Item(ItemType.LETTUCE_SEEDS, 1, lettuce.unlockLevel) {{
             description = "";
             groups.add(Group.SEEDS);
             interactionMap.put(
@@ -100,7 +100,7 @@ public class Items {
             );
         }};
 
-        carrot_seeds = new Item(ItemType.CARROT_SEEDS, 1, 1) {{
+        carrot_seeds = new Item(ItemType.CARROT_SEEDS, 1, carrot.unlockLevel) {{
             description = "";
             groups.add(Group.SEEDS);
             interactionMap.put(
@@ -110,7 +110,7 @@ public class Items {
             );
         }};
 
-        tomato_seeds = new Item(ItemType.TOMATO_SEEDS, 1, 1) {{
+        tomato_seeds = new Item(ItemType.TOMATO_SEEDS, 1, tomato.unlockLevel) {{
             description = "";
             groups.add(Group.SEEDS);
             interactionMap.put(
@@ -120,7 +120,7 @@ public class Items {
             );
         }};
 
-        cauliflower_seeds = new Item(ItemType.CAULIFLOWER_SEEDS, 1, 1) {{
+        cauliflower_seeds = new Item(ItemType.CAULIFLOWER_SEEDS, 1, cauliflower.unlockLevel) {{
             description = "";
             groups.add(Group.SEEDS);
             interactionMap.put(
@@ -130,7 +130,7 @@ public class Items {
             );
         }};
 
-        broccoli_seeds = new Item(ItemType.BROCCOLI_SEEDS, 1, 1) {{
+        broccoli_seeds = new Item(ItemType.BROCCOLI_SEEDS, 1, broccoli.unlockLevel) {{
             description = "";
             groups.add(Group.SEEDS);
             interactionMap.put(
@@ -140,7 +140,7 @@ public class Items {
             );
         }};
 
-        pumpkin_seeds = new Item(ItemType.PUMPKIN_SEEDS, 1, 1) {{
+        pumpkin_seeds = new Item(ItemType.PUMPKIN_SEEDS, 1, pumpkin.unlockLevel) {{
             description = "";
             groups.add(Group.SEEDS);
             interactionMap.put(
@@ -150,7 +150,7 @@ public class Items {
             );
         }};
 
-        cucumber_seeds = new Item(ItemType.CUCUMBER_SEEDS, 1, 1) {{
+        cucumber_seeds = new Item(ItemType.CUCUMBER_SEEDS, 1, cucumber.unlockLevel) {{
             description = "";
             groups.add(Group.SEEDS);
             interactionMap.put(
@@ -160,7 +160,7 @@ public class Items {
             );
         }};
 
-        onion_seeds = new Item(ItemType.ONION_SEEDS, 1, 1) {{
+        onion_seeds = new Item(ItemType.ONION_SEEDS, 1, onion.unlockLevel) {{
             description = "";
             groups.add(Group.SEEDS);
             interactionMap.put(
@@ -170,7 +170,7 @@ public class Items {
             );
         }};
 
-        eggplant_seeds = new Item(ItemType.EGGPLANT_SEEDS, 1, 1) {{
+        eggplant_seeds = new Item(ItemType.EGGPLANT_SEEDS, 1, eggplant.unlockLevel) {{
             description = "";
             groups.add(Group.SEEDS);
             interactionMap.put(

@@ -1,4 +1,4 @@
-package com.sj.pixelfarm.core.ui.modals;
+package com.sj.pixelfarm.ui.modals;
 
 import com.badlogic.gdx.scenes.scene2d.ui.HorizontalGroup;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;

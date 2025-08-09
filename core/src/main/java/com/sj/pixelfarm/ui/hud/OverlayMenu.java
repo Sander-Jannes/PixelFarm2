@@ -7,6 +7,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.sj.pixelfarm.core.Entities;
 import com.sj.pixelfarm.core.input.events.EventType;
 import com.sj.pixelfarm.core.input.events.Events;
+import com.sj.pixelfarm.core.ui.effects.UIEffects;
 import com.sj.pixelfarm.core.ui.styles.ButtonStyles;
 
 import static com.sj.pixelfarm.core.ui.UIUtils.*;
