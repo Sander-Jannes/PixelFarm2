@@ -49,7 +49,7 @@ public class GameScreen implements Screen {
         grid.setObjToSlot(2, PoolManager.obtain(Items.eggplant_seeds, 64, Item.Quality.NONE));
         grid.setObjToSlot(3, PoolManager.obtain(Items.onion_seeds, 64, Item.Quality.NONE));
         grid.setObjToSlot(4, PoolManager.obtain(Items.cucumber_seeds, 64, Item.Quality.NONE));
-        grid.setObjToSlot(5, PoolManager.obtain(Items.broccoli_seeds, 64, Item.Quality.NONE));
+        grid.setObjToSlot(5, PoolManager.obtain(Items.watering_can, 64, Item.Quality.NONE));
         grid.setObjToSlot(6, PoolManager.obtain(Items.scythe, 1, Item.Quality.NONE));
 
         CropInfoPopup popup = new CropInfoPopup(20, Gdx.graphics.getHeight() - 255 - 20, 200);

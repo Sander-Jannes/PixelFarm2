@@ -11,6 +11,7 @@ import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.maps.tiled.renderers.IsometricTiledMapRenderer;
 import com.badlogic.gdx.math.*;
 import com.badlogic.gdx.utils.Disposable;
+import com.badlogic.gdx.utils.Timer;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
 import com.sj.pixelfarm.*;
 import com.sj.pixelfarm.core.Entities;
@@ -28,9 +29,6 @@ import com.sj.pixelfarm.core.mem.Assets;
 import com.sj.pixelfarm.core.mem.PoolManager;
 import com.sj.pixelfarm.core.ui.effects.UIEffects;
 import com.sj.pixelfarm.core.utils.TileHelper;
-import jdk.jfr.Event;
-
-import java.util.ArrayList;
 
 
 public class World implements Disposable {
@@ -46,6 +44,7 @@ public class World implements Disposable {
     /** How far you can zoom in, 0 is close to the map  */
     private static final float MIN_ZOOM = 0.5f;
     private static final int[] ground = new int[] { Layers.GROUND };
+    private static final int[] animation = new int[] { Layers.ANIMATION };
     private static final int[] edit = new int[] { Layers.EDIT};
     private static final int[] decoration = new int[] { Layers.DECORATION };
     private static final TextureRegion cursorImage = Assets.getAtlasTexture("world/cursor");
@@ -91,6 +90,7 @@ public class World implements Disposable {
         renderer.setView(camera);
 
         renderer.render(ground);
+        renderer.render(animation);
 
         if (editMode.isActive()) {
             renderer.render(edit);
@@ -195,6 +195,23 @@ public class World implements Disposable {
                         }
                         break;
                     }
+
+                    case USE:
+                        if (worldMap.getTile(pos,Layers.ANIMATION) == null) {
+                            ActionProps.Use props = (ActionProps.Use) actionInfo.props();
+                            t.updateValueByN("water", props.amount(), 0, 100);
+                            worldMap.setAnimatedCell(pos, Layers.ANIMATION, TileType.WATER_ANIMATION);
+                            itemStack.addAmount(-1);
+
+                            Timer.schedule(new Timer.Task() {
+                                @Override
+                                public void run() {
+                                    worldMap.removeCell(pos, Layers.ANIMATION);
+                                }
+                            }, 2f);
+                        }
+
+                        break;
                 }
             }
         });
@@ -239,9 +256,10 @@ public class World implements Disposable {
 
     public static class Layers {
         public static final int GROUND = 0;
-        public static final int EDIT = 1;
-        public static final int DECORATION = 2;
-        public static final int BUY = 3;
-        public static final int CAR = 4;
+        public static final int ANIMATION = 1;
+        public static final int EDIT = 2;
+        public static final int DECORATION = 3;
+        public static final int BUY = 4;
+        public static final int CAR = 5;
     }
 }

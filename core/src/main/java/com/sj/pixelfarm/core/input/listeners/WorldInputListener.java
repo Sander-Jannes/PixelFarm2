@@ -24,6 +24,8 @@ public class WorldInputListener extends InputAdapter {
     private final World world;
     private final Stage stage;
 
+    private GridPoint2 hitPosition = new GridPoint2(0, 0);
+
     public WorldInputListener(World world, Stage stage) {
         this.world = world;
         this.stage = stage;
@@ -32,22 +34,14 @@ public class WorldInputListener extends InputAdapter {
     @Override
     public boolean touchDown(int x, int y, int pointer, int button) {
         tmpVector.set(x, y);
+
         if (button == Input.Buttons.LEFT) {
             isLeftMousePressed = true;
             world.lastX = x;
             world.lastY = y;
             world.dragging = true;
-
-            GridPoint2 gridPosition = WorldUtils.getGridPosFromMouse(world.viewport);
-            TiledMapTile tile = world.worldMap.getTile(gridPosition, World.Layers.DECORATION);
-
             world.editMode.showActionBar(tmpVector);
 
-            TileHelper.processTile(tile, t -> {
-                if (t.equals("group", "crops")) {
-                    Events.fire(new EventType.ShowCropInfoPopupEvent(tile));
-                }
-            });
             return true;
 
         } else if (button == Input.Buttons.RIGHT) {
@@ -85,6 +79,22 @@ public class WorldInputListener extends InputAdapter {
         ItemStackSlot activeSlot = stage.getRoot().findActor(Entities.ACTIVE_SLOT);
         if (isRightMousePressed && activeSlot != null && !activeSlot.isEmpty()) {
             world.dropItem(activeSlot, Interactions.COMBO_HOLD);
+        }
+
+        GridPoint2 gridPosition = WorldUtils.getGridPosFromMouse(world.viewport);
+        TiledMapTile tile = world.worldMap.getTile(gridPosition, World.Layers.DECORATION);
+        TileHelper.Tile ht = TileHelper.getHelperTile(tile);
+
+        if (!hitPosition.equals(gridPosition)) {
+
+            if (ht.equals("group", "crops")) {
+                Events.fire(new EventType.ShowCropInfoPopupEvent(tile));
+                hitPosition = gridPosition.cpy();
+
+            } else if (hitPosition.x != 0){
+                hitPosition.set(0, 0);
+                Events.fire(new EventType.HideCropInfoPopupEvent());
+            }
         }
     }
 }

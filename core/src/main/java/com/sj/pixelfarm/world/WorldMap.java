@@ -5,6 +5,7 @@ import com.badlogic.gdx.maps.MapObject;
 import com.badlogic.gdx.maps.MapObjects;
 import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.badlogic.gdx.maps.tiled.*;
+import com.badlogic.gdx.maps.tiled.tiles.AnimatedTiledMapTile;
 import com.badlogic.gdx.maps.tiled.tiles.StaticTiledMapTile;
 import com.badlogic.gdx.math.GridPoint2;
 import com.badlogic.gdx.math.Polygon;
@@ -77,7 +78,7 @@ public final class WorldMap implements Disposable {
         TiledMapTileLayer.Cell cell = getCell(pos, z);
 
         /* +1 for the next level */
-        StaticTiledMapTile newTile = getNewTile(TileSetNames.CROPS, (tile.getId() - offsets.get(TileSetNames.CROPS)) + 1);
+        StaticTiledMapTile newTile = getNewTile(TileSetNames.CROPS, (tile.getId() - offsets.get(TileSetNames.CROPS)) + 1, StaticTiledMapTile.class);
         TileHelper.processTile(newTile, t -> t.transferProps(tile));
         cell.setTile(newTile);
     }
@@ -100,28 +101,38 @@ public final class WorldMap implements Disposable {
         if (cell == null) {
             cell = createCell(pos, z);
         }
-        StaticTiledMapTile newTile = getNewTile(tile);
+        StaticTiledMapTile newTile = new StaticTiledMapTile(getNewTile(tile, StaticTiledMapTile.class));
         cell.setTile(newTile);
         return cell;
     }
 
-    private StaticTiledMapTile getNewTile(TileType tile) {
-        return getNewTile(tile.tilesetName, tile.id);
+    public TiledMapTileLayer.Cell setAnimatedCell(GridPoint2 pos, int z, TileType tile) {
+        TiledMapTileLayer.Cell cell = getCell(pos, z);
+        if (cell == null) {
+            cell = createCell(pos, z);
+        }
+        AnimatedTiledMapTile newTile = getNewTile(tile, AnimatedTiledMapTile.class);
+        cell.setTile(newTile);
+        return cell;
     }
 
-    private StaticTiledMapTile getNewTile(String tilesetName, int id) {
+    private <T> T getNewTile(TileType tile, Class<T> clazz) {
+        return getNewTile(tile.tilesetName, tile.id, clazz);
+    }
+
+    private <T> T getNewTile(String tilesetName, int id, Class<T> clazz) {
         TiledMapTileSet tileSet = map.getTileSets().getTileSet(tilesetName);
 
         if (tileSet == null) {
             throw new RuntimeException("No such tileset: " + tilesetName);
         }
 
-        StaticTiledMapTile newTile = (StaticTiledMapTile) tileSet.getTile(id + offsets.get(tilesetName));
+        T newTile = clazz.cast(tileSet.getTile(id + offsets.get(tilesetName)));
 
         if (newTile == null) {
             throw new RuntimeException("No such tile with id " + (id + offsets.get(tilesetName)));
         }
-        return new StaticTiledMapTile(newTile);
+        return newTile;
     }
 
     private TiledMapTileLayer.Cell createCell(GridPoint2 pos, int z) {

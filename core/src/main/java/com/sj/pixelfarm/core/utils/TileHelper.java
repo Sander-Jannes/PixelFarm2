@@ -31,6 +31,10 @@ public final class TileHelper {
 
         public Tile() { }
 
+        public Tile(TiledMapTile tile) {
+            this.tile = tile;
+        }
+
         public void put(String key, Object value) {
             tile.getProperties().put(key, value);
         }

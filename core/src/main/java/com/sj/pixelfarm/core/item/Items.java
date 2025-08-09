@@ -15,7 +15,7 @@ public class Items {
         lettuce, carrot, tomato, cauliflower, broccoli, pumpkin, cucumber, onion, eggplant,
         lettuce_seeds, carrot_seeds, tomato_seeds, cauliflower_seeds, broccoli_seeds, pumpkin_seeds, cucumber_seeds, onion_seeds, eggplant_seeds,
         carrot_soup, tomato_soup, cauliflower_soup, broccoli_soup, pumpkin_soup,
-        scythe, shovel, rake;
+        scythe, watering_can, shovel, rake;
 
     public static void load() {
         lettuce = new Item(ItemType.LETTUCE, 1) {{
@@ -167,7 +167,7 @@ public class Items {
             interactionMap.put(
                 Interactions.COMBO_HOLD,
                 new ActionInfo(Actions.PLANT, ActionTarget.FIELDS,
-                    new ActionProps.Plant(TileType.EGGPLANT, 2f, 99f, 0, 0, 4, Items.eggplant))
+                    new ActionProps.Plant(TileType.EGGPLANT, 60f, 99f, 2, 0, 4, Items.eggplant))
             );
         }};
 
@@ -196,6 +196,14 @@ public class Items {
             interactionMap.put(
                 Interactions.LEFT_HOLD,
                 new ActionInfo(Actions.HARVEST, ActionTarget.CROPS, null)
+            );
+        }};
+
+        watering_can = new Item(ItemType.WATERING_CAN, 1) {{
+            description = "";
+            interactionMap.put(
+                Interactions.COMBO_HOLD,
+                new ActionInfo(Actions.USE, ActionTarget.CROPS, new ActionProps.Use(12.5f + 0.5f))
             );
         }};
 

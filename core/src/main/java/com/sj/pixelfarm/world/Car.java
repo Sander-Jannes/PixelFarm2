@@ -13,8 +13,8 @@ import com.sj.pixelfarm.core.mem.PoolManager;
 public class Car {
 
     private static final TextureRegion car = Assets.getAtlasTexture("world/car");
-    private float time = 0f;
     private final ItemStack order = PoolManager.obtain(Items.cucumber, 4, Item.Quality.GOOD);
+    private float time = 0f;
     private final Path path;
     private boolean drive = false;
 

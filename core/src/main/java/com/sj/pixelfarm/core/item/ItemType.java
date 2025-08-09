@@ -31,10 +31,10 @@ public enum ItemType {
     PUMPKIN_SOUP(24, "pumpkin soup"),
 
     WATERING_CAN(30, "watering can"),
+    SCYTHE(34, "scythe"),
     FERTILIZER(31, "fertilizer"),
     BOX(32, "box"),
     CLOSED_BOX(33, "closed box"),
-    SCYTHE(34, "scythe"),
     ACID(35, "acid"),
 
     SHOVEL(100, "shovel"),

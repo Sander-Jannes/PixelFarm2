@@ -17,6 +17,7 @@ import com.sj.pixelfarm.core.ui.effects.UIEffect;
 import com.sj.pixelfarm.core.ui.effects.UIEffects;
 import com.sj.pixelfarm.core.ui.styles.ButtonStyles;
 import com.sj.pixelfarm.core.ui.styles.LabelStyles;
+import com.sj.pixelfarm.core.ui.styles.UIColors;
 
 import java.util.function.Consumer;
 
@@ -87,7 +88,7 @@ public final class UIUtils {
     }
 
     public static void createErrorMessage(Stage stage, Vector2 mouse, String text) {
-        createPopupObject(stage, mouse, text, LabelStyles.X20, Color.RED, UIEffects::applyErrorMessageEffect);
+        createPopupObject(stage, mouse, text, LabelStyles.X20, UIColors.error, UIEffects::applyErrorMessageEffect);
     }
 
     public static TextButton createTextButton(String text, LabelStyles styleName, Consumer<TextButton> action) {

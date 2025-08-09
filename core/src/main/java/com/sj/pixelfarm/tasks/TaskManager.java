@@ -14,7 +14,7 @@ import com.sj.pixelfarm.world.World;
 
 
 public class TaskManager {
-    public static final float TICK_RATE = 1f / com.sj.pixelfarm.Settings.FPS;
+    public static final float TICK_RATE = 1f / Settings.FPS;
     private static final Timer timer = new Timer();
 
     public static void initCropGrowTask(World world) {

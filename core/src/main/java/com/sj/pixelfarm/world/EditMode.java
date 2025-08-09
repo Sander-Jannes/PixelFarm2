@@ -96,13 +96,13 @@ public class EditMode implements Disposable {
 
             if (field.contains(world.getMouse())) {
                 selectedField = field;
-                shapeRenderer.setColor(UIColors.selectColor);
+                shapeRenderer.setColor(UIColors.hightlightColor);
                 shapeRenderer.polygon(selectedField.getVertices());
             }
         }
 
         if (selectedField != null && selectedField.isSelected) {
-            shapeRenderer.setColor(UIColors.selectColor);
+            shapeRenderer.setColor(UIColors.hightlightColor);
             shapeRenderer.polygon(selectedField.getVertices());
         }
 

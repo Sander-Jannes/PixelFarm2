@@ -11,4 +11,6 @@ public interface ActionProps {
     record Plant(TileType crop, float growTimePerLevel, float timeTillRotten, int waterLevel, int fertilizerLevel, int harvestQuantity, Item item) implements ActionProps { }
 
     record Sell(int money, int xp) implements ActionProps { }
+
+    record Use(float amount) implements ActionProps { }
 }

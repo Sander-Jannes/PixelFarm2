@@ -447,17 +447,16 @@
    <property name="selectable" type="bool" value="true"/>
   </properties>
   <animation>
-   <frame tileid="50" duration="2000"/>
-   <frame tileid="51" duration="150"/>
-   <frame tileid="52" duration="150"/>
-   <frame tileid="53" duration="100"/>
-   <frame tileid="54" duration="150"/>
-   <frame tileid="55" duration="150"/>
-   <frame tileid="54" duration="150"/>
-   <frame tileid="53" duration="150"/>
-   <frame tileid="52" duration="150"/>
-   <frame tileid="51" duration="150"/>
-   <frame tileid="50" duration="2000"/>
+   <frame tileid="60" duration="100"/>
+   <frame tileid="61" duration="100"/>
+   <frame tileid="62" duration="100"/>
+   <frame tileid="63" duration="100"/>
+   <frame tileid="64" duration="100"/>
+   <frame tileid="65" duration="100"/>
+   <frame tileid="66" duration="100"/>
+   <frame tileid="67" duration="100"/>
+   <frame tileid="68" duration="100"/>
+   <frame tileid="69" duration="100"/>
   </animation>
  </tile>
  <tile id="61">

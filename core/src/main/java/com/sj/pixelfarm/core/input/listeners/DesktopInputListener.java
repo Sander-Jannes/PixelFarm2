@@ -21,9 +21,6 @@ public class DesktopInputListener extends InputAdapter {
         // Remove the actions
         Events.fire(new EventType.RemoveActionBar(new Vector2(screenX, screenY)));
 
-        // Hide the crop info
-        Events.fire(new EventType.HideCropInfoPopupEvent());
-
         return false;
     }
 }
