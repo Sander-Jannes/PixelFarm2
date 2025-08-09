@@ -1,4 +1,4 @@
-package com.sj.pixelfarm.core.ui.models;
+package com.sj.pixelfarm.core.ui.modals;
 
 
 public class TabModal<T> extends Modal {

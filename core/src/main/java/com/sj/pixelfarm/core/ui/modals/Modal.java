@@ -1,4 +1,4 @@
-package com.sj.pixelfarm.core.ui.models;
+package com.sj.pixelfarm.core.ui.modals;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;

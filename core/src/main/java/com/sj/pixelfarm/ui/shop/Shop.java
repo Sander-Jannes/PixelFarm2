@@ -9,7 +9,7 @@ import com.sj.pixelfarm.core.input.events.Events;
 import com.sj.pixelfarm.core.item.Item;
 import com.sj.pixelfarm.core.item.Items;
 import com.sj.pixelfarm.core.ui.effects.UIEffects;
-import com.sj.pixelfarm.core.ui.models.TabModal;
+import com.sj.pixelfarm.core.ui.modals.TabModal;
 import static com.sj.pixelfarm.core.ui.UIUtils.*;
 
 
