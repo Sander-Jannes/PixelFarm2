@@ -152,16 +152,6 @@ public class World implements Disposable {
                         break;
                     }
 
-                    case MAP_CHANGE: {
-                        if (worldMap.getTile(pos, Layers.DECORATION) != null) return;
-
-                        ActionProps.MapChange props = (ActionProps.MapChange) actionInfo.props();
-                        worldMap.setCell(pos, Layers.GROUND, props.tile());
-                        Events.fire(new EventType.ShowPopupObject(itemStack.item.image, "-1", UIEffects::applyFadeDownEffect));
-                        itemStack.addAmount(-1);
-                        break;
-                    }
-
                     case PLANT: {
                         if (worldMap.getTile(pos, Layers.DECORATION) != null) return;
 
@@ -210,7 +200,6 @@ public class World implements Disposable {
                                 }
                             }, 2f);
                         }
-
                         break;
                 }
             }

@@ -1,4 +1,4 @@
-package com.sj.pixelfarm.core.ui.hud;
+package com.sj.pixelfarm.ui.hud;
 
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.sj.pixelfarm.core.Vars;

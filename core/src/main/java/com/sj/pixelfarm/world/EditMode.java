@@ -11,7 +11,7 @@ import com.badlogic.gdx.utils.Null;
 import com.sj.pixelfarm.core.Vars;
 import com.sj.pixelfarm.core.input.events.EventType;
 import com.sj.pixelfarm.core.input.events.Events;
-import com.sj.pixelfarm.core.ui.actionbar.ActionBar;
+import com.sj.pixelfarm.ui.actionbar.ActionBar;
 import com.sj.pixelfarm.core.ui.styles.ButtonStyles;
 import com.sj.pixelfarm.core.ui.styles.LabelStyles;
 import com.sj.pixelfarm.core.ui.styles.UIColors;

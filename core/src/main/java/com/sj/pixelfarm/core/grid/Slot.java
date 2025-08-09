@@ -35,11 +35,6 @@ public class Slot<T extends SlotObject> extends Container<T> {
 
     public int getSlotType() { return slotType; }
 
-    public Vector2 getScreenPosition() {
-        tmpVec.set(0, 0);
-        return localToAscendantCoordinates(null, tmpVec);
-    }
-
     public void setObj(T obj) {
         if (this.obj != null) {
             removeActor(this.obj);
@@ -79,6 +74,11 @@ public class Slot<T extends SlotObject> extends Container<T> {
             if (hasPool) Pools.free(obj);
             obj = null;
         }
+    }
+
+    public void reset() {
+        detachObj();
+        number = -1;
     }
 
     public boolean equals(Slot<T> other) {

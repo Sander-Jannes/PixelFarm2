@@ -7,7 +7,7 @@ import com.sj.pixelfarm.core.input.Interactions;
 import com.sj.pixelfarm.core.itemgrid.ItemGrid;
 import com.sj.pixelfarm.core.itemgrid.ItemStack;
 import com.sj.pixelfarm.core.itemgrid.ItemStackSlot;
-import com.sj.pixelfarm.core.ui.actionbar.ActionBar;
+import com.sj.pixelfarm.ui.actionbar.ActionBar;
 import com.sj.pixelfarm.core.ui.effects.UIEffect;
 
 
@@ -40,4 +40,10 @@ public class EventType {
     public record ShowErrorMessage(String text) { }
 
     public record StartCar() { }
+
+    public record UnlockCardEvent() { }
+
+    public record HideCurrentModalEvent() { }
+
+    public record ShowModalEvent(String name) { }
 }

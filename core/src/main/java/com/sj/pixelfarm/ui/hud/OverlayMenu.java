@@ -1,4 +1,4 @@
-package com.sj.pixelfarm.core.ui.hud;
+package com.sj.pixelfarm.ui.hud;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.scenes.scene2d.Group;
@@ -35,7 +35,12 @@ public class OverlayMenu extends Group {
             Events.fire(new EventType.ToggleEditMode());
         });
 
+        Button shopButton = createButton(ButtonStyles.INVENTORY_BUTTON, button -> {
+            Events.fire(new EventType.ShowModalEvent(Entities.SHOP));
+        });
+
         buttonParent.addActor(inventoryButton);
+        buttonParent.addActor(shopButton);
         row.addActor(buttonParent);
 
         row.addActor(hud);

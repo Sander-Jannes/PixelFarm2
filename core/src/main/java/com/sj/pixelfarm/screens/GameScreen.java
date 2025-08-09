@@ -18,9 +18,10 @@ import com.sj.pixelfarm.core.item.Items;
 import com.sj.pixelfarm.core.itemgrid.ItemGrid;
 import com.sj.pixelfarm.core.mem.Assets;
 import com.sj.pixelfarm.core.mem.PoolManager;
-import com.sj.pixelfarm.core.ui.hud.OverlayMenu;
+import com.sj.pixelfarm.ui.hud.OverlayMenu;
 import com.sj.pixelfarm.core.ui.UIEventProcessor;
 import com.sj.pixelfarm.tasks.TaskManager;
+import com.sj.pixelfarm.ui.shop.Shop;
 import com.sj.pixelfarm.world.World;
 
 
@@ -54,9 +55,11 @@ public class GameScreen implements Screen {
 
         CropInfoPopup popup = new CropInfoPopup(20, Gdx.graphics.getHeight() - 255 - 20, 200);
         OverlayMenu overlayMenu = new OverlayMenu();
+        Shop shop = new Shop();
 
         stage.addActor(grid);
         stage.addActor(popup);
+        stage.addActor(shop);
         stage.addActor(overlayMenu);
         main.multiplexer.addProcessor(stage);
         main.multiplexer.addProcessor(worldInputListener);

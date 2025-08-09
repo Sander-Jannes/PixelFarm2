@@ -32,7 +32,6 @@ public class FlipCard extends Card {
 
     private void flipSide() {
         boolean showingFront = front.isVisible();
-
         front.setVisible(!showingFront);
         back.setVisible(showingFront);
     }

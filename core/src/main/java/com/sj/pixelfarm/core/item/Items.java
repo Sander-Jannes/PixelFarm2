@@ -15,10 +15,10 @@ public class Items {
         lettuce, carrot, tomato, cauliflower, broccoli, pumpkin, cucumber, onion, eggplant,
         lettuce_seeds, carrot_seeds, tomato_seeds, cauliflower_seeds, broccoli_seeds, pumpkin_seeds, cucumber_seeds, onion_seeds, eggplant_seeds,
         carrot_soup, tomato_soup, cauliflower_soup, broccoli_soup, pumpkin_soup,
-        scythe, watering_can, shovel, rake;
+        scythe, watering_can, fertilizer;
 
     public static void load() {
-        lettuce = new Item(ItemType.LETTUCE, 1) {{
+        lettuce = new Item(ItemType.LETTUCE, 1, 1) {{
             description = "";
             interactionMap.put(
                 Interactions.LEFT_RELEASE,
@@ -26,7 +26,7 @@ public class Items {
             );
         }};
 
-        carrot = new Item(ItemType.CARROT, 1) {{
+        carrot = new Item(ItemType.CARROT, 1, 1) {{
             description = "";
             interactionMap.put(
                 Interactions.LEFT_RELEASE,
@@ -34,7 +34,7 @@ public class Items {
             );
         }};
 
-        tomato = new Item(ItemType.TOMATO, 1) {{
+        tomato = new Item(ItemType.TOMATO, 1, 1) {{
             description = "";
             interactionMap.put(
                 Interactions.LEFT_RELEASE,
@@ -42,7 +42,7 @@ public class Items {
             );
         }};
 
-        cauliflower = new Item(ItemType.CAULIFLOWER, 1) {{
+        cauliflower = new Item(ItemType.CAULIFLOWER, 1, 1) {{
             description = "";
             interactionMap.put(
                 Interactions.LEFT_RELEASE,
@@ -50,7 +50,7 @@ public class Items {
             );
         }};
 
-        broccoli = new Item(ItemType.BROCCOLI, 1) {{
+        broccoli = new Item(ItemType.BROCCOLI, 1, 1) {{
             description = "";
             interactionMap.put(
                 Interactions.LEFT_RELEASE,
@@ -58,7 +58,7 @@ public class Items {
             );
         }};
 
-        pumpkin = new Item(ItemType.PUMPKIN, 1) {{
+        pumpkin = new Item(ItemType.PUMPKIN, 1, 1) {{
             description = "";
             interactionMap.put(
                 Interactions.LEFT_RELEASE,
@@ -66,7 +66,7 @@ public class Items {
             );
         }};
 
-        cucumber = new Item(ItemType.CUCUMBER, 1){{
+        cucumber = new Item(ItemType.CUCUMBER, 1, 1){{
             description = "";
             interactionMap.put(
                 Interactions.LEFT_RELEASE,
@@ -74,7 +74,7 @@ public class Items {
             );
         }};
 
-        onion = new Item(ItemType.ONION, 1) {{
+        onion = new Item(ItemType.ONION, 1, 1) {{
             description = "";
             interactionMap.put(
                 Interactions.LEFT_RELEASE,
@@ -82,7 +82,7 @@ public class Items {
             );
         }};
 
-        eggplant = new Item(ItemType.EGGPLANT, 1) {{
+        eggplant = new Item(ItemType.EGGPLANT, 1, 1) {{
             description = "";
             interactionMap.put(
                 Interactions.LEFT_RELEASE,
@@ -90,8 +90,9 @@ public class Items {
             );
         }};
 
-        lettuce_seeds = new Item(ItemType.LETTUCE_SEEDS, 1) {{
+        lettuce_seeds = new Item(ItemType.LETTUCE_SEEDS, 1, 1) {{
             description = "";
+            groups.add(Group.SEEDS);
             interactionMap.put(
                 Interactions.COMBO_HOLD,
                 new ActionInfo(Actions.PLANT, ActionTarget.FIELDS,
@@ -99,8 +100,9 @@ public class Items {
             );
         }};
 
-        carrot_seeds = new Item(ItemType.CARROT_SEEDS, 1) {{
+        carrot_seeds = new Item(ItemType.CARROT_SEEDS, 1, 1) {{
             description = "";
+            groups.add(Group.SEEDS);
             interactionMap.put(
                 Interactions.COMBO_HOLD,
                 new ActionInfo(Actions.PLANT, ActionTarget.FIELDS,
@@ -108,8 +110,9 @@ public class Items {
             );
         }};
 
-        tomato_seeds = new Item(ItemType.TOMATO_SEEDS, 1) {{
+        tomato_seeds = new Item(ItemType.TOMATO_SEEDS, 1, 1) {{
             description = "";
+            groups.add(Group.SEEDS);
             interactionMap.put(
                 Interactions.COMBO_HOLD,
                 new ActionInfo(Actions.PLANT, ActionTarget.FIELDS,
@@ -117,8 +120,9 @@ public class Items {
             );
         }};
 
-        cauliflower_seeds = new Item(ItemType.CAULIFLOWER_SEEDS, 1) {{
+        cauliflower_seeds = new Item(ItemType.CAULIFLOWER_SEEDS, 1, 1) {{
             description = "";
+            groups.add(Group.SEEDS);
             interactionMap.put(
                 Interactions.COMBO_HOLD,
                 new ActionInfo(Actions.PLANT, ActionTarget.FIELDS,
@@ -126,8 +130,9 @@ public class Items {
             );
         }};
 
-        broccoli_seeds = new Item(ItemType.BROCCOLI_SEEDS, 1) {{
+        broccoli_seeds = new Item(ItemType.BROCCOLI_SEEDS, 1, 1) {{
             description = "";
+            groups.add(Group.SEEDS);
             interactionMap.put(
                 Interactions.COMBO_HOLD,
                 new ActionInfo(Actions.PLANT, ActionTarget.FIELDS,
@@ -135,8 +140,9 @@ public class Items {
             );
         }};
 
-        pumpkin_seeds = new Item(ItemType.PUMPKIN_SEEDS, 1) {{
+        pumpkin_seeds = new Item(ItemType.PUMPKIN_SEEDS, 1, 1) {{
             description = "";
+            groups.add(Group.SEEDS);
             interactionMap.put(
                 Interactions.COMBO_HOLD,
                 new ActionInfo(Actions.PLANT, ActionTarget.FIELDS,
@@ -144,8 +150,9 @@ public class Items {
             );
         }};
 
-        cucumber_seeds = new Item(ItemType.CUCUMBER_SEEDS, 1) {{
+        cucumber_seeds = new Item(ItemType.CUCUMBER_SEEDS, 1, 1) {{
             description = "";
+            groups.add(Group.SEEDS);
             interactionMap.put(
                 Interactions.COMBO_HOLD,
                 new ActionInfo(Actions.PLANT, ActionTarget.FIELDS,
@@ -153,8 +160,9 @@ public class Items {
             );
         }};
 
-        onion_seeds = new Item(ItemType.ONION_SEEDS, 1) {{
+        onion_seeds = new Item(ItemType.ONION_SEEDS, 1, 1) {{
             description = "";
+            groups.add(Group.SEEDS);
             interactionMap.put(
                 Interactions.COMBO_HOLD,
                 new ActionInfo(Actions.PLANT, ActionTarget.FIELDS,
@@ -162,8 +170,9 @@ public class Items {
             );
         }};
 
-        eggplant_seeds = new Item(ItemType.EGGPLANT_SEEDS, 1) {{
+        eggplant_seeds = new Item(ItemType.EGGPLANT_SEEDS, 1, 1) {{
             description = "";
+            groups.add(Group.SEEDS);
             interactionMap.put(
                 Interactions.COMBO_HOLD,
                 new ActionInfo(Actions.PLANT, ActionTarget.FIELDS,
@@ -171,27 +180,27 @@ public class Items {
             );
         }};
 
-        carrot_soup = new Item(ItemType.CARROT_SOUP, 1) {{
+        carrot_soup = new Item(ItemType.CARROT_SOUP, 1, 1) {{
             description = "";
         }};
 
-        tomato_soup = new Item(ItemType.TOMATO_SOUP, 1) {{
+        tomato_soup = new Item(ItemType.TOMATO_SOUP, 1, 1) {{
             description = "";
         }};
 
-        cauliflower_soup = new Item(ItemType.CAULIFLOWER_SOUP, 1) {{
+        cauliflower_soup = new Item(ItemType.CAULIFLOWER_SOUP, 1, 1) {{
             description = "";
         }};
 
-        broccoli_soup = new Item(ItemType.BROCCOLI_SOUP, 1) {{
+        broccoli_soup = new Item(ItemType.BROCCOLI_SOUP, 1, 1) {{
             description = "";
         }};
 
-        pumpkin_soup = new Item(ItemType.PUMPKIN_SOUP, 1) {{
+        pumpkin_soup = new Item(ItemType.PUMPKIN_SOUP, 1, 1) {{
             description = "";
         }};
 
-        scythe = new Item(ItemType.SCYTHE, 1) {{
+        scythe = new Item(ItemType.SCYTHE, 1, 1) {{
             description = "";
             interactionMap.put(
                 Interactions.LEFT_HOLD,
@@ -199,24 +208,22 @@ public class Items {
             );
         }};
 
-        watering_can = new Item(ItemType.WATERING_CAN, 1) {{
+        watering_can = new Item(ItemType.WATERING_CAN, 1, 1) {{
             description = "";
+            groups.add(Group.CARE);
             interactionMap.put(
                 Interactions.COMBO_HOLD,
                 new ActionInfo(Actions.USE, ActionTarget.CROPS, new ActionProps.Use(12.5f + 0.5f))
             );
         }};
 
-        shovel = new Item(ItemType.SHOVEL, 2) {{
+        fertilizer = new Item(ItemType.FERTILIZER, 1, 1) {{
             description = "";
+            groups.add(Group.CARE);
             interactionMap.put(
                 Interactions.COMBO_HOLD,
-                new ActionInfo(Actions.MAP_CHANGE, ActionTarget.GRASS, new ActionProps.MapChange(TileType.FIELD))
+                new ActionInfo(Actions.USE, ActionTarget.CROPS, new ActionProps.Use(12.5f + 0.5f))
             );
-        }};
-
-        rake = new Item(ItemType.RAKE, 2) {{
-            description = "";
         }};
     }
 }

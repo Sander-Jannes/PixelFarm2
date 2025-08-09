@@ -7,12 +7,15 @@ import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.*;
+import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.Null;
 import com.badlogic.gdx.utils.Scaling;
 import com.sj.pixelfarm.core.Entities;
 import com.sj.pixelfarm.core.input.events.Events;
+import com.sj.pixelfarm.core.item.Item;
 import com.sj.pixelfarm.core.mem.Assets;
-import com.sj.pixelfarm.core.ui.actionbar.ActionBar;
+import com.sj.pixelfarm.core.ui.styles.TextButtonStyles;
+import com.sj.pixelfarm.ui.actionbar.ActionBar;
 import com.sj.pixelfarm.core.ui.effects.UIEffect;
 import com.sj.pixelfarm.core.ui.effects.UIEffects;
 import com.sj.pixelfarm.core.ui.styles.ButtonStyles;
@@ -91,10 +94,20 @@ public final class UIUtils {
         createPopupObject(stage, mouse, text, LabelStyles.X20, UIColors.error, UIEffects::applyErrorMessageEffect);
     }
 
-    public static TextButton createTextButton(String text, LabelStyles styleName, Consumer<TextButton> action) {
+    public static TextButton createTextButton(String text, TextButtonStyles styleName, Consumer<TextButton> action) {
         TextButton button = new TextButton(text, Assets.getSkin("common"), styleName.getName());
         Events.addClickListener(button, () -> action.accept(button));
         return button;
+    }
+
+    public static Table createTableWithRemoveButton(Consumer<Button> action) {
+        Table table = new Table();
+        table.top();
+        Button removeButton = createButton(ButtonStyles.CARD_REMOVE_BUTTON, action);
+        table.add(removeButton).expandX().left().padLeft(20);
+        table.top().padTop(20);
+        table.row();
+        return table;
     }
 
     public static ScrollPane createScrollPane(Actor actor, Consumer<ScrollPane> action) {
@@ -110,5 +123,12 @@ public final class UIUtils {
 
     public static Image createImage(String texture) {
         return new Image(Assets.getAtlasTexture(texture));
+    }
+
+    public static Image createItemPreview(Item item, float scale) {
+        Image image = new Image(item.image);
+        image.setOrigin(Align.center);
+        image.scaleBy(scale);
+        return image;
     }
 }

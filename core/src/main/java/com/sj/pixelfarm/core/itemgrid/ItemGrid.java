@@ -9,7 +9,7 @@ import com.sj.pixelfarm.core.grid.GridLoader;
 import com.sj.pixelfarm.core.input.events.EventType;
 import com.sj.pixelfarm.core.input.events.Events;
 import com.sj.pixelfarm.core.input.listeners.GridListener;
-import com.sj.pixelfarm.core.ui.actionbar.ActionBar;
+import com.sj.pixelfarm.ui.actionbar.ActionBar;
 import com.sj.pixelfarm.core.ui.effects.UIEffects;
 import com.sj.pixelfarm.core.ui.styles.ButtonStyles;
 
@@ -103,7 +103,7 @@ public class ItemGrid extends GridBase<ItemStack, ItemStackSlot> {
     }
 
     public void removeSelectedSlot() {
-        selectedSlot.detachObj();
+        selectedSlot.reset();
         selectedSlot.remove();
     }
 

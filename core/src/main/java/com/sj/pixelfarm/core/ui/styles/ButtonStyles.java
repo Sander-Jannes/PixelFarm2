@@ -10,7 +10,9 @@ public enum ButtonStyles {
     INFO_BUTTON("info-button"),
     INVENTORY_BUTTON("inventory-button"),
     BUY_BUTTON("buy-button"),
-    CALENDAR_BUTTON("calendar-button");
+    CALENDAR_BUTTON("calendar-button"),
+    CARD_REMOVE_BUTTON("card-remove-button"),
+    ENTER_BUTTON("enter-button");
 
     private final String name;
 
