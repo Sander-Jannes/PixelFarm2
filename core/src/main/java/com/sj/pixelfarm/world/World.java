@@ -189,8 +189,8 @@ public class World implements Disposable {
                     case USE:
                         if (worldMap.getTile(pos,Layers.ANIMATION) == null) {
                             ActionProps.Use props = (ActionProps.Use) actionInfo.props();
-                            t.updateValueByN("water", props.amount(), 0, 100);
-                            worldMap.setAnimatedCell(pos, Layers.ANIMATION, TileType.WATER_ANIMATION);
+                            t.updateValueByN(props.target(), props.amount(), 0, 100);
+                            worldMap.setAnimatedCell(pos, Layers.ANIMATION, props.animation());
                             itemStack.addAmount(-1);
 
                             Timer.schedule(new Timer.Task() {

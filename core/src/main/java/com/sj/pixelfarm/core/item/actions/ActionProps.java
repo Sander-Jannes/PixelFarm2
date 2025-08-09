@@ -6,11 +6,9 @@ import com.sj.pixelfarm.world.TileType;
 
 public interface ActionProps {
 
-    record MapChange(TileType tile) implements ActionProps { }
-
     record Plant(TileType crop, float growTimePerLevel, float timeTillRotten, int waterLevel, int fertilizerLevel, int harvestQuantity, Item item) implements ActionProps { }
 
     record Sell(int money, int xp) implements ActionProps { }
 
-    record Use(float amount) implements ActionProps { }
+    record Use(String target, float amount, TileType animation) implements ActionProps { }
 }

@@ -31,7 +31,7 @@ public class OverlayMenu extends Group {
         HorizontalGroup row = new HorizontalGroup().space(15);
         VerticalGroup buttonParent = new VerticalGroup().space(10);
 
-        Button inventoryButton = createButton(ButtonStyles.INVENTORY_BUTTON, button -> {
+        Button inventoryButton = createButton(ButtonStyles.EDIT_BUTTON, button -> {
             Events.fire(new EventType.ToggleEditMode());
         });
 

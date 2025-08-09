@@ -528,6 +528,18 @@
    <property name="name" value=""/>
    <property name="selectable" type="bool" value="true"/>
   </properties>
+  <animation>
+   <frame tileid="70" duration="100"/>
+   <frame tileid="71" duration="100"/>
+   <frame tileid="72" duration="100"/>
+   <frame tileid="73" duration="100"/>
+   <frame tileid="74" duration="100"/>
+   <frame tileid="75" duration="100"/>
+   <frame tileid="76" duration="100"/>
+   <frame tileid="77" duration="100"/>
+   <frame tileid="78" duration="100"/>
+   <frame tileid="79" duration="100"/>
+  </animation>
  </tile>
  <tile id="71">
   <properties>

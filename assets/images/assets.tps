@@ -682,8 +682,8 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">atlas/ui/buttons/calendar_button.png</key>
-            <key type="filename">atlas/ui/buttons/calendar_button_clicked.png</key>
+            <key type="filename">atlas/ui/buttons/edit_button.png</key>
+            <key type="filename">atlas/ui/buttons/edit_button_clicked.png</key>
             <key type="filename">atlas/ui/buttons/info_button.png</key>
             <key type="filename">atlas/ui/buttons/info_button_clicked.png</key>
             <key type="filename">atlas/ui/buttons/inventory_button.png</key>

@@ -213,7 +213,7 @@ public class Items {
             groups.add(Group.CARE);
             interactionMap.put(
                 Interactions.COMBO_HOLD,
-                new ActionInfo(Actions.USE, ActionTarget.CROPS, new ActionProps.Use(12.5f + 0.5f))
+                new ActionInfo(Actions.USE, ActionTarget.CROPS, new ActionProps.Use("water", 12.5f + 0.5f, TileType.WATER_ANIMATION))
             );
         }};
 
@@ -222,7 +222,7 @@ public class Items {
             groups.add(Group.CARE);
             interactionMap.put(
                 Interactions.COMBO_HOLD,
-                new ActionInfo(Actions.USE, ActionTarget.CROPS, new ActionProps.Use(12.5f + 0.5f))
+                new ActionInfo(Actions.USE, ActionTarget.CROPS, new ActionProps.Use("fertilizer", 12.5f + 0.5f, TileType.FERTILIZER_ANIMATION))
             );
         }};
     }

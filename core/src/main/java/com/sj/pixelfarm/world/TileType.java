@@ -5,7 +5,7 @@ public enum TileType {
     FIELD("tiles", 3),
     ROTTEN_FIELD("tiles", 2),
     WATER_ANIMATION("tiles", 61),
-
+    FERTILIZER_ANIMATION("tiles", 71),
     LETTUCE("crops", 1),
     CARROT("crops", 5),
     TOMATO("crops", 9),

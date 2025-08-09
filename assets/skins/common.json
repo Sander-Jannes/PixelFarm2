@@ -164,10 +164,10 @@
       "down": "ui/buttons/inventory_button_clicked",
       "over": "ui/buttons/inventory_button_clicked"
     },
-    "calendar-button": {
-      "up": "ui/buttons/calendar_button",
-      "down": "ui/buttons/calendar_button_clicked",
-      "over": "ui/buttons/calendar_button_clicked"
+    "edit-button": {
+      "up": "ui/buttons/edit_button",
+      "down": "ui/buttons/edit_button_clicked",
+      "over": "ui/buttons/edit_button_clicked"
     },
     "settings-button": {
       "up": "ui/buttons/settings_button",

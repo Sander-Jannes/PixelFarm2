@@ -297,20 +297,6 @@ ui/buttons/buy_clicked
   orig: 48, 48
   offset: 0, 0
   index: -1
-ui/buttons/calendar_button
-  rotate: false
-  xy: 1500, 23
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: -1
-ui/buttons/calendar_button_clicked
-  rotate: false
-  xy: 1564, 23
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: -1
 ui/buttons/close_box
   rotate: false
   xy: 820, 23
@@ -323,6 +309,20 @@ ui/buttons/close_box_clicked
   xy: 868, 23
   size: 48, 48
   orig: 48, 48
+  offset: 0, 0
+  index: -1
+ui/buttons/edit_button
+  rotate: false
+  xy: 1500, 23
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+ui/buttons/edit_button_clicked
+  rotate: false
+  xy: 1564, 23
+  size: 64, 64
+  orig: 64, 64
   offset: 0, 0
   index: -1
 ui/buttons/empty_button
