@@ -75,18 +75,18 @@ public abstract class GridBase<T extends SlotObject, U extends Slot<T>> extends 
         return null;
     }
 
-    public @Null U getFreeSlot(int slotType) {
+    public @Null U getFreeSlot(T obj) {
         for (U slot : slots) {
-            if (slot.isEmpty() && slot.getSlotType() == slotType) {
+            if (slot.isEmpty() && slot.getSlotType() == obj.getSlotType()) {
                 return slot;
             }
         }
         return null;
     }
 
-    public @Null U getFreeSlot(int slotType, int[] excludeNumbers) {
+    public @Null U getFreeSlot(T obj, int[] excludeNumbers) {
         for (U slot : slots.select(s -> Arrays.stream(excludeNumbers).anyMatch(n -> n != s.getNumber()))) {
-            if (slot.isEmpty() && slot.getSlotType() == slotType) {
+            if (slot.isEmpty() && slot.getSlotType() == obj.getSlotType()) {
                 return slot;
             }
         }

@@ -10,7 +10,6 @@ import com.sj.pixelfarm.core.grid.GridLoader;
 import com.sj.pixelfarm.core.input.events.EventType;
 import com.sj.pixelfarm.core.input.events.Events;
 import com.sj.pixelfarm.core.input.listeners.GridListener;
-import com.sj.pixelfarm.core.item.Item;
 import com.sj.pixelfarm.ui.actionbar.ActionBar;
 import com.sj.pixelfarm.core.ui.effects.UIEffects;
 import com.sj.pixelfarm.core.ui.styles.ButtonStyles;
@@ -70,7 +69,7 @@ public class ItemGrid extends GridBase<ItemStack, ItemStackSlot> {
                 }
             }
 
-            ItemStackSlot freeSlot = getFreeSlot(e.stack().item, new int[] { selectedSlot.getNumber() });
+            ItemStackSlot freeSlot = getFreeSlot(e.stack(), new int[] { selectedSlot.getNumber() });
             if (freeSlot != null) {
                 freeSlot.setObj(e.stack());
                 e.onSuccess().run();
@@ -92,25 +91,9 @@ public class ItemGrid extends GridBase<ItemStack, ItemStackSlot> {
         }
     }
 
-    public @Null ItemStackSlot getFreeSlot(Item item) {
-        for (ItemStackSlot slot : slots.select(s -> s.itemFits(item))) {
-            if (slot.isEmpty()) return slot;
-        }
-        return null;
-    }
-
-    public @Null ItemStackSlot getFreeSlot(Item item, int[] excludeNumbers) {
-        for (ItemStackSlot slot : slots.select(
-            s -> s.itemFits(item) &&
-                Arrays.stream(excludeNumbers).anyMatch(n -> n != s.getNumber()))) {
-            if (slot.isEmpty()) return slot;
-        }
-        return null;
-    }
-
     public void splitSlot(ItemStackSlot slot) {
         if (slot != null && !slot.isEmpty()) {
-            ItemStackSlot newSlot = getFreeSlot(slot.getObj().item);
+            ItemStackSlot newSlot = getFreeSlot(slot.getObj());
 
             if (newSlot != null) {
                 newSlot.setObj(slot.split());
@@ -199,7 +182,7 @@ public class ItemGrid extends GridBase<ItemStack, ItemStackSlot> {
             return true;
         }
 
-        ItemStackSlot freeSlot = getFreeSlot(dropItem.item);
+        ItemStackSlot freeSlot = getFreeSlot(dropItem);
 
         if (freeSlot != null) {
             targetSlot.setAmount(maxSlotCapacity);
@@ -209,5 +192,23 @@ public class ItemGrid extends GridBase<ItemStack, ItemStackSlot> {
         }
 
         return false;
+    }
+
+    @Override
+    public @Null ItemStackSlot getFreeSlot(ItemStack stack) {
+        for (ItemStackSlot slot : slots.select(s -> s.itemFits(stack.item))) {
+            if (slot.isEmpty()) return slot;
+        }
+        return null;
+    }
+
+    @Override
+    public @Null ItemStackSlot getFreeSlot(ItemStack stack, int[] excludeNumbers) {
+        for (ItemStackSlot slot : slots.select(
+            s -> s.itemFits(stack.item) &&
+                Arrays.stream(excludeNumbers).anyMatch(n -> n != s.getNumber()))) {
+            if (slot.isEmpty()) return slot;
+        }
+        return null;
     }
 }
