@@ -1,6 +1,8 @@
-package com.sj.pixelfarm.core.item;
+package com.sj.pixelfarm.items;
 
 
+import com.sj.pixelfarm.core.item.Item;
+import com.sj.pixelfarm.core.item.ItemType;
 import com.sj.pixelfarm.core.item.actions.ActionInfo;
 import com.sj.pixelfarm.core.item.actions.ActionTarget;
 import com.sj.pixelfarm.core.item.actions.Actions;
@@ -15,79 +17,46 @@ public class Items {
         lettuce, carrot, tomato, cauliflower, broccoli, pumpkin, cucumber, onion, eggplant,
         lettuce_seeds, carrot_seeds, tomato_seeds, cauliflower_seeds, broccoli_seeds, pumpkin_seeds, cucumber_seeds, onion_seeds, eggplant_seeds,
         carrot_soup, tomato_soup, cauliflower_soup, broccoli_soup, pumpkin_soup,
-        scythe, watering_can, fertilizer;
+        scythe, watering_can, fertilizer,
+        box, closed_box;
+
+    public static BonusItem flowers;
 
     public static void load() {
         lettuce = new Item(ItemType.LETTUCE, 1, 1) {{
             description = "";
-            interactionMap.put(
-                Interactions.LEFT_RELEASE,
-                new ActionInfo(Actions.SELL, ActionTarget.CAR, new ActionProps.Sell(10, 5))
-            );
         }};
 
         carrot = new Item(ItemType.CARROT, 1, 1) {{
             description = "";
-            interactionMap.put(
-                Interactions.LEFT_RELEASE,
-                new ActionInfo(Actions.SELL, ActionTarget.CAR, new ActionProps.Sell(10, 5))
-            );
         }};
 
         tomato = new Item(ItemType.TOMATO, 1, 1) {{
             description = "";
-            interactionMap.put(
-                Interactions.LEFT_RELEASE,
-                new ActionInfo(Actions.SELL, ActionTarget.CAR, new ActionProps.Sell(10, 5))
-            );
         }};
 
         cauliflower = new Item(ItemType.CAULIFLOWER, 1, 1) {{
             description = "";
-            interactionMap.put(
-                Interactions.LEFT_RELEASE,
-                new ActionInfo(Actions.SELL, ActionTarget.CAR, new ActionProps.Sell(10, 5))
-            );
         }};
 
         broccoli = new Item(ItemType.BROCCOLI, 1, 1) {{
             description = "";
-            interactionMap.put(
-                Interactions.LEFT_RELEASE,
-                new ActionInfo(Actions.SELL, ActionTarget.CAR, new ActionProps.Sell(10, 5))
-            );
         }};
 
         pumpkin = new Item(ItemType.PUMPKIN, 1, 1) {{
             description = "";
-            interactionMap.put(
-                Interactions.LEFT_RELEASE,
-                new ActionInfo(Actions.SELL, ActionTarget.CAR, new ActionProps.Sell(10, 5))
-            );
         }};
 
         cucumber = new Item(ItemType.CUCUMBER, 1, 1){{
             description = "";
-            interactionMap.put(
-                Interactions.LEFT_RELEASE,
-                new ActionInfo(Actions.SELL, ActionTarget.CAR, new ActionProps.Sell(10, 5))
-            );
         }};
 
         onion = new Item(ItemType.ONION, 1, 1) {{
             description = "";
-            interactionMap.put(
-                Interactions.LEFT_RELEASE,
-                new ActionInfo(Actions.SELL, ActionTarget.CAR, new ActionProps.Sell(10, 5))
-            );
         }};
 
         eggplant = new Item(ItemType.EGGPLANT, 1, 1) {{
             description = "";
-            interactionMap.put(
-                Interactions.LEFT_RELEASE,
-                new ActionInfo(Actions.SELL, ActionTarget.CAR, new ActionProps.Sell(10, 5))
-            );
         }};
 
         lettuce_seeds = new Item(ItemType.LETTUCE_SEEDS, 1, lettuce.unlockLevel) {{
@@ -200,7 +169,7 @@ public class Items {
             description = "";
         }};
 
-        scythe = new Item(ItemType.SCYTHE, 1, 1) {{
+        scythe = new Item(ItemType.SCYTHE, 2, 1) {{
             description = "";
             interactionMap.put(
                 Interactions.LEFT_HOLD,
@@ -224,6 +193,23 @@ public class Items {
                 Interactions.COMBO_HOLD,
                 new ActionInfo(Actions.USE, ActionTarget.CROPS, new ActionProps.Use("fertilizer", 12.5f + 0.5f, TileType.FERTILIZER_ANIMATION))
             );
+        }};
+
+        box = new Item(ItemType.BOX, 3, 1) {{
+            description = "";
+        }};
+
+        closed_box = new Item(ItemType.CLOSED_BOX, 3, 1) {{
+            description = "";
+            interactionMap.put(
+                Interactions.LEFT_RELEASE,
+                new ActionInfo(Actions.SELL, ActionTarget.CAR, null)
+            );
+        }};
+
+        flowers = new BonusItem(ItemType.FLOWERS, 1, 1) {{
+            multiplier = 2.0f;
+            description = "colorful";
         }};
     }
 }

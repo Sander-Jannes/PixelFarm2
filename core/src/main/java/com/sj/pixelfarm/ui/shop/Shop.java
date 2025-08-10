@@ -7,7 +7,7 @@ import com.sj.pixelfarm.core.Entities;
 import com.sj.pixelfarm.core.input.events.EventType;
 import com.sj.pixelfarm.core.input.events.Events;
 import com.sj.pixelfarm.core.item.Item;
-import com.sj.pixelfarm.core.item.Items;
+import com.sj.pixelfarm.items.Items;
 import com.sj.pixelfarm.core.ui.effects.UIEffects;
 import com.sj.pixelfarm.ui.modals.TabModal;
 import static com.sj.pixelfarm.core.ui.UIUtils.*;
@@ -33,8 +33,6 @@ public class Shop extends TabModal<Item.Group> {
 
         addTab("seeds", Item.Group.SEEDS, this::swapCards);
         addTab("care", Item.Group.CARE, this::swapCards);
-        addTab("tools", Item.Group.TOOLS, this::swapCards);
-        addTab("extra", Item.Group.EXTRA, this::swapCards);
         updateBar();
 
         for (Item item : items) {

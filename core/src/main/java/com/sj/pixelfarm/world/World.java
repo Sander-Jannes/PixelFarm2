@@ -29,6 +29,7 @@ import com.sj.pixelfarm.core.mem.Assets;
 import com.sj.pixelfarm.core.mem.PoolManager;
 import com.sj.pixelfarm.core.ui.effects.UIEffects;
 import com.sj.pixelfarm.core.utils.TileHelper;
+import com.sj.pixelfarm.items.box.Box;
 
 
 public class World implements Disposable {
@@ -80,6 +81,8 @@ public class World implements Disposable {
             WorldUtils.getRectanglePos(((RectangleMapObject) objects.get("pickup")).getRectangle())
         });
 
+        car.start();
+
         Events.on(EventType.DropItemOnWorld.class, e -> dropItem(e.itemStackSlot(), e.interaction()));
         Events.on(EventType.ToggleEditMode.class, e -> editMode.toggle());
         Events.on(EventType.StartCar.class, e -> car.start());
@@ -103,7 +106,7 @@ public class World implements Disposable {
         }
 
         renderer.render(decoration);
-        car.draw(renderer.getBatch(), delta);
+        car.draw(renderer.getBatch());
     }
 
     private void renderCursor() {
@@ -173,13 +176,14 @@ public class World implements Disposable {
                     }
 
                     case SELL: {
-                        ActionProps.Sell props = (ActionProps.Sell) actionInfo.props();
-
                         if (car.getPosition().equals(pos)) {
-                            if (car.acceptOrder(itemStack)) {
+                            Box box = (Box) itemStack;
+
+                            if (car.acceptOrder(box)) {
                                 itemStackSlot.destroyObj(true);
-                                Vars.state.money += props.money() * itemStack.amount;
-                                Vars.state.xp += props.xp() * itemStack.amount;
+                                itemStackSlot.setObj(PoolManager.obtainBox());
+                                Vars.state.money += car.order.value * itemStack.amount;
+                                Vars.state.xp += car.order.xp * itemStack.amount;
                                 Events.fire(new EventType.UpdateOverlayEvent());
                             }
                         }

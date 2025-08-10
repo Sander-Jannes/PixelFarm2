@@ -3,20 +3,20 @@ package com.sj.pixelfarm.world;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.*;
-import com.sj.pixelfarm.core.item.Item;
-import com.sj.pixelfarm.core.item.Items;
-import com.sj.pixelfarm.core.itemgrid.ItemStack;
+import com.sj.pixelfarm.core.input.events.EventType;
+import com.sj.pixelfarm.core.input.events.Events;
 import com.sj.pixelfarm.core.mem.Assets;
-import com.sj.pixelfarm.core.mem.PoolManager;
+import com.sj.pixelfarm.items.box.Box;
+import com.sj.pixelfarm.items.box.Order;
+import com.sj.pixelfarm.items.box.OrderGenerator;
 
 
 public class Car {
 
     private static final TextureRegion car = Assets.getAtlasTexture("world/car");
-    private final ItemStack order = PoolManager.obtain(Items.cucumber, 4, Item.Quality.GOOD);
-    private float time = 0f;
     private final Path path;
     private boolean drive = false;
+    public Order order = OrderGenerator.generateRandomOrder();
 
     public Car(GridPoint2[] points) {
         this.path = new Path(points[0], points[1], points[2]);
@@ -24,16 +24,17 @@ public class Car {
 
     public void start() {
         drive = true;
-        time = 0f;
     }
 
     public void drive(float delta) {
         if (drive) {
-            path.update(delta / 8f);
-
             if (path.reachedEnd()) {
-                drive = false;
                 path.reset();
+                drive = false;
+            }
+
+            if (!path.update(delta / 8f)) {
+                Events.fire(new EventType.ShowOrderEvent(order, path.start.cpy()));
             }
         }
     }
@@ -42,26 +43,21 @@ public class Car {
         return WorldUtils.getGridPos(path.start).cpy().add(0, 1);
     }
 
-    public boolean acceptOrder(ItemStack order) {
-        if (this.order.equalsWithAmount(order)) {
+    public boolean acceptOrder(Box order) {
+        if (this.order.doesBoxFulfilOrder(order)) {
             path.continuePath();
+            Events.fire(new EventType.RemoveOrderEvent());
+            this.order = OrderGenerator.generateRandomOrder();
             return true;
         }
         return false;
     }
 
-    public void draw(Batch batch, float delta) {
+    public void draw(Batch batch) {
         if (!drive) return;
-
-        time += delta;
-        float bounceOffset = MathUtils.sin(time * 2f) * 0.1f;
 
         batch.begin();
         batch.draw(car, path.start.x, path.start.y, 0.9f, 0.9f);
-
-        if (path.reachedStop) {
-            batch.draw(order.item.image, path.start.x + 0.1f, path.start.y + 0.75f + bounceOffset, 0.5f, 0.5f);
-        }
         batch.end();
     }
 
@@ -97,12 +93,16 @@ public class Car {
             return end.equals(stop) && start.x >= stop.x - 1f;
         }
 
-        public void update(float alpha) {
-            if (reachedStop || start.x >= stop.x) {
+        public boolean update(float alpha) {
+            if (!reachedStop && start.x >= stop.x) {
                 reachedStop = true;
-                return;
+                return false;
+
+            } else if (!reachedStop) {
+                start.lerp(end, alpha);
             }
-            start.lerp(end, alpha);
+
+            return true;
         }
     }
 }

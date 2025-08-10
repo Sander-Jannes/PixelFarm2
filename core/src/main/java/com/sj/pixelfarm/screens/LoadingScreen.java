@@ -8,8 +8,9 @@ import com.badlogic.gdx.graphics.g2d.NinePatch;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.Pools;
 import com.sj.pixelfarm.Main;
-import com.sj.pixelfarm.core.item.Items;
+import com.sj.pixelfarm.items.Items;
 import com.sj.pixelfarm.core.itemgrid.ItemStack;
+import com.sj.pixelfarm.items.box.Box;
 
 
 public class LoadingScreen implements Screen {
@@ -54,7 +55,10 @@ public class LoadingScreen implements Screen {
             System.out.println("# Assets initialized");
             main.assets.init();
             Items.load();
+
+            // Init the pools
             Pools.set(ItemStack.class, Pools.get(ItemStack.class));
+            Pools.set(Box.class, Pools.get(Box.class));
 
         } else if (timeShown >= showAfter) {
             main.setScreen(new GameScreen(main));

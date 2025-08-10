@@ -11,9 +11,16 @@
     {
       "slotType": 2,
       "class": "com.sj.pixelfarm.core.itemgrid.ItemStackSlot",
-      "selectImage": "hotbar/hotbar_selection2",
-      "highlightImage": "",
-      "size": [188, 94]
+      "selectImage": "hotbar/hotbar_selection",
+      "highlightImage": "hotbar/hotbar_forced_selection",
+      "size": [94, 94]
+    },
+    {
+      "slotType": 3,
+      "class": "com.sj.pixelfarm.core.itemgrid.ItemStackSlot",
+      "selectImage": "hotbar/hotbar_selection",
+      "highlightImage": "hotbar/hotbar_forced_selection",
+      "size": [94, 94]
     }
   ],
   "slots": [
@@ -49,8 +56,23 @@
     },
     {
       "number": 7,
-      "slotType": 2,
+      "slotType": 1,
       "pos": [597, 4]
+    },
+    {
+      "number": 8,
+      "slotType": 1,
+      "pos": [694, 4]
+    },
+    {
+      "number": 9,
+      "slotType": 2,
+      "pos": [848, 4]
+    },
+    {
+      "number": 10,
+      "slotType": 3,
+      "pos": [945, 4]
     }
   ]
 }

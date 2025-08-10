@@ -12,6 +12,7 @@ import com.sj.pixelfarm.core.item.Item;
 import com.sj.pixelfarm.core.mem.Assets;
 import com.sj.pixelfarm.core.mem.PoolManager;
 import com.sj.pixelfarm.core.ui.styles.LabelStyles;
+import com.sj.pixelfarm.ui.actionbar.ActionBar;
 
 import static com.sj.pixelfarm.core.ui.UIUtils.*;
 
@@ -25,6 +26,8 @@ public class ItemStack extends SlotObject implements Pool.Poolable {
     private final Label amountLabel = createLabel("", LabelStyles.X12, null, Align.center);
     private final Container<Image> overlayImageContainer = new Container<>();
     private final Container<Image> imageContainer = new Container<Image>().fill();
+
+    protected @Null ActionBar actionBar;
 
     public ItemStack() {
         Container<Stack> overlayContainer = new Container<>();
@@ -48,8 +51,11 @@ public class ItemStack extends SlotObject implements Pool.Poolable {
         this.amount = amount;
 
         imageContainer.setActor(new Image(item.image));
-        overlayImageContainer.setActor(new Image(Assets.qualities.get(quality.ordinal())));
-        amountLabel.setText(String.valueOf(amount));
+
+        if (amount > 0) {
+            overlayImageContainer.setActor(new Image(Assets.qualities.get(quality.ordinal())));
+            amountLabel.setText(String.valueOf(amount));
+        }
     }
 
     public void setAmount(int n) {
@@ -61,7 +67,7 @@ public class ItemStack extends SlotObject implements Pool.Poolable {
         this.amount += n;
 
         if (this.amount == 0) {
-            getParent().destroyObj(true);
+           ((ItemStackSlot) getParent()).destroyObj(true);
             return;
         }
 
@@ -90,11 +96,6 @@ public class ItemStack extends SlotObject implements Pool.Poolable {
 
     public boolean equalsWithAmount(ItemStack other) {
         return amount == other.amount && equals(other);
-    }
-
-    @Override
-    public ItemStackSlot getParent() {
-        return (ItemStackSlot) super.getParent();
     }
 
     @Override

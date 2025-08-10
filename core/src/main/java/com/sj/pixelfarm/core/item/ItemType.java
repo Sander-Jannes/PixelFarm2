@@ -36,9 +36,7 @@ public enum ItemType {
     BOX(32, "box"),
     CLOSED_BOX(33, "closed box"),
     ACID(35, "acid"),
-
-    SHOVEL(100, "shovel"),
-    RAKE(101, "rake");
+    FLOWERS(36, "acid");
 
     private final String name;
     private final int index;

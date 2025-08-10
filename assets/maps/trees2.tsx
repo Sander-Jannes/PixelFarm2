@@ -4,31 +4,37 @@
  <tile id="0">
   <properties>
    <property name="group" value="trees"/>
+   <property name="name" value=""/>
   </properties>
  </tile>
  <tile id="1">
   <properties>
    <property name="group" value="trees"/>
+   <property name="name" value=""/>
   </properties>
  </tile>
  <tile id="2">
   <properties>
    <property name="group" value="trees"/>
+   <property name="name" value=""/>
   </properties>
  </tile>
  <tile id="3">
   <properties>
    <property name="group" value="trees"/>
+   <property name="name" value=""/>
   </properties>
  </tile>
  <tile id="4">
   <properties>
    <property name="group" value="trees"/>
+   <property name="name" value=""/>
   </properties>
  </tile>
  <tile id="5">
   <properties>
    <property name="group" value="trees"/>
+   <property name="name" value=""/>
   </properties>
  </tile>
  <tile id="6">
@@ -54,6 +60,7 @@
  <tile id="10">
   <properties>
    <property name="group" value="trees"/>
+   <property name="name" value=""/>
   </properties>
   <animation>
    <frame tileid="10" duration="500"/>
@@ -67,26 +74,31 @@
  <tile id="11">
   <properties>
    <property name="group" value="trees"/>
+   <property name="name" value=""/>
   </properties>
  </tile>
  <tile id="12">
   <properties>
    <property name="group" value="trees"/>
+   <property name="name" value=""/>
   </properties>
  </tile>
  <tile id="13">
   <properties>
    <property name="group" value="trees"/>
+   <property name="name" value=""/>
   </properties>
  </tile>
  <tile id="14">
   <properties>
    <property name="group" value="trees"/>
+   <property name="name" value=""/>
   </properties>
  </tile>
  <tile id="15">
   <properties>
    <property name="group" value="trees"/>
+   <property name="name" value=""/>
   </properties>
  </tile>
  <tile id="16">

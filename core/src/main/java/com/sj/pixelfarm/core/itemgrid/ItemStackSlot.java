@@ -13,15 +13,15 @@ public class ItemStackSlot extends Slot<ItemStack> {
         super(number, slotType, rx, ry, width, height);
     }
 
-    public boolean canMergeWith(ItemStack other, int maxSlotCapacity) {
-        return !isEmpty() && getObj().amount != maxSlotCapacity && obj.equals(other);
-    }
-
     public ItemStack split() {
         return obj.split();
     }
 
     public void setAmount(int amount) {
         obj.setAmount(amount);
+    }
+
+    protected boolean canMergeWith(ItemStack other, int maxSlotCapacity) {
+        return !isEmpty() && getObj().amount != maxSlotCapacity && obj.equals(other);
     }
 }

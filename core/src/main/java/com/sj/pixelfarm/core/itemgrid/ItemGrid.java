@@ -13,6 +13,9 @@ import com.sj.pixelfarm.ui.actionbar.ActionBar;
 import com.sj.pixelfarm.core.ui.effects.UIEffects;
 import com.sj.pixelfarm.core.ui.styles.ButtonStyles;
 
+import java.util.ArrayList;
+
+
 import static com.sj.pixelfarm.core.ui.UIUtils.createActionBar;
 import static com.sj.pixelfarm.core.ui.UIUtils.createButton;
 
@@ -24,10 +27,13 @@ public class ItemGrid extends GridBase<ItemStack, ItemStackSlot> {
     private final int maxSlotCapacity;
     public ActionBar actionBar;
 
+    private final ArrayList<Integer> noActions = new ArrayList<>();
+
     public ItemGrid(GridLoader.GridConfig<ItemStack, ItemStackSlot> data, int maxSlotCapacity, String name) {
         super(data);
 
         this.maxSlotCapacity = maxSlotCapacity;
+        noActions.add(2);
 
         setName(name);
         selectedSlot.setName(Entities.ACTIVE_SLOT);
@@ -117,12 +123,22 @@ public class ItemGrid extends GridBase<ItemStack, ItemStackSlot> {
 
     public void showActionBar(Vector2 localPos) {
         clickedSlot = getSlotByPos(localPos);
+        ActionBar ab = null;
 
         if (clickedSlot != null && !clickedSlot.isEmpty()) {
             Vector2 stagePos = localToStageCoordinates(new Vector2(clickedSlot.getX(), clickedSlot.getY()));
-            actionBar.setPosition(stagePos.x + clickedSlot.getWidth() / 2 + actionBar.getWidth() / 2, stagePos.y + clickedSlot.getHeight() + 10);
-            getStage().getRoot().addActor(actionBar);
-            UIEffects.applyBounceEffect(actionBar);
+
+            if (clickedSlot.getObj().actionBar != null) {
+                ab = clickedSlot.getObj().actionBar;
+            } else if (!noActions.contains(clickedSlot.getSlotType())) {
+               ab = actionBar;
+            }
+
+            if (ab != null) {
+                ab.setPosition(stagePos.x + clickedSlot.getWidth() / 2 + ab.getWidth() / 2, stagePos.y + clickedSlot.getHeight() + 10);
+                getStage().getRoot().addActor(ab);
+                UIEffects.applyBounceEffect(ab);
+            }
         }
     }
 

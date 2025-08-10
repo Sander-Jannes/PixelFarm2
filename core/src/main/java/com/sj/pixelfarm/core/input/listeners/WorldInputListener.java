@@ -41,7 +41,6 @@ public class WorldInputListener extends InputAdapter {
             world.lastY = y;
             world.dragging = true;
             world.editMode.showActionBar(tmpVector);
-
             return true;
 
         } else if (button == Input.Buttons.RIGHT) {

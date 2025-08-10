@@ -188,6 +188,21 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
+            <key type="filename">atlas/box_info/box_info2.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>68,84,135,167</rect>
+                <key>scale9Paddings</key>
+                <rect>68,84,135,167</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
             <key type="filename">atlas/box_info/box_info_selection1.png</key>
             <key type="filename">atlas/chest/inventory_selection1.png</key>
             <key type="filename">atlas/item.png</key>
@@ -219,6 +234,21 @@
                 <rect>20,41,40,81</rect>
                 <key>scale9Paddings</key>
                 <rect>20,41,40,81</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">atlas/box_info/order_popup.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>30,15,60,30</rect>
+                <key>scale9Paddings</key>
+                <rect>30,15,60,30</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
@@ -458,36 +488,6 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">atlas/levelup/level_up.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>232,166,464,333</rect>
-                <key>scale9Paddings</key>
-                <rect>232,166,464,333</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">atlas/order_time_popup/order_time_popup.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>35,25,70,50</rect>
-                <key>scale9Paddings</key>
-                <rect>35,25,70,50</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
             <key type="filename">atlas/overlay/hud.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
@@ -500,21 +500,6 @@
                 <rect>100,63,200,125</rect>
                 <key>scale9Paddings</key>
                 <rect>100,63,200,125</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">atlas/plant_book/info_card.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>50,43,100,85</rect>
-                <key>scale9Paddings</key>
-                <rect>50,43,100,85</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
@@ -627,7 +612,6 @@
                 <false/>
             </struct>
             <key type="filename">atlas/shop/shop_card.png</key>
-            <key type="filename">atlas/soup_maker/card_highlight.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -639,21 +623,6 @@
                 <rect>51,64,103,127</rect>
                 <key>scale9Paddings</key>
                 <rect>51,64,103,127</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">atlas/soup_maker/soup_maker.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>275,179,550,359</rect>
-                <key>scale9Paddings</key>
-                <rect>275,179,550,359</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>

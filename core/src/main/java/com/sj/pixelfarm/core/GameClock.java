@@ -9,7 +9,7 @@ public class GameClock {
 
     private static final float SECONDS_IN_A_DAY = 86400f;
     private static final float updateInterval = 300f;
-    private static final float timeScale = 9600;
+    private static final float timeScale = 96;
     public static final OrderedMap<String, String> dayNameMap = new OrderedMap<>();
 
     static {

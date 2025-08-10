@@ -11,7 +11,6 @@ public class Slot<T extends SlotObject> extends Container<T> {
     protected @Null T obj;
     private int number;
     private int slotType;
-    private final Vector2 tmpVec = new Vector2();
 
     public Slot() {}
 

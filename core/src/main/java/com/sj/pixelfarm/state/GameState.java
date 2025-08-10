@@ -16,7 +16,7 @@ public final class GameState {
     public int xpGoal;
 
     /* Represents the current level of the player in the game. */
-    public int level = 1;
+    public int level = 7;
 
     public final Array<FieldGroup> unlockedFields = new Array<>();
 }

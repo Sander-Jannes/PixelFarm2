@@ -14,12 +14,12 @@ import com.sj.pixelfarm.core.card.CropInfoPopup;
 import com.sj.pixelfarm.core.grid.GridLoader;
 import com.sj.pixelfarm.core.input.listeners.WorldInputListener;
 import com.sj.pixelfarm.core.item.Item;
-import com.sj.pixelfarm.core.item.Items;
+import com.sj.pixelfarm.items.Items;
 import com.sj.pixelfarm.core.itemgrid.ItemGrid;
 import com.sj.pixelfarm.core.mem.Assets;
 import com.sj.pixelfarm.core.mem.PoolManager;
 import com.sj.pixelfarm.ui.hud.OverlayMenu;
-import com.sj.pixelfarm.core.ui.UIEventProcessor;
+import com.sj.pixelfarm.core.input.events.UIEventProcessor;
 import com.sj.pixelfarm.tasks.TaskManager;
 import com.sj.pixelfarm.ui.shop.Shop;
 import com.sj.pixelfarm.world.World;
@@ -49,9 +49,12 @@ public class GameScreen implements Screen {
         grid.setObjToSlot(1, PoolManager.obtain(Items.cucumber, 4, Item.Quality.GOOD));
         grid.setObjToSlot(2, PoolManager.obtain(Items.eggplant_seeds, 64, Item.Quality.NONE));
         grid.setObjToSlot(3, PoolManager.obtain(Items.onion_seeds, 64, Item.Quality.NONE));
-        grid.setObjToSlot(4, PoolManager.obtain(Items.cucumber_seeds, 64, Item.Quality.NONE));
+
+        grid.setObjToSlot(4, PoolManager.obtain(Items.flowers, 2, Item.Quality.NONE));
+
         grid.setObjToSlot(5, PoolManager.obtain(Items.watering_can, 64, Item.Quality.NONE));
-        grid.setObjToSlot(6, PoolManager.obtain(Items.scythe, 1, Item.Quality.NONE));
+        grid.setObjToSlot(9, PoolManager.obtain(Items.scythe, 0, Item.Quality.NONE));
+        grid.setObjToSlot(10, PoolManager.obtainBox());
 
         CropInfoPopup popup = new CropInfoPopup(20, Gdx.graphics.getHeight() - 255 - 20, 200);
         OverlayMenu overlayMenu = new OverlayMenu();
@@ -64,7 +67,7 @@ public class GameScreen implements Screen {
         main.multiplexer.addProcessor(stage);
         main.multiplexer.addProcessor(worldInputListener);
 
-        UIEventProcessor.init(stage);
+        UIEventProcessor.init(stage, world);
     }
 
     @Override

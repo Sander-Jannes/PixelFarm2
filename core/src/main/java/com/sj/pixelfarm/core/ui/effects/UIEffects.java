@@ -53,11 +53,14 @@ public final class UIEffects {
         ));
     }
 
-    public static void applySqueezeEffect(Actor actor) {
-        actor.addAction(Actions.sequence(
-            Actions.scaleTo(0.9f, 0.9f, 0.05f, Interpolation.smooth),
-            Actions.scaleTo(1.05f, 1.05f, 0.08f, Interpolation.smooth),
-            Actions.scaleTo(1f, 1f, 0.05f, Interpolation.smooth)
-        ));
+    public static void applySinusBounce(Actor actor, float amplitude, float duration) {
+        actor.addAction(
+            Actions.forever(
+                Actions.sequence(
+                    Actions.moveBy(0, amplitude, duration / 2f, Interpolation.sine),
+                    Actions.moveBy(0, -amplitude, duration / 2f, Interpolation.sine)
+                )
+            )
+        );
     }
 }
