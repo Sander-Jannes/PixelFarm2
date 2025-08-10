@@ -19,7 +19,7 @@ import java.util.HashMap;
  * configuration from a JSON file, manage slots, query slot information, and render the grid.
  * @param <T> The clazz of objects this grid will hold, extending SlotObject.
  */
-public abstract class GridBase<T extends SlotObject, U extends Slot<T>> extends Group implements Grid<T, U> {
+public abstract class GridBase<T extends SlotObject, U extends Slot<T>> extends Group {
 
     private final HashMap<Integer, GridLoader.SlotInfo> slotInfo = new HashMap<>();
     private boolean isSelectable = true;
@@ -40,17 +40,14 @@ public abstract class GridBase<T extends SlotObject, U extends Slot<T>> extends 
         }
     }
 
-    @Override
     public int getSize() {
         return slots.size;
     }
 
-    @Override
     public Array<U> getSlots() {
         return this.slots;
     }
 
-    @Override
     public Array<U> getFullSlots() {
         Array<U> fullSlots = new Array<>();
 
@@ -60,7 +57,6 @@ public abstract class GridBase<T extends SlotObject, U extends Slot<T>> extends 
         return fullSlots;
     }
 
-    @Override
     public @Null U getSlotByNumber(int number) {
         for (U slot : slots) {
             if (slot.getNumber() == number) {
@@ -70,7 +66,6 @@ public abstract class GridBase<T extends SlotObject, U extends Slot<T>> extends 
         return null;
     }
 
-    @Override
     public @Null U getSlotByPos(Vector2 localPos) {
         for (U slot : slots) {
             if (slot.contains(localPos)) {
@@ -80,7 +75,6 @@ public abstract class GridBase<T extends SlotObject, U extends Slot<T>> extends 
         return null;
     }
 
-    @Override
     public @Null U getFreeSlot(int slotType) {
         for (U slot : slots) {
             if (slot.isEmpty() && slot.getSlotType() == slotType) {
@@ -90,7 +84,6 @@ public abstract class GridBase<T extends SlotObject, U extends Slot<T>> extends 
         return null;
     }
 
-    @Override
     public @Null U getFreeSlot(int slotType, int[] excludeNumbers) {
         for (U slot : slots.select(s -> Arrays.stream(excludeNumbers).anyMatch(n -> n != s.getNumber()))) {
             if (slot.isEmpty() && slot.getSlotType() == slotType) {
@@ -100,10 +93,8 @@ public abstract class GridBase<T extends SlotObject, U extends Slot<T>> extends 
         return null;
     }
 
-    @Override
     public void setSelectable(boolean value) { this.isSelectable = value; }
 
-    @Override
     public final void setObjToSlot(int slotNumber, T item) {
         U slot = getSlotByNumber(slotNumber);
 
@@ -112,7 +103,6 @@ public abstract class GridBase<T extends SlotObject, U extends Slot<T>> extends 
         }
     }
 
-    @Override
     public void reset(boolean hasPool) {
         for (U slot : slots) {
             slot.destroyObj(hasPool);

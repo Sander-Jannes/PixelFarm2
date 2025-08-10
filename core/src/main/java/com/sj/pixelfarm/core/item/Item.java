@@ -45,8 +45,6 @@ public class Item {
 
     public enum Group {
         SEEDS,
-        TOOLS,
         CARE,
-        EXTRA
     }
 }

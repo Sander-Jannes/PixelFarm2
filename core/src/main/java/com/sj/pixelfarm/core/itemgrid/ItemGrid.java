@@ -3,17 +3,20 @@ package com.sj.pixelfarm.core.itemgrid;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.utils.Align;
+import com.badlogic.gdx.utils.Null;
 import com.sj.pixelfarm.core.Entities;
 import com.sj.pixelfarm.core.grid.GridBase;
 import com.sj.pixelfarm.core.grid.GridLoader;
 import com.sj.pixelfarm.core.input.events.EventType;
 import com.sj.pixelfarm.core.input.events.Events;
 import com.sj.pixelfarm.core.input.listeners.GridListener;
+import com.sj.pixelfarm.core.item.Item;
 import com.sj.pixelfarm.ui.actionbar.ActionBar;
 import com.sj.pixelfarm.core.ui.effects.UIEffects;
 import com.sj.pixelfarm.core.ui.styles.ButtonStyles;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 
 import static com.sj.pixelfarm.core.ui.UIUtils.createActionBar;
@@ -67,7 +70,7 @@ public class ItemGrid extends GridBase<ItemStack, ItemStackSlot> {
                 }
             }
 
-            ItemStackSlot freeSlot = getFreeSlot(e.stack().getSlotType(), new int[] { selectedSlot.getNumber() });
+            ItemStackSlot freeSlot = getFreeSlot(e.stack().item, new int[] { selectedSlot.getNumber() });
             if (freeSlot != null) {
                 freeSlot.setObj(e.stack());
                 e.onSuccess().run();
@@ -89,9 +92,25 @@ public class ItemGrid extends GridBase<ItemStack, ItemStackSlot> {
         }
     }
 
+    public @Null ItemStackSlot getFreeSlot(Item item) {
+        for (ItemStackSlot slot : slots.select(s -> s.itemFits(item))) {
+            if (slot.isEmpty()) return slot;
+        }
+        return null;
+    }
+
+    public @Null ItemStackSlot getFreeSlot(Item item, int[] excludeNumbers) {
+        for (ItemStackSlot slot : slots.select(
+            s -> s.itemFits(item) &&
+                Arrays.stream(excludeNumbers).anyMatch(n -> n != s.getNumber()))) {
+            if (slot.isEmpty()) return slot;
+        }
+        return null;
+    }
+
     public void splitSlot(ItemStackSlot slot) {
         if (slot != null && !slot.isEmpty()) {
-            ItemStackSlot newSlot = getFreeSlot(slot.getSlotType());
+            ItemStackSlot newSlot = getFreeSlot(slot.getObj().item);
 
             if (newSlot != null) {
                 newSlot.setObj(slot.split());
@@ -153,19 +172,21 @@ public class ItemGrid extends GridBase<ItemStack, ItemStackSlot> {
 
         if (targetSlot == null || dropSlot == null) return false;
 
-        if (targetSlot.equals(dropSlot)) {
+        if (targetSlot.itemFits(dropSlot.getObj().item)) {
             if (targetSlot.isEmpty()) {
                 targetSlot.setObj(dropSlot.getObj());
+                return true;
 
             } else if (targetSlot.canMergeWith(dropSlot.getObj(), maxSlotCapacity)) {
                 tryMergeItem(dropSlot.getObj(), targetSlot);
+                return true;
 
-            } else {
+            } else if (dropSlot.itemFits(targetSlot.getObj().item)) {
                 dropSlot.swapObj(targetSlot);
                 ItemStackSlot oldSlot = getSlotByNumber(dropSlot.getNumber());
                 oldSlot.setObj(dropSlot.getObj());
+                return false;
             }
-            return true;
         }
 
         return false;
@@ -178,7 +199,7 @@ public class ItemGrid extends GridBase<ItemStack, ItemStackSlot> {
             return true;
         }
 
-        ItemStackSlot freeSlot = getFreeSlot(dropItem.getSlotType());
+        ItemStackSlot freeSlot = getFreeSlot(dropItem.item);
 
         if (freeSlot != null) {
             targetSlot.setAmount(maxSlotCapacity);

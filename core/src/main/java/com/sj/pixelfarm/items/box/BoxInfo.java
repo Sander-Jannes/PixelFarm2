@@ -7,8 +7,8 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.sj.pixelfarm.core.Entities;
 import com.sj.pixelfarm.core.card.Card;
 import com.sj.pixelfarm.core.grid.GridLoader;
-import com.sj.pixelfarm.core.itemgrid.FixedItemStackSlot;
 import com.sj.pixelfarm.core.itemgrid.ItemGrid;
+import com.sj.pixelfarm.core.itemgrid.ItemStackSlot;
 import com.sj.pixelfarm.core.mem.Assets;
 import com.sj.pixelfarm.core.ui.styles.LabelStyles;
 import com.sj.pixelfarm.items.Items;
@@ -31,7 +31,8 @@ public class BoxInfo extends Card {
         super(IMAGE, 0, 0, false);
         setName(Entities.BOX_INFO);
 
-        FixedItemStackSlot slot = (FixedItemStackSlot) grid.getSlotByNumber(1);
+        ItemStackSlot slot = grid.getSlotByNumber(1);
+        slot.fixed = true;
         slot.allowedItems.add(Items.flowers);
 
         orderNumberLabel = createLabel("", LabelStyles.X20, Color.BROWN, null);

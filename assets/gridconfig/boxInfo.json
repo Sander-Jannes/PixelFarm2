@@ -7,19 +7,12 @@
       "selectImage": "box_info/box_info_selection1",
       "highlightImage": "",
       "size": [82, 82]
-    },
-    {
-      "slotType": 4,
-      "class": "com.sj.pixelfarm.core.itemgrid.FixedItemStackSlot",
-      "selectImage": "box_info/box_info_selection1",
-      "highlightImage": "",
-      "size": [82, 82]
     }
   ],
   "slots": [
     {
       "number": 1,
-      "slotType": 4,
+      "slotType": 1,
       "pos": [181, 7]
     },
     {
