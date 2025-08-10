@@ -4,12 +4,13 @@ import com.sj.pixelfarm.core.grid.Slot;
 import com.sj.pixelfarm.core.item.Item;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class ItemStackSlot extends Slot<ItemStack> {
 
-    public ArrayList<Item> allowedItems = new ArrayList<>();
-    public boolean fixed = false;
+    private ArrayList<Item> allowedItems = new ArrayList<>();
+    private boolean fixed = false;
 
     public ItemStackSlot() {
         super();
@@ -31,12 +32,21 @@ public class ItemStackSlot extends Slot<ItemStack> {
         return !isEmpty() && getObj().amount != maxSlotCapacity && obj.equals(other);
     }
 
-    public boolean itemFits(Item item) {
-        return (!fixed || allowedItems.contains(item)) && item.slotType == getSlotType();
+    public boolean itemFits(ItemStack stack) {
+        return (!fixed || allowedItems.contains(stack.item)) && stack.item.slotType == getSlotType();
+    }
+
+    public boolean equals(ItemStackSlot slot) {
+        return !slot.isEmpty() && itemFits(slot.getObj());
+    }
+
+    public void setFixed(Item... items) {
+        fixed = true;
+        allowedItems.addAll(List.of(items));
     }
 
     public void set(ItemStackSlot slot) {
-       super.set(slot);
+        super.set(slot);
         fixed = slot.fixed;
         allowedItems = slot.allowedItems;
     }

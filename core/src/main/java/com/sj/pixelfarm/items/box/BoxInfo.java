@@ -32,8 +32,7 @@ public class BoxInfo extends Card {
         setName(Entities.BOX_INFO);
 
         ItemStackSlot slot = grid.getSlotByNumber(1);
-        slot.fixed = true;
-        slot.allowedItems.add(Items.flowers);
+        slot.setFixed(Items.flowers);
 
         orderNumberLabel = createLabel("", LabelStyles.X20, Color.BROWN, null);
         clientLabel = createLabel("", LabelStyles.X14, null, null);

@@ -102,7 +102,8 @@ public class ItemGrid extends GridBase<ItemStack, ItemStackSlot> {
     }
 
     public boolean dropSelectedSlot(Vector2 localPos) {
-        return dropSlot(selectedSlot, localPos);
+        if (dropSlot(selectedSlot, localPos)) return true;
+        return swapSlot(selectedSlot, localPos);
     }
 
     public void updateSelectedSlot(Vector2 localPos) {
@@ -152,10 +153,9 @@ public class ItemGrid extends GridBase<ItemStack, ItemStackSlot> {
 
     private boolean dropSlot(ItemStackSlot dropSlot, Vector2 localPos) {
         ItemStackSlot targetSlot = getSlotByPos(localPos);
-
         if (targetSlot == null || dropSlot == null) return false;
 
-        if (targetSlot.itemFits(dropSlot.getObj().item)) {
+        if (targetSlot.equals(dropSlot)) {
             if (targetSlot.isEmpty()) {
                 targetSlot.setObj(dropSlot.getObj());
                 return true;
@@ -163,15 +163,23 @@ public class ItemGrid extends GridBase<ItemStack, ItemStackSlot> {
             } else if (targetSlot.canMergeWith(dropSlot.getObj(), maxSlotCapacity)) {
                 tryMergeItem(dropSlot.getObj(), targetSlot);
                 return true;
-
-            } else if (dropSlot.itemFits(targetSlot.getObj().item)) {
-                dropSlot.swapObj(targetSlot);
-                ItemStackSlot oldSlot = getSlotByNumber(dropSlot.getNumber());
-                oldSlot.setObj(dropSlot.getObj());
-                return false;
             }
         }
 
+        return false;
+    }
+
+    // Het is alleen mogelijk om binnen hetzelfde grid een slot te verwisselen, daarom zit dit niet bij in dropSlot
+    public boolean swapSlot(ItemStackSlot dropSlot, Vector2 localPos) {
+        ItemStackSlot targetSlot = getSlotByPos(localPos);
+        if (targetSlot == null || dropSlot == null) return false;
+
+        if (targetSlot.equals(dropSlot) && dropSlot.equals(targetSlot)) {
+            dropSlot.swapObj(targetSlot);
+            ItemStackSlot oldSlot = getSlotByNumber(dropSlot.getNumber());
+            oldSlot.setObj(dropSlot.getObj());
+            return true;
+        }
         return false;
     }
 
@@ -196,7 +204,7 @@ public class ItemGrid extends GridBase<ItemStack, ItemStackSlot> {
 
     @Override
     public @Null ItemStackSlot getFreeSlot(ItemStack stack) {
-        for (ItemStackSlot slot : slots.select(s -> s.itemFits(stack.item))) {
+        for (ItemStackSlot slot : slots.select(s -> s.itemFits(stack))) {
             if (slot.isEmpty()) return slot;
         }
         return null;
@@ -205,7 +213,7 @@ public class ItemGrid extends GridBase<ItemStack, ItemStackSlot> {
     @Override
     public @Null ItemStackSlot getFreeSlot(ItemStack stack, int[] excludeNumbers) {
         for (ItemStackSlot slot : slots.select(
-            s -> s.itemFits(stack.item) &&
+            s -> s.itemFits(stack) &&
                 Arrays.stream(excludeNumbers).anyMatch(n -> n != s.getNumber()))) {
             if (slot.isEmpty()) return slot;
         }
