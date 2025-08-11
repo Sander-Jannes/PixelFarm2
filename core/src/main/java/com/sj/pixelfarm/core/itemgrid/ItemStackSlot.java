@@ -9,7 +9,7 @@ import java.util.List;
 
 public class ItemStackSlot extends Slot<ItemStack> {
 
-    private ArrayList<Item> allowedItems = new ArrayList<>();
+    private ArrayList<Item> fixedItems = new ArrayList<>();
     private boolean fixed = false;
 
     public ItemStackSlot() {
@@ -33,7 +33,7 @@ public class ItemStackSlot extends Slot<ItemStack> {
     }
 
     public boolean itemFits(ItemStack stack) {
-        return (!fixed || allowedItems.contains(stack.item)) && stack.item.slotType == getSlotType();
+        return (!fixed || fixedItems.contains(stack.item)) && stack.item.slotType == getSlotType();
     }
 
     public boolean equals(ItemStackSlot slot) {
@@ -42,12 +42,12 @@ public class ItemStackSlot extends Slot<ItemStack> {
 
     public void setFixed(Item... items) {
         fixed = true;
-        allowedItems.addAll(List.of(items));
+        fixedItems.addAll(List.of(items));
     }
 
     public void set(ItemStackSlot slot) {
         super.set(slot);
         fixed = slot.fixed;
-        allowedItems = slot.allowedItems;
+        fixedItems = slot.fixedItems;
     }
 }

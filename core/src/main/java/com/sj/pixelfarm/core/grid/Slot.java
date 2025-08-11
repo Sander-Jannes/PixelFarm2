@@ -12,12 +12,15 @@ public class Slot<T extends SlotObject> extends Container<T> {
     private int number;
     private int slotType;
 
-    public Slot() {}
+    public Slot() {
+        setName("");
+    }
 
     public Slot(int number, int slotType, float rx, float ry, float width, float height) {
         this.number = number;
         this.slotType = slotType;
         setBounds(rx, ry, width, height);
+        setName("");
     }
 
     public void set(Slot<T> slot) {

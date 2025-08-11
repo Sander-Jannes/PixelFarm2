@@ -18,7 +18,7 @@ public class Items {
         lettuce_seeds, carrot_seeds, tomato_seeds, cauliflower_seeds, broccoli_seeds, pumpkin_seeds, cucumber_seeds, onion_seeds, eggplant_seeds,
         carrot_soup, tomato_soup, cauliflower_soup, broccoli_soup, pumpkin_soup,
         scythe, watering_can, fertilizer,
-        box, closed_box;
+        box, closed_box, test;
 
     public static BonusItem flowers;
 
@@ -209,7 +209,12 @@ public class Items {
 
         flowers = new BonusItem(ItemType.FLOWERS, 1, 1) {{
             multiplier = 2.0f;
-            description = "colorful";
+            description = "";
+        }};
+
+        test = new BonusItem(ItemType.CARROT_SOUP, 1, 1) {{
+            multiplier = 2.0f;
+            description = "";
         }};
     }
 }

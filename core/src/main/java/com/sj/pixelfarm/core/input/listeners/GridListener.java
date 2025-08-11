@@ -27,7 +27,7 @@ public class GridListener extends InputListener {
 
         if (button == Input.Buttons.LEFT) {
             isLeftMousePressed = true;
-            grid.grabItem(tmpVec2);
+            grid.grabSlot(tmpVec2);
             return true;
         }
 

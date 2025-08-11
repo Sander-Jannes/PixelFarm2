@@ -54,7 +54,7 @@ public class ItemGrid extends GridBase<ItemStack, ItemStackSlot> {
 
             // Belangrijk: maak kopie, bij meerdere grids wordt 'e.pos()' steeds veranderd en gebruikt voor verdere berekeningen
             Vector2 localPos = stageToLocalCoordinates(e.pos().cpy());
-            if (dropSlot(e.source().selectedSlot, localPos)) {
+            if (putSlot(e.source().selectedSlot, localPos) != null) {
                 e.source().removeSelectedSlot();
             }
         });
@@ -81,29 +81,65 @@ public class ItemGrid extends GridBase<ItemStack, ItemStackSlot> {
         return selectedSlot;
     }
 
-    public void grabItem(Vector2 localPos) {
+    public @Null ItemStackSlot grabSlot(Vector2 localPos) {
         ItemStackSlot clickedSlot = getSlotByPos(localPos);
 
         if (clickedSlot != null && !clickedSlot.isEmpty()) {
             selectedSlot.set(clickedSlot);
             updateSelectedSlot(localPos);
             getStage().getRoot().addActor(selectedSlot);
+            return clickedSlot;
         }
+        return null;
     }
 
-    public void splitSlot(ItemStackSlot slot) {
+    public @Null ItemStackSlot splitSlot(ItemStackSlot slot) {
         if (slot != null && !slot.isEmpty()) {
             ItemStackSlot newSlot = getFreeSlot(slot.getObj());
 
             if (newSlot != null) {
                 newSlot.setObj(slot.split());
+                return newSlot;
             }
         }
+        return null;
+    }
+
+    protected @Null ItemStackSlot putSlot(ItemStackSlot dropSlot, Vector2 localPos) {
+        ItemStackSlot targetSlot = getSlotByPos(localPos);
+        if (targetSlot == null || dropSlot == null) return null;
+
+        if (targetSlot.equals(dropSlot)) {
+            if (targetSlot.isEmpty()) {
+                targetSlot.setObj(dropSlot.getObj());
+                return targetSlot;
+
+            } else if (targetSlot.canMergeWith(dropSlot.getObj(), maxSlotCapacity)) {
+                tryMergeItem(dropSlot.getObj(), targetSlot);
+                return targetSlot;
+            }
+        }
+
+        return null;
+    }
+
+    // Het is alleen mogelijk om binnen hetzelfde grid een slot te verwisselen, daarom zit dit niet bij in dropSlot
+    protected @Null ItemStackSlot swapSlot(ItemStackSlot dropSlot, Vector2 localPos) {
+        ItemStackSlot targetSlot = getSlotByPos(localPos);
+        if (targetSlot == null || dropSlot == null) return null;
+
+        if (targetSlot.equals(dropSlot) && dropSlot.equals(targetSlot)) {
+            dropSlot.swapObj(targetSlot);
+            ItemStackSlot oldSlot = getSlotByNumber(dropSlot.getNumber());
+            oldSlot.setObj(dropSlot.getObj());
+            return targetSlot;
+        }
+        return null;
     }
 
     public boolean dropSelectedSlot(Vector2 localPos) {
-        if (dropSlot(selectedSlot, localPos)) return true;
-        return swapSlot(selectedSlot, localPos);
+        if (putSlot(selectedSlot, localPos) != null) return true;
+        return swapSlot(selectedSlot, localPos) != null;
     }
 
     public void updateSelectedSlot(Vector2 localPos) {
@@ -149,38 +185,6 @@ public class ItemGrid extends GridBase<ItemStack, ItemStackSlot> {
         if (!slot.isEmpty()) {
             setObjToSlot(slot.getNumber(), slot.getObj());
         }
-    }
-
-    private boolean dropSlot(ItemStackSlot dropSlot, Vector2 localPos) {
-        ItemStackSlot targetSlot = getSlotByPos(localPos);
-        if (targetSlot == null || dropSlot == null) return false;
-
-        if (targetSlot.equals(dropSlot)) {
-            if (targetSlot.isEmpty()) {
-                targetSlot.setObj(dropSlot.getObj());
-                return true;
-
-            } else if (targetSlot.canMergeWith(dropSlot.getObj(), maxSlotCapacity)) {
-                tryMergeItem(dropSlot.getObj(), targetSlot);
-                return true;
-            }
-        }
-
-        return false;
-    }
-
-    // Het is alleen mogelijk om binnen hetzelfde grid een slot te verwisselen, daarom zit dit niet bij in dropSlot
-    public boolean swapSlot(ItemStackSlot dropSlot, Vector2 localPos) {
-        ItemStackSlot targetSlot = getSlotByPos(localPos);
-        if (targetSlot == null || dropSlot == null) return false;
-
-        if (targetSlot.equals(dropSlot) && dropSlot.equals(targetSlot)) {
-            dropSlot.swapObj(targetSlot);
-            ItemStackSlot oldSlot = getSlotByNumber(dropSlot.getNumber());
-            oldSlot.setObj(dropSlot.getObj());
-            return true;
-        }
-        return false;
     }
 
     private boolean tryMergeItem(ItemStack dropItem, ItemStackSlot targetSlot) {

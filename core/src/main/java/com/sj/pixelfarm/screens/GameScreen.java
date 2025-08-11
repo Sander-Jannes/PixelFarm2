@@ -48,8 +48,9 @@ public class GameScreen implements Screen {
 
         grid.setObjToSlot(1, PoolManager.obtain(Items.cucumber, 4, Item.Quality.GOOD));
         grid.setObjToSlot(2, PoolManager.obtain(Items.eggplant_seeds, 64, Item.Quality.NONE));
-        grid.setObjToSlot(3, PoolManager.obtain(Items.onion_seeds, 64, Item.Quality.NONE));
 
+
+        grid.setObjToSlot(3, PoolManager.obtain(Items.test, 5, Item.Quality.NONE));
         grid.setObjToSlot(4, PoolManager.obtain(Items.flowers, 2, Item.Quality.NONE));
 
         grid.setObjToSlot(5, PoolManager.obtain(Items.watering_can, 64, Item.Quality.NONE));

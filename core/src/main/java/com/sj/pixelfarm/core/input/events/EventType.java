@@ -7,7 +7,6 @@ import com.sj.pixelfarm.core.input.Interactions;
 import com.sj.pixelfarm.core.itemgrid.ItemGrid;
 import com.sj.pixelfarm.core.itemgrid.ItemStack;
 import com.sj.pixelfarm.core.itemgrid.ItemStackSlot;
-import com.sj.pixelfarm.items.box.Box;
 import com.sj.pixelfarm.items.box.Order;
 import com.sj.pixelfarm.ui.actionbar.ActionBar;
 import com.sj.pixelfarm.core.ui.effects.UIEffect;
@@ -52,4 +51,8 @@ public class EventType {
     public record ShowOrderEvent(Order order, Vector2 pos) { }
 
     public record RemoveOrderEvent() { }
+
+    public record AddBoxInfoBonus() { }
+
+    public record RemoveBoxInfoBonus() { }
 }
