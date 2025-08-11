@@ -1,14 +1,12 @@
 package com.sj.pixelfarm.items;
 
 
-import com.sj.pixelfarm.core.item.Item;
-import com.sj.pixelfarm.core.item.ItemType;
-import com.sj.pixelfarm.core.item.actions.ActionInfo;
-import com.sj.pixelfarm.core.item.actions.ActionTarget;
-import com.sj.pixelfarm.core.item.actions.Actions;
-import com.sj.pixelfarm.core.input.Interactions;
-import com.sj.pixelfarm.core.item.actions.ActionProps;
-import com.sj.pixelfarm.world.TileType;
+import com.sj.pixelfarm.items.actions.ActionInfo;
+import com.sj.pixelfarm.items.actions.ActionTarget;
+import com.sj.pixelfarm.items.actions.Actions;
+import com.sj.pixelfarm.input.Interactions;
+import com.sj.pixelfarm.items.actions.ActionProps;
+import com.sj.pixelfarm.world.types.TileType;
 
 
 public class Items {

@@ -3,7 +3,7 @@
   "slotInfo": [
     {
       "slotType": 1,
-      "class": "com.sj.pixelfarm.core.itemgrid.ItemStackSlot",
+      "class": "com.sj.pixelfarm.itemgrid.ItemStackSlot",
       "selectImage": "box_info/box_info_selection1",
       "highlightImage": "",
       "size": [82, 82]

@@ -10,17 +10,17 @@ import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.Null;
 import com.badlogic.gdx.utils.Scaling;
-import com.sj.pixelfarm.core.Entities;
-import com.sj.pixelfarm.core.input.events.Events;
-import com.sj.pixelfarm.core.item.Item;
-import com.sj.pixelfarm.core.mem.Assets;
-import com.sj.pixelfarm.core.ui.styles.TextButtonStyles;
-import com.sj.pixelfarm.ui.actionbar.ActionBar;
+import com.sj.pixelfarm.Entities;
+import com.sj.pixelfarm.core.Events;
+import com.sj.pixelfarm.items.Item;
+import com.sj.pixelfarm.mem.Assets;
+import com.sj.pixelfarm.ui.styles.TextButtonStyles;
+import com.sj.pixelfarm.ui.elements.actionbar.ActionBar;
 import com.sj.pixelfarm.core.ui.effects.UIEffect;
 import com.sj.pixelfarm.core.ui.effects.UIEffects;
-import com.sj.pixelfarm.core.ui.styles.ButtonStyles;
-import com.sj.pixelfarm.core.ui.styles.LabelStyles;
-import com.sj.pixelfarm.core.ui.styles.UIColors;
+import com.sj.pixelfarm.ui.styles.ButtonStyles;
+import com.sj.pixelfarm.ui.styles.LabelStyles;
+import com.sj.pixelfarm.ui.styles.UIColors;
 
 import java.util.function.Consumer;
 

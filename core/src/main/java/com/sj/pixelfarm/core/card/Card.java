@@ -5,8 +5,7 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Group;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Stack;
-import com.sj.pixelfarm.core.input.listeners.CardInputListener;
-import com.sj.pixelfarm.core.mem.Assets;
+import com.sj.pixelfarm.mem.Assets;
 
 
 /**

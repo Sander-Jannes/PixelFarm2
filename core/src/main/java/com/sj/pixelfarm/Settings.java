@@ -1,6 +1,6 @@
 package com.sj.pixelfarm;
 
-import com.sj.pixelfarm.core.utils.Logic;
+import com.sj.pixelfarm.utils.Logic;
 
 
 public final class Settings {

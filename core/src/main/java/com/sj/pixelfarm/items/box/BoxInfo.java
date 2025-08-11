@@ -5,12 +5,12 @@ import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 
-import com.sj.pixelfarm.core.Entities;
+import com.sj.pixelfarm.Entities;
 import com.sj.pixelfarm.core.card.Card;
 import com.sj.pixelfarm.core.grid.GridLoader;
-import com.sj.pixelfarm.core.itemgrid.ItemStack;
-import com.sj.pixelfarm.core.mem.Assets;
-import com.sj.pixelfarm.core.ui.styles.LabelStyles;
+import com.sj.pixelfarm.itemgrid.ItemStack;
+import com.sj.pixelfarm.mem.Assets;
+import com.sj.pixelfarm.ui.styles.LabelStyles;
 import com.sj.pixelfarm.items.BonusItem;
 import com.sj.pixelfarm.order.Order;
 import com.sj.pixelfarm.order.OrderGenerator;

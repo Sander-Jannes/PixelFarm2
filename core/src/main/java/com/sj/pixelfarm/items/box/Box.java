@@ -5,10 +5,10 @@ import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.sj.pixelfarm.core.grid.Slot;
-import com.sj.pixelfarm.core.item.Item;
+import com.sj.pixelfarm.items.Item;
 import com.sj.pixelfarm.items.Items;
-import com.sj.pixelfarm.core.itemgrid.ItemStack;
-import com.sj.pixelfarm.core.ui.styles.ButtonStyles;
+import com.sj.pixelfarm.itemgrid.ItemStack;
+import com.sj.pixelfarm.ui.styles.ButtonStyles;
 
 import java.util.List;
 import java.util.Objects;

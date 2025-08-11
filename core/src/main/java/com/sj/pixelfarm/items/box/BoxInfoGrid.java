@@ -3,9 +3,9 @@ package com.sj.pixelfarm.items.box;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Null;
 import com.sj.pixelfarm.core.grid.GridLoader;
-import com.sj.pixelfarm.core.itemgrid.ItemGrid;
-import com.sj.pixelfarm.core.itemgrid.ItemStack;
-import com.sj.pixelfarm.core.itemgrid.ItemStackSlot;
+import com.sj.pixelfarm.itemgrid.ItemGrid;
+import com.sj.pixelfarm.itemgrid.ItemStack;
+import com.sj.pixelfarm.itemgrid.ItemStackSlot;
 import com.sj.pixelfarm.items.BonusItem;
 import com.sj.pixelfarm.items.Items;
 

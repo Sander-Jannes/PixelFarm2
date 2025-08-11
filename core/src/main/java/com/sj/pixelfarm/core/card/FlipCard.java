@@ -5,7 +5,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Container;
 import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
 import com.badlogic.gdx.scenes.scene2d.ui.Stack;
 import com.badlogic.gdx.utils.Align;
-import com.sj.pixelfarm.core.ui.styles.ButtonStyles;
+import com.sj.pixelfarm.ui.styles.ButtonStyles;
 
 import java.util.function.Consumer;
 

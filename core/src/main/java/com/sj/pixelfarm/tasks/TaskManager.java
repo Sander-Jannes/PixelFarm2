@@ -5,9 +5,9 @@ import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.math.GridPoint2;
 import com.badlogic.gdx.utils.Timer;
 import com.sj.pixelfarm.Settings;
-import com.sj.pixelfarm.core.utils.Logic;
-import com.sj.pixelfarm.core.utils.TileHelper;
-import com.sj.pixelfarm.world.TileSetNames;
+import com.sj.pixelfarm.utils.Logic;
+import com.sj.pixelfarm.utils.TileHelper;
+import com.sj.pixelfarm.world.types.TileSetNames;
 import com.sj.pixelfarm.world.World;
 
 

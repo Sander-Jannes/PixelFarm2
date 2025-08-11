@@ -2,7 +2,7 @@ package com.sj.pixelfarm.state;
 
 
 import com.badlogic.gdx.utils.Array;
-import com.sj.pixelfarm.world.FieldGroup;
+import com.sj.pixelfarm.world.types.FieldGroup;
 
 public final class GameState {
 

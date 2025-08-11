@@ -1,7 +1,7 @@
 package com.sj.pixelfarm.order;
 
 
-import com.sj.pixelfarm.core.itemgrid.ItemStack;
+import com.sj.pixelfarm.itemgrid.ItemStack;
 import com.sj.pixelfarm.items.box.Box;
 
 import java.util.ArrayList;

@@ -4,8 +4,8 @@ import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputMultiplexer;
-import com.sj.pixelfarm.core.input.listeners.DesktopInputListener;
-import com.sj.pixelfarm.core.mem.Assets;
+import com.sj.pixelfarm.input.listeners.DesktopInputListener;
+import com.sj.pixelfarm.mem.Assets;
 import com.sj.pixelfarm.screens.LoadingScreen;
 
 

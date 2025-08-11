@@ -9,7 +9,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.Pools;
 import com.sj.pixelfarm.Main;
 import com.sj.pixelfarm.items.Items;
-import com.sj.pixelfarm.core.itemgrid.ItemStack;
+import com.sj.pixelfarm.itemgrid.ItemStack;
 import com.sj.pixelfarm.items.box.Box;
 
 

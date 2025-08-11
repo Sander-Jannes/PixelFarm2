@@ -3,21 +3,21 @@
   "slotInfo": [
     {
       "slotType": 1,
-      "class": "com.sj.pixelfarm.core.itemgrid.ItemStackSlot",
+      "class": "com.sj.pixelfarm.itemgrid.ItemStackSlot",
       "selectImage": "hotbar/hotbar_selection",
       "highlightImage": "hotbar/hotbar_forced_selection",
       "size": [94, 94]
     },
     {
       "slotType": 2,
-      "class": "com.sj.pixelfarm.core.itemgrid.ItemStackSlot",
+      "class": "com.sj.pixelfarm.itemgrid.ItemStackSlot",
       "selectImage": "hotbar/hotbar_selection",
       "highlightImage": "hotbar/hotbar_forced_selection",
       "size": [94, 94]
     },
     {
       "slotType": 3,
-      "class": "com.sj.pixelfarm.core.itemgrid.ItemStackSlot",
+      "class": "com.sj.pixelfarm.itemgrid.ItemStackSlot",
       "selectImage": "hotbar/hotbar_selection",
       "highlightImage": "hotbar/hotbar_forced_selection",
       "size": [94, 94]
