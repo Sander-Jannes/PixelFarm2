@@ -1,4 +1,4 @@
-package com.sj.pixelfarm.items.box;
+package com.sj.pixelfarm.order;
 
 import com.sj.pixelfarm.core.item.Item;
 import com.sj.pixelfarm.core.itemgrid.ItemStack;
@@ -8,7 +8,7 @@ import com.sj.pixelfarm.items.Items;
 import java.util.Random;
 
 
-public class OrderGenerator {
+public final class OrderGenerator {
 
     private static final Random random = new Random();
     public static int currentOrder = 0;

@@ -182,7 +182,8 @@ public class World implements Disposable {
                             if (car.acceptOrder(box)) {
                                 itemStackSlot.destroyObj(true);
                                 itemStackSlot.setObj(PoolManager.obtainBox());
-                                Vars.state.money += car.order.value * itemStack.amount;
+
+                                Vars.state.money += car.order.value + (car.order.value * box.getMultiplier());
                                 Vars.state.xp += car.order.xp * itemStack.amount;
                                 Events.fire(new EventType.UpdateOverlayEvent());
                             }

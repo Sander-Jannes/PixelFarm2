@@ -7,7 +7,7 @@ import com.sj.pixelfarm.world.FieldGroup;
 public final class GameState {
 
     /* Represents the amount of money the player currently has in the game. */
-    public float money = 999;
+    public float money = 20;
 
     /* Represents the player's current experience points in the game. */
     public int xp = 0;

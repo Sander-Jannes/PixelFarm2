@@ -1,7 +1,8 @@
-package com.sj.pixelfarm.items.box;
+package com.sj.pixelfarm.order;
 
 
 import com.sj.pixelfarm.core.itemgrid.ItemStack;
+import com.sj.pixelfarm.items.box.Box;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -9,7 +10,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 
-public class Order {
+public final class Order {
 
     public static String client = "";
 

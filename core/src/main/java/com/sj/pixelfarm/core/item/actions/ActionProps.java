@@ -6,7 +6,7 @@ import com.sj.pixelfarm.world.TileType;
 
 public interface ActionProps {
 
-    record Plant(TileType crop, float growTimePerLevel, float timeTillRotten, int waterLevel, int fertilizerLevel, int harvestQuantity, Item item) implements ActionProps { }
+    record Plant(TileType crop, float growTimePerLevel, int waterLevel, int fertilizerLevel, int harvestQuantity, Item item) implements ActionProps { }
 
     record Use(String target, float amount, TileType animation) implements ActionProps { }
 }

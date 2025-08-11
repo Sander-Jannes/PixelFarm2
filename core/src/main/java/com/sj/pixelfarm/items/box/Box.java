@@ -48,8 +48,7 @@ public class Box extends ItemStack {
             Button remove = createButton(ButtonStyles.REMOVE_ITEM, button -> {
                 item = Items.box;
                 setActor(new Image(item.image));
-                boxInfo.grid.reset(true);
-                boxInfo.grid.setTouchable(Touchable.enabled);
+                boxInfo.reset();
                 bar.setState(1);
             });
 
@@ -58,6 +57,10 @@ public class Box extends ItemStack {
             bar.setState(1);
             bar.space(5);
         });
+    }
+
+    public float getMultiplier() {
+        return boxInfo.getMultiplier();
     }
 
     public List<ItemStack> getItems() {
@@ -76,8 +79,7 @@ public class Box extends ItemStack {
     @Override
     public void reset() {
         super.reset();
-        boxInfo.grid.reset(true);
-        boxInfo.grid.setTouchable(Touchable.enabled);
+        boxInfo.reset();
         item = Items.box;
         setActor(new Image(item.image));
     }

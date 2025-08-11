@@ -12,6 +12,8 @@ import com.sj.pixelfarm.core.itemgrid.ItemStack;
 import com.sj.pixelfarm.core.mem.Assets;
 import com.sj.pixelfarm.core.ui.styles.LabelStyles;
 import com.sj.pixelfarm.items.BonusItem;
+import com.sj.pixelfarm.order.Order;
+import com.sj.pixelfarm.order.OrderGenerator;
 
 import static com.sj.pixelfarm.core.ui.UIUtils.*;
 
@@ -36,18 +38,18 @@ public class BoxInfo extends Card {
 
         orderNumberLabel = createLabel("", LabelStyles.X20, Color.BROWN, null);
         clientLabel = createLabel("", LabelStyles.X14, null, null);
-        bonusLabel = createLabel("", LabelStyles.X14, null, null);
+        bonusLabel = createLabel("Bonus: 0x", LabelStyles.X17, null, null);
         bonusLabel.setTouchable(Touchable.disabled);
 
         Table table = createTableWithRemoveButton(button -> setVisible(false));
         stack.add(grid);
         stack.addActor(table);
 
-        table.add(orderNumberLabel);
+        table.add(orderNumberLabel).padTop(20);
         table.row().padTop(10);
         table.add(clientLabel);
         table.row().expand();
-        table.add(bonusLabel).bottom().padBottom(50);
+        table.add(bonusLabel).left().padLeft(15).bottom().padBottom(35);
     }
 
     public void setBonus(ItemStack stack) {
@@ -57,11 +59,21 @@ public class BoxInfo extends Card {
     }
 
     public void removeBonus() {
-        bonusLabel.setText("");
+        bonusLabel.setText("Bonus: 0x");
     }
 
     public void updateOrderInformation() {
         orderNumberLabel.setText("Order: #" + String.format("%04d", OrderGenerator.currentOrder));
         clientLabel.setText("Client: " + Order.client);
+    }
+
+    public void reset() {
+        grid.reset(true);
+        grid.setTouchable(Touchable.enabled);
+        bonusLabel.setText("Bonus: 0x");
+    }
+
+    public float getMultiplier() {
+        return grid.getMultiplier();
     }
 }

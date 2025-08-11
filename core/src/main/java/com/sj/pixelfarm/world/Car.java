@@ -7,8 +7,8 @@ import com.sj.pixelfarm.core.input.events.EventType;
 import com.sj.pixelfarm.core.input.events.Events;
 import com.sj.pixelfarm.core.mem.Assets;
 import com.sj.pixelfarm.items.box.Box;
-import com.sj.pixelfarm.items.box.Order;
-import com.sj.pixelfarm.items.box.OrderGenerator;
+import com.sj.pixelfarm.order.Order;
+import com.sj.pixelfarm.order.OrderGenerator;
 
 
 public class Car {

@@ -6,6 +6,7 @@ import com.sj.pixelfarm.core.grid.GridLoader;
 import com.sj.pixelfarm.core.itemgrid.ItemGrid;
 import com.sj.pixelfarm.core.itemgrid.ItemStack;
 import com.sj.pixelfarm.core.itemgrid.ItemStackSlot;
+import com.sj.pixelfarm.items.BonusItem;
 import com.sj.pixelfarm.items.Items;
 
 
@@ -20,6 +21,13 @@ public class BoxInfoGrid extends ItemGrid {
 
         bonus = getSlotByNumber(1);
         bonus.setFixed(Items.flowers, Items.test);
+    }
+
+    public float getMultiplier() {
+        if (bonus.isEmpty()) {
+            return 0f;
+        }
+        return ((BonusItem) bonus.getObj().item).multiplier;
     }
 
     @Override
@@ -56,7 +64,7 @@ public class BoxInfoGrid extends ItemGrid {
     protected @Null ItemStackSlot swapSlot(ItemStackSlot dropSlot, Vector2 localPos) {
         ItemStackSlot targetSlot = super.swapSlot(dropSlot, localPos);
 
-        if (isBonusSlot(targetSlot, dropSlot)) {
+        if (isBonusSlot(targetSlot, dropSlot) && !bonus.isEmpty()) {
             boxInfo.setBonus(bonus.getObj());
         }
         return targetSlot;

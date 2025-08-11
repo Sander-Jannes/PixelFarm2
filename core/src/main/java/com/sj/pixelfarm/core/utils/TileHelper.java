@@ -85,7 +85,6 @@ public final class TileHelper {
             transfer(source, "item");
             transfer(source, "props");
             ActionProps.Plant plantProperties = getProperty("props", ActionProps.Plant.class);
-            put("timeTillRotten", plantProperties.timeTillRotten());
             put("growTime", plantProperties.growTimePerLevel());
             put("waterLevel", plantProperties.waterLevel());
             put("fertilizerLevel", plantProperties.fertilizerLevel());
@@ -97,7 +96,6 @@ public final class TileHelper {
             put("quality", Logic.itemQualityToTileQuality(Item.Quality.GOOD));
             put("props", props);
             put("item", props.item());
-            put("timeTillRotten", props.timeTillRotten());
             put("growTime", props.growTimePerLevel());
             put("waterLevel", props.waterLevel());
             put("fertilizerLevel", props.fertilizerLevel());

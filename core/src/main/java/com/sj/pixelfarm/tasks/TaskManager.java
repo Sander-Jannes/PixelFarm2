@@ -5,11 +5,9 @@ import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.math.GridPoint2;
 import com.badlogic.gdx.utils.Timer;
 import com.sj.pixelfarm.Settings;
-import com.sj.pixelfarm.core.item.Item;
 import com.sj.pixelfarm.core.utils.Logic;
 import com.sj.pixelfarm.core.utils.TileHelper;
 import com.sj.pixelfarm.world.TileSetNames;
-import com.sj.pixelfarm.world.TileType;
 import com.sj.pixelfarm.world.World;
 
 
@@ -68,17 +66,6 @@ public class TaskManager {
 
                             } else {
                                 t.updateValueByN("quality", -Settings.QUALITY_DEBUFF_FERTILIZER, 0f, 100f);
-                            }
-
-                            /* Too long a BAD quality results in rotten plants... */
-                            if (Logic.tileQualityToItemQuality(t.getProperty("quality", Float.class)) == Item.Quality.BAD) {
-                                t.updateValueByN("timeTillRotten", -TICK_RATE, -TICK_RATE);
-
-                                if (t.getProperty("timeTillRotten", Float.class) <= TICK_RATE) {
-                                    tmpGridPoint2.set(finalRow, finalCol);
-                                    world.worldMap.setCell(tmpGridPoint2, World.Layers.GROUND, TileType.ROTTEN_FIELD);
-                                    world.worldMap.removeCell(tmpGridPoint2, World.Layers.DECORATION);
-                                }
                             }
 
                             // let the growth time count down

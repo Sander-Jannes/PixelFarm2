@@ -7,7 +7,7 @@ import com.sj.pixelfarm.core.input.Interactions;
 import com.sj.pixelfarm.core.itemgrid.ItemGrid;
 import com.sj.pixelfarm.core.itemgrid.ItemStack;
 import com.sj.pixelfarm.core.itemgrid.ItemStackSlot;
-import com.sj.pixelfarm.items.box.Order;
+import com.sj.pixelfarm.order.Order;
 import com.sj.pixelfarm.ui.actionbar.ActionBar;
 import com.sj.pixelfarm.core.ui.effects.UIEffect;
 
