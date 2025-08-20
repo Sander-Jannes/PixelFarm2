@@ -26,19 +26,16 @@ import static com.sj.pixelfarm.core.ui.UIUtils.createButton;
 public class ItemGrid extends GridBase<ItemStack, ItemStackSlot> {
 
     protected final ItemStackSlot selectedSlot = new ItemStackSlot();
+    protected final ArrayList<Integer> noActionTypes = new ArrayList<>();
+
     private ItemStackSlot clickedSlot;
     private final int maxSlotCapacity;
-    public ActionBar actionBar;
-
-    protected final ArrayList<Integer> noActions = new ArrayList<>();
+    private final ActionBar actionBar;
 
     public ItemGrid(GridLoader.GridConfig<ItemStack, ItemStackSlot> data, int maxSlotCapacity, String name) {
         super(data);
 
         this.maxSlotCapacity = maxSlotCapacity;
-
-        // Slottype twee heeft geen acties, dit moet anders
-        noActions.add(2);
 
         setName(name);
         selectedSlot.setName(Entities.ACTIVE_SLOT);
@@ -172,7 +169,7 @@ public class ItemGrid extends GridBase<ItemStack, ItemStackSlot> {
 
             if (clickedSlot.getObj().actionBar != null) {
                 ab = clickedSlot.getObj().actionBar;
-            } else if (!noActions.contains(clickedSlot.getSlotType())) {
+            } else if (!noActionTypes.contains(clickedSlot.getSlotType())) {
                ab = actionBar;
             }
 

@@ -7,6 +7,7 @@ import com.sj.pixelfarm.itemgrid.ItemGrid;
 import com.sj.pixelfarm.itemgrid.ItemStack;
 import com.sj.pixelfarm.itemgrid.ItemStackSlot;
 import com.sj.pixelfarm.items.Item;
+import com.sj.pixelfarm.items.ItemType;
 import com.sj.pixelfarm.items.Items;
 import com.sj.pixelfarm.items.box.Box;
 import com.sj.pixelfarm.mem.PoolManager;
@@ -20,7 +21,12 @@ public class OrderCardGrid extends ItemGrid {
 
     public OrderCardGrid(GridLoader.GridConfig<ItemStack, ItemStackSlot> data, int maxSlotCapacity, String name) {
         super(data, maxSlotCapacity, name);
-        noActions.add(3);
+        noActionTypes.add(3);
+    }
+
+    // Zorg dat er geen items genomen kunnen worden uit de grid
+    public @Null ItemStackSlot grabSlot(Vector2 localPos) {
+        return null;
     }
 
     @Override
@@ -28,7 +34,7 @@ public class OrderCardGrid extends ItemGrid {
         ItemStackSlot targetSlot = getSlotByPos(localPos);
         if (targetSlot == null || dropSlot == null) return null;
 
-        if (dropSlot.getObj().getName().equals("Box")) {
+        if (!dropSlot.isEmpty() && dropSlot.getObj().item.itemType == ItemType.CLOSED_BOX) {
             Box box = (Box) dropSlot.getObj();
             items = box.getItems();
             targetSlot.setObj(PoolManager.obtain(Items.closed_box, 0, Item.Quality.NONE));

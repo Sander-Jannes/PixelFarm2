@@ -18,6 +18,7 @@ import com.sj.pixelfarm.items.Item;
 import com.sj.pixelfarm.items.Items;
 import com.sj.pixelfarm.mem.Assets;
 import com.sj.pixelfarm.mem.PoolManager;
+import com.sj.pixelfarm.ui.elements.hotbar.HotBar;
 import com.sj.pixelfarm.ui.elements.hud.OverlayMenu;
 import com.sj.pixelfarm.input.events.UIEventProcessor;
 import com.sj.pixelfarm.tasks.TaskManager;
@@ -44,7 +45,7 @@ public class GameScreen implements Screen {
         world = new World(worldViewport);
         worldInputListener = new WorldInputListener(world, stage);
 
-        ItemGrid hotbar = new ItemGrid(GridLoader.load("gridconfig/hotbar.json", Assets::getAtlasTexture), 64, Entities.HOTBAR);
+        HotBar hotbar = new HotBar(GridLoader.load("gridconfig/hotbar.json", Assets::getAtlasTexture), 64, Entities.HOTBAR);
         hotbar.setPosition(Gdx.graphics.getWidth() / 2f - hotbar.getWidth() / 2f,40);
 
         hotbar.setObjToSlot(1, PoolManager.obtain(Items.cucumber, 4, Item.Quality.GOOD));
