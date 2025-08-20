@@ -5,13 +5,13 @@ public class TabModal<T> extends Modal {
 
     private final TabBar<T> tabBar;
 
-    public TabModal(String image, T initialTab) {
-        super(image);
+    public TabModal(String image, String name, T initialTab) {
+        super(image, name);
         this.tabBar = new TabBar<>(initialTab);
         tabBar.space(20);
 
-        table.add(tabBar).left().padLeft(40).top().padTop(50);
-        table.row().expand();
+        modalTable.add(tabBar).left().padLeft(40).top().padTop(50);
+        modalTable.row().expand();
     }
 
     public void addTab(String text, T tab, Runnable action) {

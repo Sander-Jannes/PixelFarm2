@@ -7,7 +7,8 @@ public enum ActionTarget {
     FIELDS("group", "fields", World.Layers.GROUND),
     CROPS("group", "crops", World.Layers.DECORATION),
     GRASS("group", "grass", World.Layers.GROUND),
-    CAR("group", "roads", World.Layers.GROUND);
+    CAR("group", "roads", World.Layers.GROUND),
+    STALL("name", "stall", World.Layers.DECORATION);
 
     public final String property;
     public final String name;

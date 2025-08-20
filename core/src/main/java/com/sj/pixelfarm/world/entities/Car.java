@@ -3,12 +3,7 @@ package com.sj.pixelfarm.world.entities;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.*;
-import com.sj.pixelfarm.input.events.EventType;
-import com.sj.pixelfarm.core.Events;
 import com.sj.pixelfarm.mem.Assets;
-import com.sj.pixelfarm.items.box.Box;
-import com.sj.pixelfarm.order.Order;
-import com.sj.pixelfarm.order.OrderGenerator;
 import com.sj.pixelfarm.world.utils.WorldUtils;
 
 
@@ -17,7 +12,7 @@ public class Car {
     private static final TextureRegion car = Assets.getAtlasTexture("world/car");
     private final Path path;
     private boolean drive = false;
-    public Order order = OrderGenerator.generateRandomOrder();
+//    public Order order = OrderGenerator.generateRandomOrder();
 
     public Car(GridPoint2[] points) {
         this.path = new Path(points[0], points[1], points[2]);
@@ -35,7 +30,7 @@ public class Car {
             }
 
             if (!path.update(delta / 8f)) {
-                Events.fire(new EventType.ShowOrderEvent(order, path.start.cpy()));
+//                Events.fire(new EventType.ShowOrderEvent(order, path.start.cpy()));
             }
         }
     }
@@ -44,15 +39,15 @@ public class Car {
         return WorldUtils.getGridPos(path.start).cpy().add(0, 1);
     }
 
-    public boolean acceptOrder(Box order) {
-        if (this.order.doesBoxFulfilOrder(order)) {
-            path.continuePath();
-            Events.fire(new EventType.RemoveOrderEvent());
-            this.order = OrderGenerator.generateRandomOrder();
-            return true;
-        }
-        return false;
-    }
+//    public boolean acceptOrder(Box order) {
+//        if (this.order.doesBoxFulfilOrder(order)) {
+//            path.continuePath();
+//            Events.fire(new EventType.RemoveOrderEvent());
+//            this.order = OrderGenerator.generateRandomOrder();
+//            return true;
+//        }
+//        return false;
+//    }
 
     public void draw(Batch batch) {
         if (!drive) return;

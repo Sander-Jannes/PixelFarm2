@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 
 public final class Order {
 
-    public static String client = "";
+    public String client;
 
     private final ArrayList<ItemStack> items;
     private final Map<String, Integer> order;
@@ -20,11 +20,11 @@ public final class Order {
     public float value;
     public int xp;
 
-    public Order(ItemStack[] items, float value, int xp, String c) {
+    public Order(ItemStack[] items, float value, int xp, String client) {
         this.items = new ArrayList<>(Arrays.asList(items));
         this.value = value;
         this.xp = xp;
-        client = c;
+        this.client = client;
 
         order = this.items.stream()
             .collect(Collectors.groupingBy(

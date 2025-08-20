@@ -182,18 +182,18 @@ public class World implements Disposable {
                     }
 
                     case SELL: {
-                        if (car.getPosition().equals(pos)) {
-                            Box box = (Box) itemStack;
-
-                            if (car.acceptOrder(box)) {
-                                itemStackSlot.destroyObj(true);
-                                itemStackSlot.setObj(PoolManager.obtainBox());
-
-                                Vars.state.money += car.order.value + (car.order.value * box.getMultiplier());
-                                Vars.state.xp += car.order.xp * itemStack.amount;
-                                Events.fire(new EventType.UpdateOverlayEvent());
-                            }
-                        }
+//                        if (car.getPosition().equals(pos)) {
+//                            Box box = (Box) itemStack;
+//
+//                            if (car.acceptOrder(box)) {
+//                                itemStackSlot.destroyObj(true);
+//                                itemStackSlot.setObj(PoolManager.obtainBox());
+//
+//                                Vars.state.money += car.order.value + (car.order.value * box.getMultiplier());
+//                                Vars.state.xp += car.order.xp * itemStack.amount;
+//                                Events.fire(new EventType.UpdateOverlayEvent());
+//                            }
+//                        }
                         break;
                     }
 

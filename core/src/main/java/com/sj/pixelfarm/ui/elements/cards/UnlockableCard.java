@@ -30,7 +30,7 @@ public class UnlockableCard extends FlipCard {
 
         lockContainer.setActor(lockStack);
         lockContainer.top().right().padRight(-15).padTop(-20);
-        stack.add(lockContainer);
+        cardStack.add(lockContainer);
     }
 
     protected void unlock(Runnable action) {

@@ -30,6 +30,8 @@ public class ItemStack extends SlotObject implements Pool.Poolable {
     protected @Null ActionBar actionBar;
 
     public ItemStack() {
+        setName("ItemStack");
+
         Container<Stack> overlayContainer = new Container<>();
         overlayContainer.right().top().padTop(5).padRight(5);
 

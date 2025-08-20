@@ -109,7 +109,7 @@ public abstract class GridBase<T extends SlotObject, U extends Slot<T>> extends 
         }
     }
 
-    private void addSlot(U slot) {
+    public void addSlot(U slot) {
         slot.setOrigin(Align.center);
         slots.add(slot);
         addActor(slot);
@@ -128,11 +128,8 @@ public abstract class GridBase<T extends SlotObject, U extends Slot<T>> extends 
             for (U slot : slots) {
                 GridLoader.SlotInfo info = slotInfo.get(slot.getSlotType());
 
-                if (info != null) {
-                    if (slot.contains(tempVec2) && info.selectImage() != null) {
-                        batch.draw(info.selectImage(), getX() + slot.getX(), getY() + slot.getY(),
-                                slot.getWidth(), slot.getHeight());
-                    }
+                if (info != null && slot.contains(tempVec2) && info.selectImage() != null) {
+                    batch.draw(info.selectImage(), getX() + slot.getX(), getY() + slot.getY(), slot.getWidth(), slot.getHeight());
                 }
             }
         }

@@ -4,7 +4,7 @@
         <key>fileFormatVersion</key>
         <int>6</int>
         <key>texturePackerVersion</key>
-        <string>7.8.0</string>
+        <string>7.9.0</string>
         <key>autoSDSettings</key>
         <array>
             <struct type="AutoSDSettings">
@@ -283,6 +283,7 @@
                 <false/>
             </struct>
             <key type="filename">atlas/calendar/day_selection.png</key>
+            <key type="filename">atlas/stall/order_grid.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -623,6 +624,21 @@
                 <rect>51,64,103,127</rect>
                 <key>scale9Paddings</key>
                 <rect>51,64,103,127</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">atlas/stall/order.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>50,25,100,50</rect>
+                <key>scale9Paddings</key>
+                <rect>50,25,100,50</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>

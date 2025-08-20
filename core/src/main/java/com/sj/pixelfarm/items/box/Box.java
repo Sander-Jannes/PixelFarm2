@@ -10,6 +10,7 @@ import com.sj.pixelfarm.items.Items;
 import com.sj.pixelfarm.itemgrid.ItemStack;
 import com.sj.pixelfarm.ui.styles.ButtonStyles;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -25,6 +26,7 @@ public class Box extends ItemStack {
 
     public Box() {
         super();
+        setName("Box");
         boxInfo.moveCenterTo(Gdx.graphics.getWidth() / 2f, Gdx.graphics.getHeight() / 2f);
     }
 
@@ -63,8 +65,8 @@ public class Box extends ItemStack {
         return boxInfo.getMultiplier();
     }
 
-    public List<ItemStack> getItems() {
-        return StreamSupport.stream(boxInfo.grid.getSlots().spliterator(), false)
+    public ArrayList<ItemStack> getItems() {
+        return (ArrayList<ItemStack>) StreamSupport.stream(boxInfo.grid.getSlots().spliterator(), false)
             .map(Slot::getObj)
             .filter(Objects::nonNull)
             .collect(Collectors.toList());
@@ -81,6 +83,7 @@ public class Box extends ItemStack {
         super.reset();
         boxInfo.reset();
         item = Items.box;
+        actionBar.setState(1);
         setActor(new Image(item.image));
     }
 }

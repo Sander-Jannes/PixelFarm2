@@ -15,18 +15,18 @@ import com.sj.pixelfarm.mem.Assets;
  */
 public abstract class Card extends Group {
 
-    protected final Stack stack = new Stack();
+    protected final Stack cardStack = new Stack();
 
     public Card(String imagePath, float x, float y, boolean isMovable) {
         super();
 
         TextureRegion region = Assets.getAtlasTexture(imagePath);
         Image image = new Image(region);
-        stack.setFillParent(true);
+        cardStack.setFillParent(true);
         setBounds(x, y, region.getRegionWidth(), region.getRegionHeight());
 
-        stack.addActor(image);
-        addActor(stack);
+        cardStack.addActor(image);
+        addActor(cardStack);
 
         if (isMovable) {
             addListener(new CardInputListener(this));

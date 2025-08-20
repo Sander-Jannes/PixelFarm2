@@ -1,67 +1,67 @@
 assets.png
-size: 1899, 1369
+size: 1997, 1271
 format: RGBA8888
 filter: Linear, Linear
 repeat: none
 box_info/box_info
   rotate: false
-  xy: 1320, 346
+  xy: 1645, 311
   size: 270, 335
   orig: 270, 335
   offset: 0, 0
   index: -1
 box_info/box_info2
   rotate: false
-  xy: 1590, 346
+  xy: 0, 646
   size: 270, 335
   orig: 270, 335
   offset: 0, 0
   index: -1
 box_info/box_info_selection1
   rotate: false
-  xy: 715, 87
+  xy: 587, 87
   size: 82, 82
   orig: 82, 82
   offset: 0, 0
   index: -1
 box_info/box_info_selection3
   rotate: false
-  xy: 1517, 183
+  xy: 0, 311
   size: 82, 147
   orig: 82, 147
   offset: 0, 0
   index: -1
 box_info/order_popup
   rotate: false
-  xy: 192, 87
+  xy: 64, 87
   size: 120, 65
   orig: 120, 65
   offset: 0, 0
   index: -1
 calendar/day_icon
   rotate: false
-  xy: 797, 87
+  xy: 669, 87
   size: 90, 90
   orig: 90, 90
   offset: 0, 0
   index: -1
 calendar/day_icon_completed
   rotate: false
-  xy: 887, 87
+  xy: 759, 87
   size: 90, 90
   orig: 90, 90
   offset: 0, 0
   index: -1
 calendar/day_selection
   rotate: false
-  xy: 977, 87
+  xy: 849, 87
   size: 90, 90
   orig: 90, 90
   offset: 0, 0
   index: -1
 calendar/day_selection2
   rotate: false
-  xy: 1043, 183
+  xy: 1523, 183
   size: 90, 120
   orig: 90, 120
   offset: 0, 0
@@ -75,56 +75,56 @@ calendar/order_completed
   index: -1
 calendar/order_details
   rotate: false
-  xy: 0, 681
+  xy: 270, 646
   size: 330, 411
   orig: 330, 411
   offset: 0, 0
   index: -1
 car
   rotate: false
-  xy: 1133, 183
+  xy: 1613, 183
   size: 128, 128
   orig: 128, 128
   offset: 0, 0
   index: -1
 chest/chest
   rotate: false
-  xy: 330, 681
+  xy: 600, 646
   size: 345, 428
   orig: 345, 428
   offset: 0, 0
   index: -1
 chest/inventory_selection1
   rotate: false
-  xy: 312, 87
+  xy: 184, 87
   size: 80, 80
   orig: 80, 80
   offset: 0, 0
   index: -1
 chest/inventory_selection2
   rotate: false
-  xy: 392, 87
+  xy: 264, 87
   size: 163, 80
   orig: 163, 80
   offset: 0, 0
   index: -1
 chest/inventory_selection3
   rotate: false
-  xy: 1599, 183
+  xy: 82, 311
   size: 80, 163
   orig: 80, 163
   offset: 0, 0
   index: -1
 chest/inventory_selection4
   rotate: false
-  xy: 1679, 183
+  xy: 162, 311
   size: 163, 163
   orig: 163, 163
   offset: 0, 0
   index: -1
 grid
   rotate: false
-  xy: 1060, 346
+  xy: 1385, 311
   size: 260, 260
   orig: 260, 260
   offset: 0, 0
@@ -138,21 +138,21 @@ hotbar/hotbar
   index: -1
 hotbar/hotbar_forced_selection
   rotate: false
-  xy: 1067, 87
+  xy: 939, 87
   size: 94, 94
   orig: 94, 94
   offset: 0, 0
   index: -1
 hotbar/hotbar_selection
   rotate: false
-  xy: 1161, 87
+  xy: 1033, 87
   size: 94, 94
   orig: 94, 94
   offset: 0, 0
   index: -1
 hotbar/hotbar_selection2
   rotate: false
-  xy: 1255, 87
+  xy: 1127, 87
   size: 181, 94
   orig: 181, 94
   offset: 0, 0
@@ -166,21 +166,21 @@ icon
   index: -1
 item
   rotate: false
-  xy: 555, 87
+  xy: 427, 87
   size: 80, 80
   orig: 80, 80
   offset: 0, 0
   index: -1
 item2
   rotate: false
-  xy: 635, 87
+  xy: 507, 87
   size: 80, 80
   orig: 80, 80
   offset: 0, 0
   index: -1
 overlay/hud
   rotate: false
-  xy: 0, 346
+  xy: 325, 311
   size: 360, 241
   orig: 360, 241
   offset: 0, 0
@@ -208,7 +208,7 @@ popup/pointer
   index: -1
 popup/popup2
   rotate: false
-  xy: 760, 346
+  xy: 1085, 311
   size: 300, 255
   orig: 300, 255
   offset: 0, 0
@@ -229,7 +229,7 @@ popup/water_meter
   index: -1
 shop/front_style
   rotate: false
-  xy: 360, 346
+  xy: 685, 311
   size: 200, 250
   orig: 200, 250
   offset: 0, 0
@@ -250,16 +250,30 @@ shop/scrollbar_knob
   index: -1
 shop/shop
   rotate: false
-  xy: 675, 681
-  size: 1100, 688
-  orig: 1100, 688
+  xy: 945, 646
+  size: 1000, 625
+  orig: 1000, 625
   offset: 0, 0
   index: -1
 shop/shop_card
   rotate: false
-  xy: 560, 346
+  xy: 885, 311
   size: 200, 250
   orig: 200, 250
+  offset: 0, 0
+  index: -1
+stall/order
+  rotate: false
+  xy: 1043, 183
+  size: 380, 100
+  orig: 380, 100
+  offset: 0, 0
+  index: -1
+stall/order_grid
+  rotate: false
+  xy: 1423, 183
+  size: 100, 100
+  orig: 100, 100
   offset: 0, 0
   index: -1
 ui/buttons/buy
@@ -320,14 +334,14 @@ ui/buttons/empty_button_hover
   index: -1
 ui/buttons/enter
   rotate: false
-  xy: 1526, 87
+  xy: 1398, 87
   size: 96, 96
   orig: 96, 96
   offset: 0, 0
   index: -1
 ui/buttons/enter_clicked
   rotate: false
-  xy: 1622, 87
+  xy: 1494, 87
   size: 96, 96
   orig: 96, 96
   offset: 0, 0
@@ -418,14 +432,14 @@ ui/buttons/remove_item_clicked
   index: -1
 ui/buttons/settings_button
   rotate: false
-  xy: 0, 87
+  xy: 1854, 23
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: -1
 ui/buttons/settings_button_clicked
   rotate: false
-  xy: 64, 87
+  xy: 1918, 23
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
@@ -467,7 +481,7 @@ ui/icons/drop_arrow
   index: -1
 ui/icons/happy
   rotate: false
-  xy: 128, 87
+  xy: 0, 87
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
@@ -495,21 +509,21 @@ ui/useBarOverlay
   index: -1
 world/car
   rotate: false
-  xy: 1436, 87
+  xy: 1308, 87
   size: 90, 94
   orig: 90, 94
   offset: 0, 0
   index: -1
 world/cursor
   rotate: false
-  xy: 1261, 183
+  xy: 1741, 183
   size: 128, 128
   orig: 128, 128
   offset: 0, 0
   index: -1
 world/cursor2
   rotate: false
-  xy: 1389, 183
+  xy: 1869, 183
   size: 128, 128
   orig: 128, 128
   offset: 0, 0

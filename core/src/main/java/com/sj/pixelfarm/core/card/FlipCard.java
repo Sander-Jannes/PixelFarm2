@@ -21,13 +21,13 @@ public class FlipCard extends Card {
         super(imagePath, x, y, isMovable);
 
         back.setVisible(false);
-        stack.add(front);
-        stack.add(back);
+        cardStack.add(front);
+        cardStack.add(back);
 
         ImageButton flipButton = createImageButton(ButtonStyles.FLIP_BUTTON, button -> flip(f -> flipSide()));
         Container<ImageButton> flip = new Container<>(flipButton);
         flip.left().top().padTop(7).padLeft(8);
-        stack.add(flip);
+        cardStack.add(flip);
     }
 
     private void flipSide() {

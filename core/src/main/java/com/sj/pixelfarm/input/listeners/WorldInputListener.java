@@ -11,6 +11,8 @@ import com.sj.pixelfarm.input.Interactions;
 import com.sj.pixelfarm.input.events.EventType;
 import com.sj.pixelfarm.core.Events;
 import com.sj.pixelfarm.itemgrid.ItemStackSlot;
+import com.sj.pixelfarm.items.actions.ActionTarget;
+import com.sj.pixelfarm.utils.TileHelper;
 import com.sj.pixelfarm.world.World;
 import com.sj.pixelfarm.world.utils.WorldUtils;
 
@@ -40,6 +42,16 @@ public class WorldInputListener extends InputAdapter {
             world.lastY = y;
             world.dragging = true;
             world.editMode.showActionBar(tmpVector);
+
+            GridPoint2 gridPos = WorldUtils.getGridPosFromMouse(world.viewport);
+            TiledMapTile tile = world.worldMap.getTile(gridPos, World.Layers.DECORATION);
+
+            TileHelper.processTile(tile, t -> {
+               if (t.evaluateActionTarget(ActionTarget.STALL)) {
+                    Events.fire(new EventType.ShowModalEvent(Entities.STALL));
+               }
+            });
+
             return true;
 
         } else if (button == Input.Buttons.RIGHT) {

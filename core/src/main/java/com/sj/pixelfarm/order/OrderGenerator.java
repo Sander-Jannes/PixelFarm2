@@ -5,6 +5,7 @@ import com.sj.pixelfarm.itemgrid.ItemStack;
 import com.sj.pixelfarm.mem.PoolManager;
 import com.sj.pixelfarm.items.Items;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 
@@ -27,18 +28,28 @@ public final class OrderGenerator {
     };
 
     public static Order generateRandomOrder() {
-        Item randomItem = possibleItems[random.nextInt(possibleItems.length)];
-        int amount = random.nextInt(10) + 1;
         int price = 20 + random.nextInt(81);
         int xp = 5 + random.nextInt(16);
         String customerName = possibleNames[random.nextInt(possibleNames.length)];
+        int itemAmount = random.nextInt(3) + 1;
+        ItemStack[] stacks = new ItemStack[itemAmount];
 
-        ItemStack[] stacks = {
-            PoolManager.obtain(randomItem, amount, Item.Quality.NONE)
-        };
+        for (int i = 0; i < itemAmount; i++) {
+            Item randomItem = possibleItems[random.nextInt(possibleItems.length)];
+            int amount = random.nextInt(10) + 1;
+            stacks[i] = PoolManager.obtain(randomItem, amount, Item.Quality.NONE);
+        }
 
         currentOrder++;
 
         return new Order(stacks, price, xp, customerName);
+    }
+
+    public static ArrayList<Order> generateOrders(int n) {
+        ArrayList<Order> orders = new ArrayList<>();
+        for (int i = 0; i < n; i++) {
+            orders.add(generateRandomOrder());
+        }
+        return orders;
     }
 }

@@ -12,4 +12,5 @@ public class Entities {
     public static final String BOX_INFO = "boxInfo";
     public static final String ERROR_MESSAGE = "error_message";
     public static final String ORDER = "order";
+    public static final String STALL = "stall";
 }

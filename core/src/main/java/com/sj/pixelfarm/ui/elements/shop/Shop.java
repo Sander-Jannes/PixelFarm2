@@ -4,13 +4,11 @@ import com.badlogic.gdx.scenes.scene2d.ui.ScrollPane;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.utils.Array;
 import com.sj.pixelfarm.Entities;
-import com.sj.pixelfarm.input.events.EventType;
-import com.sj.pixelfarm.core.Events;
 import com.sj.pixelfarm.items.Item;
 import com.sj.pixelfarm.items.Items;
-import com.sj.pixelfarm.core.ui.effects.UIEffects;
 import com.sj.pixelfarm.ui.elements.modals.TabModal;
-import static com.sj.pixelfarm.core.ui.UIUtils.*;
+
+import static com.sj.pixelfarm.core.ui.UIUtils.createScrollPane;
 
 
 public class Shop extends TabModal<Item.Group> {
@@ -27,9 +25,7 @@ public class Shop extends TabModal<Item.Group> {
     };
 
     public Shop() {
-        super(IMAGE, Item.Group.SEEDS);
-        setName(Entities.SHOP);
-        setVisible(false);
+        super(IMAGE, Entities.SHOP, Item.Group.SEEDS);
 
         addTab("seeds", Item.Group.SEEDS, this::swapCards);
         addTab("care", Item.Group.CARE, this::swapCards);
@@ -46,13 +42,8 @@ public class Shop extends TabModal<Item.Group> {
             pane.setScrollingDisabled(false, true);
         });
 
-        table.add(scrollPane).expandY().pad(10).center();
+        modalTable.add(scrollPane).expandY().pad(10).center();
         swapCards();
-
-        Events.on(EventType.ShowModalEvent.class, e -> {
-            if (getName().equals(e.name())) setVisible(true);
-            UIEffects.applySpawnInEffect(this);
-        });
     }
 
     private void addCard(ShopCard card) {

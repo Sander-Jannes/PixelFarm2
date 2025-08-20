@@ -42,7 +42,7 @@ public class CropInfoPopup extends TimerPopup<TiledMapTile> {
 
         Table table = new Table();
         table.top();
-        stack.add(table);
+        cardStack.add(table);
 
         VerticalGroup panel = new VerticalGroup();
         panel.space(30);

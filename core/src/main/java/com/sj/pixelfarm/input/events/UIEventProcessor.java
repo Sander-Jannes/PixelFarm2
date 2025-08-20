@@ -42,36 +42,36 @@ public class UIEventProcessor {
             UIUtils.createErrorMessage(stage, tmpVec, e.text());
         });
 
-        Events.on(EventType.ShowOrderEvent.class, e -> {
-            world.viewport.project(e.pos());
-            stage.screenToStageCoordinates(e.pos());
+//        Events.on(EventType.ShowOrderEvent.class, e -> {
+//            world.viewport.project(e.pos());
+//            stage.screenToStageCoordinates(e.pos());
+//
+//            Stack stack = new Stack();
+//            stack.setName(Entities.ORDER);
+//            stack.setPosition(e.pos().x, Gdx.graphics.getHeight() - e.pos().y + 50);
+//            UIEffects.applySinusBounce(stack, 12f, 2f);
+//
+//            stage.getRoot().addActorAt(0, stack);
+//
+//            stack.add(new Container<>(createImage("box_info/order_popup")));
+//
+//            HorizontalGroup body = new HorizontalGroup().center().space(-22).padBottom(20);
+//
+//            for (ItemStack itemStack : e.order().getItems()) {
+//                VerticalGroup group = new VerticalGroup().space(-20);
+//
+//                group.addActor(createItemPreview(itemStack.item, -0.4f));
+//                Container<Label> quantityContainer = createLabelContainer(itemStack.amount + "x", LabelStyles.X13, null, null);
+//
+//                group.addActor(quantityContainer);
+//                body.addActor(group);
+//            }
+//
+//            stack.add(body);
+//        });
 
-            Stack stack = new Stack();
-            stack.setName(Entities.ORDER);
-            stack.setPosition(e.pos().x, Gdx.graphics.getHeight() - e.pos().y + 50);
-            UIEffects.applySinusBounce(stack, 12f, 2f);
-
-            stage.getRoot().addActorAt(0, stack);
-
-            stack.add(new Container<>(createImage("box_info/order_popup")));
-
-            HorizontalGroup body = new HorizontalGroup().center().space(-22).padBottom(20);
-
-            for (ItemStack itemStack : e.order().getItems()) {
-                VerticalGroup group = new VerticalGroup().space(-20);
-
-                group.addActor(createItemPreview(itemStack.item, -0.4f));
-                Container<Label> quantityContainer = createLabelContainer(itemStack.amount + "x", LabelStyles.X13, null, null);
-
-                group.addActor(quantityContainer);
-                body.addActor(group);
-            }
-
-            stack.add(body);
-        });
-
-        Events.on(EventType.RemoveOrderEvent.class, e -> {
-            stage.getRoot().findActor(Entities.ORDER).remove();
-        });
+//        Events.on(EventType.RemoveOrderEvent.class, e -> {
+//            stage.getRoot().findActor(Entities.ORDER).remove();
+//        });
     }
 }

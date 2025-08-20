@@ -10,18 +10,19 @@ import com.badlogic.gdx.utils.viewport.ExtendViewport;
 import com.sj.pixelfarm.*;
 import com.sj.pixelfarm.Entities;
 import com.sj.pixelfarm.Vars;
+import com.sj.pixelfarm.itemgrid.ItemGrid;
 import com.sj.pixelfarm.ui.elements.cards.CropInfoPopup;
 import com.sj.pixelfarm.core.grid.GridLoader;
 import com.sj.pixelfarm.input.listeners.WorldInputListener;
 import com.sj.pixelfarm.items.Item;
 import com.sj.pixelfarm.items.Items;
-import com.sj.pixelfarm.itemgrid.ItemGrid;
 import com.sj.pixelfarm.mem.Assets;
 import com.sj.pixelfarm.mem.PoolManager;
 import com.sj.pixelfarm.ui.elements.hud.OverlayMenu;
 import com.sj.pixelfarm.input.events.UIEventProcessor;
 import com.sj.pixelfarm.tasks.TaskManager;
 import com.sj.pixelfarm.ui.elements.shop.Shop;
+import com.sj.pixelfarm.ui.elements.stall.Stall;
 import com.sj.pixelfarm.world.World;
 
 
@@ -43,27 +44,29 @@ public class GameScreen implements Screen {
         world = new World(worldViewport);
         worldInputListener = new WorldInputListener(world, stage);
 
-        ItemGrid grid = new ItemGrid(GridLoader.load("gridconfig/hotbar.json", Assets::getAtlasTexture), 64, Entities.HOTBAR);
-        grid.setPosition(Gdx.graphics.getWidth() / 2f - grid.getWidth() / 2f,40);
+        ItemGrid hotbar = new ItemGrid(GridLoader.load("gridconfig/hotbar.json", Assets::getAtlasTexture), 64, Entities.HOTBAR);
+        hotbar.setPosition(Gdx.graphics.getWidth() / 2f - hotbar.getWidth() / 2f,40);
 
-        grid.setObjToSlot(1, PoolManager.obtain(Items.cucumber, 4, Item.Quality.GOOD));
-        grid.setObjToSlot(2, PoolManager.obtain(Items.eggplant_seeds, 64, Item.Quality.NONE));
+        hotbar.setObjToSlot(1, PoolManager.obtain(Items.cucumber, 4, Item.Quality.GOOD));
+        hotbar.setObjToSlot(2, PoolManager.obtain(Items.eggplant_seeds, 64, Item.Quality.NONE));
 
 
-        grid.setObjToSlot(3, PoolManager.obtain(Items.test, 5, Item.Quality.NONE));
-        grid.setObjToSlot(4, PoolManager.obtain(Items.flowers, 2, Item.Quality.NONE));
+        hotbar.setObjToSlot(3, PoolManager.obtain(Items.test, 5, Item.Quality.NONE));
+        hotbar.setObjToSlot(4, PoolManager.obtain(Items.flowers, 2, Item.Quality.NONE));
 
-        grid.setObjToSlot(5, PoolManager.obtain(Items.watering_can, 64, Item.Quality.NONE));
-        grid.setObjToSlot(9, PoolManager.obtain(Items.scythe, 0, Item.Quality.NONE));
-        grid.setObjToSlot(10, PoolManager.obtainBox());
+        hotbar.setObjToSlot(5, PoolManager.obtain(Items.watering_can, 64, Item.Quality.NONE));
+        hotbar.setObjToSlot(9, PoolManager.obtain(Items.scythe, 0, Item.Quality.NONE));
+        hotbar.setObjToSlot(10, PoolManager.obtainBox());
 
         CropInfoPopup popup = new CropInfoPopup(20, Gdx.graphics.getHeight() - 255 - 20, 200);
         OverlayMenu overlayMenu = new OverlayMenu();
         Shop shop = new Shop();
+        Stall stall = new Stall();
 
-        stage.addActor(grid);
+        stage.addActor(hotbar);
         stage.addActor(popup);
         stage.addActor(shop);
+        stage.addActor(stall);
         stage.addActor(overlayMenu);
         main.multiplexer.addProcessor(stage);
         main.multiplexer.addProcessor(worldInputListener);
