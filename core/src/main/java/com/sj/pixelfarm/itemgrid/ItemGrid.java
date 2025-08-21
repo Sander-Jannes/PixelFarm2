@@ -10,6 +10,7 @@ import com.sj.pixelfarm.core.grid.GridLoader;
 import com.sj.pixelfarm.input.events.EventType;
 import com.sj.pixelfarm.core.Events;
 import com.sj.pixelfarm.input.listeners.GridListener;
+import com.sj.pixelfarm.items.Item;
 import com.sj.pixelfarm.ui.elements.actionbar.ActionBar;
 import com.sj.pixelfarm.core.ui.effects.UIEffects;
 import com.sj.pixelfarm.ui.styles.ButtonStyles;
@@ -25,9 +26,8 @@ import static com.sj.pixelfarm.core.ui.UIUtils.createButton;
 
 public class ItemGrid extends GridBase<ItemStack, ItemStackSlot> {
 
-    protected final ItemStackSlot selectedSlot = new ItemStackSlot();
-    protected final ArrayList<Integer> noActionTypes = new ArrayList<>();
-
+    private final ItemStackSlot selectedSlot = new ItemStackSlot();
+    private final ArrayList<Integer> noActionTypes = new ArrayList<>();
     private ItemStackSlot clickedSlot;
     private final int maxSlotCapacity;
     private final ActionBar actionBar;
@@ -75,10 +75,6 @@ public class ItemGrid extends GridBase<ItemStack, ItemStackSlot> {
                 e.onSuccess().run();
             }
         });
-    }
-
-    public ItemStackSlot getSelectedSlot() {
-        return selectedSlot;
     }
 
     public @Null ItemStackSlot grabSlot(Vector2 localPos) {
@@ -135,6 +131,10 @@ public class ItemGrid extends GridBase<ItemStack, ItemStackSlot> {
             return targetSlot;
         }
         return null;
+    }
+
+    public ItemStackSlot getSelectedSlot() {
+        return selectedSlot;
     }
 
     public boolean dropSelectedSlot(Vector2 localPos) {
@@ -204,6 +204,18 @@ public class ItemGrid extends GridBase<ItemStack, ItemStackSlot> {
         }
 
         return false;
+    }
+
+    public void setSlotFixed(int number, Item... items) {
+        ItemStackSlot slot = getSlotByNumber(number);
+
+        if (slot != null) {
+            slot.setFixed(items);
+        }
+    }
+
+    public void setNoActions(Integer... slotTypes) {
+        noActionTypes.addAll(Arrays.asList(slotTypes));
     }
 
     @Override

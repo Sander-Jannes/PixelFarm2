@@ -1,6 +1,7 @@
 package com.sj.pixelfarm.ui.styles;
 
 public enum LabelStyles {
+
     X48("48x"),
     X32("32x"),
     X28("28x"),

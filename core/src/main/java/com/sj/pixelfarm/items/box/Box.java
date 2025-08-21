@@ -11,7 +11,6 @@ import com.sj.pixelfarm.itemgrid.ItemStack;
 import com.sj.pixelfarm.ui.styles.ButtonStyles;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
@@ -26,7 +25,6 @@ public class Box extends ItemStack {
 
     public Box() {
         super();
-        setName("Box");
         boxInfo.moveCenterTo(Gdx.graphics.getWidth() / 2f, Gdx.graphics.getHeight() / 2f);
     }
 
@@ -73,17 +71,20 @@ public class Box extends ItemStack {
     }
 
     private void close() {
-        item = Items.closed_box;
-        setActor(new Image(item.image));
+        setItem(Items.closed_box);
         boxInfo.grid.setTouchable(Touchable.disabled);
+    }
+
+    private void setItem(Item item) {
+        this.item = item;
+        setActor(new Image(this.item.image));
     }
 
     @Override
     public void reset() {
         super.reset();
         boxInfo.reset();
-        item = Items.box;
         actionBar.setState(1);
-        setActor(new Image(item.image));
+        setItem(Items.box);
     }
 }

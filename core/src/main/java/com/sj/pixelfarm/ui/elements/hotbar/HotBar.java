@@ -9,8 +9,6 @@ public class HotBar extends ItemGrid {
 
     public HotBar(GridLoader.GridConfig<ItemStack, ItemStackSlot> data, int maxSlotCapacity, String name) {
         super(data, maxSlotCapacity, name);
-
-        // Slottype twee heeft geen acties
-        noActionTypes.add(2);
+        setNoActions(2);
     }
 }

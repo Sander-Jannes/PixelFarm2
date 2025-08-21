@@ -21,7 +21,8 @@ public class OrderCardGrid extends ItemGrid {
 
     public OrderCardGrid(GridLoader.GridConfig<ItemStack, ItemStackSlot> data, int maxSlotCapacity, String name) {
         super(data, maxSlotCapacity, name);
-        noActionTypes.add(3);
+        setNoActions(3);
+        setSlotFixed(1, Items.closed_box);
     }
 
     // Zorg dat er geen items genomen kunnen worden uit de grid
@@ -37,10 +38,10 @@ public class OrderCardGrid extends ItemGrid {
         if (!dropSlot.isEmpty() && dropSlot.getObj().item.itemType == ItemType.CLOSED_BOX) {
             Box box = (Box) dropSlot.getObj();
             items = box.getItems();
-            targetSlot.setObj(PoolManager.obtain(Items.closed_box, 0, Item.Quality.NONE));
             box.reset();
-        }
 
+            targetSlot.setObj(PoolManager.obtain(Items.closed_box, 0, Item.Quality.NONE));
+        }
         return null;
     }
 }

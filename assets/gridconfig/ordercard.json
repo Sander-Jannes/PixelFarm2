@@ -2,7 +2,7 @@
   "background": "stall/order_grid",
   "slotInfo": [
     {
-      "slotType": 3,
+      "slotType": 1,
       "class": "com.sj.pixelfarm.itemgrid.ItemStackSlot",
       "selectImage": "hotbar/hotbar_selection",
       "highlightImage": "hotbar/hotbar_forced_selection",
@@ -12,7 +12,7 @@
   "slots": [
     {
       "number": 1,
-      "slotType": 3,
+      "slotType": 1,
       "pos": [3, 4]
     }
   ]

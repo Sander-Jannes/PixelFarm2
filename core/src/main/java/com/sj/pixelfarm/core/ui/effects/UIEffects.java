@@ -46,13 +46,6 @@ public final class UIEffects {
         ));
     }
 
-    public static void showNSeconds(Actor actor) {
-        actor.addAction(sequence(
-                Actions.delay(5),
-                Actions.removeActor()
-        ));
-    }
-
     public static void applySinusBounce(Actor actor, float amplitude, float duration) {
         actor.addAction(
             Actions.forever(
